@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
 
 function App() {
   useEffect(() => {
-
     fetch(
       'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=10&page=1',
       {
@@ -15,32 +12,13 @@ function App() {
         },
       }
     ).then((res) =>
-    res.json().then((data) => {
-      console.log(data);      
-    })
-  );
-}, []);
+      res.json().then((data) => {
+        console.log(data);
+      })
+    );
+  }, []);
 
-    
-  
-  return (
-    <div className="App">
-                                        <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className="App">Test</div>;
 }
 
 export default App;
