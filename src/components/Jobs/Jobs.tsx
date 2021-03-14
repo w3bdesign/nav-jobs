@@ -1,8 +1,13 @@
+/* eslint-disable react/button-has-type */
 import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering'; // https://navikt.github.io/paginering-doc/build/
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp } from 'nav-frontend-knapper';
+
+import Modal from 'react-modal';
+
+import ModalWrapper from 'nav-frontend-modal';
 
 import './Jobs.css';
 
@@ -11,6 +16,7 @@ type dateType = string | number | Date;
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   // Decimal round up for pagecount
   // const pageCount = Math.ceil(items.length / jobsPerPage);
@@ -23,7 +29,15 @@ const Jobs: React.FC = () => {
     setPageNumber(page);
   };
 
-  const formatTime = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const formatDate = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -42,6 +56,7 @@ const Jobs: React.FC = () => {
     ).then((res) => res.json().then((data) => {
       console.log(data);
       setItems(data.content);
+      ModalWrapper.setAppElement('#root');
     }));
   }, []);
   // items.length ?
@@ -56,11 +71,36 @@ const Jobs: React.FC = () => {
               uuid, title, employer: { name }, published,
             }) => (
               <Panel key={uuid} className="panel" border>
+
+                <Modal
+                  isOpen={modalIsOpen}
+                  onRequestClose={closeModal}
+                  contentLabel="Example Modal"
+                >
+                  <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
+                  <div>I am a modal</div>
+                  <form>
+                    <input />
+                    <button>tab navigation</button>
+                    <button>stays</button>
+                    <button>inside</button>
+                    <button>the modal</button>
+                  </form>
+                </Modal>
+
+                <ModalWrapper
+                  isOpen={modalIsOpen}
+                  onRequestClose={closeModal}
+                  closeButton
+                  contentLabel="Min modalrute"
+                >
+                  <div>Denne skal skjules</div>
+                </ModalWrapper>
                 <span className="panelSpan">{title}</span>
                 <span className="panelSpan">{name}</span>
-                <span className="panelSpan">{formatTime(published)}</span>
+                <span className="panelSpan">{formatDate(published)}</span>
                 <span className="panelButton">
-                  <Hovedknapp>Vis</Hovedknapp>
+                  <Hovedknapp onClick={openModal}>Vis</Hovedknapp>
                   <Hovedknapp>Lagre</Hovedknapp>
                 </span>
               </Panel>
