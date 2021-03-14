@@ -59,7 +59,6 @@ const Jobs: React.FC = () => {
       Modal.setAppElement('#root');
     }));
   }, []);
-  // items.length ?
 
   return (
     <div>
@@ -69,7 +68,13 @@ const Jobs: React.FC = () => {
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(
               ({
-                uuid, title, employer: { name }, published, description,
+                uuid,
+                title,
+                employer: { name },
+                published,
+                description,
+                extent,
+                applicationDue,
               }) => (
                 <Panel key={uuid} className="panel" border>
                   <Modal
@@ -77,7 +82,13 @@ const Jobs: React.FC = () => {
                     onRequestClose={closeModal}
                     contentLabel={title}
                   >
-                    <JobContent description={description} name={name} closeModal={closeModal} />
+                    <JobContent
+                      description={description}
+                      extent={extent}
+                      name={name}
+                      applicationDue={applicationDue}
+                      closeModal={closeModal}
+                    />
                   </Modal>
                   <span className="panelSpan">{title}</span>
                   <span className="panelSpan">{name}</span>
