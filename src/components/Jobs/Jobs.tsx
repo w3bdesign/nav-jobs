@@ -6,6 +6,8 @@ import { Hovedknapp } from 'nav-frontend-knapper';
 
 import './Jobs.css';
 
+type dateType = string | number | Date
+
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
@@ -18,6 +20,12 @@ const Jobs: React.FC = () => {
   const changePage = (page: number) => {
     setPageNumber(page);
   };
+
+  const formatTime = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   useEffect(() => {
     fetch(
@@ -46,7 +54,7 @@ const Jobs: React.FC = () => {
             <Panel key={uuid} className="panel" border>
               <span className="panelSpan">{title}</span>
               <span className="panelSpan">{name}</span>
-              <span className="panelSpan">{published}</span>
+              <span className="panelSpan">{formatTime(published)}</span>
               <span className="panelButton">
                 <Hovedknapp>Vis</Hovedknapp>
                 <Hovedknapp>Lagre</Hovedknapp>
