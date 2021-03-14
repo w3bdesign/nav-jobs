@@ -1,15 +1,6 @@
-/* Custom properties */
-:root {
-  --nav-background: #c30000;
-  --clr-job-app: #2b3595;
-  --clr-font: white;
-  --clr-main-markup: #e14594;
-  --clr-secondary-markup: #fed000;
-}
-
 /* Header text */
 .header-title {
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
   font-size: 40px;
   line-height: 44px;
@@ -23,22 +14,22 @@
 }
 
 .system-title {
-    color: #000;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-  }
+  color: var(--black);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+}
 
 /* Logo container*/
 nav {
   display: flex;
   align-items: center;
   min-height: 10vh;
-  background-color: #fff;  
+  background-color: var(--white);
   justify-content: center;
-  border-bottom: 2px #c6c2bf solid;
+  border-bottom: 2px var(--borderColor) solid;
 }
 
 .logo {
-    padding: 1rem;
+  padding: 1rem;
 }

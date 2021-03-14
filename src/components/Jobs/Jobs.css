@@ -16,15 +16,13 @@
   padding: 0.5em;
   gap: 1em;
   position: relative;
-  /*margin-top: 10px;*/
-  /*width: 50px;  */
 }
 
 .panelSpan {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  padding: 0.51em;
+  padding: 0.5em;
   position: relative;
   min-height: 40px;
 }
