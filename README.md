@@ -1,7 +1,5 @@
 # NAV home assignment
 
-This application fetches and displays jobs from NAV.no.
-
 We want you to create a simple app / website that retrieves job advertisements from NAV's REST API and shows them to the user. 
 
 The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
