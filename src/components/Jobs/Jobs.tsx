@@ -1,13 +1,13 @@
-/* eslint-disable react/button-has-type */
 import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering'; // https://navikt.github.io/paginering-doc/build/
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp } from 'nav-frontend-knapper';
-
 import Modal from 'react-modal';
 
-import ModalWrapper from 'nav-frontend-modal';
+import JobContent from './JobContent';
+
+// import ModalWrapper from 'nav-frontend-modal';
 
 import './Jobs.css';
 
@@ -29,13 +29,13 @@ const Jobs: React.FC = () => {
     setPageNumber(page);
   };
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   const formatDate = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
     year: 'numeric',
@@ -56,7 +56,7 @@ const Jobs: React.FC = () => {
     ).then((res) => res.json().then((data) => {
       console.log(data);
       setItems(data.content);
-      ModalWrapper.setAppElement('#root');
+      Modal.setAppElement('#root');
     }));
   }, []);
   // items.length ?
@@ -67,44 +67,31 @@ const Jobs: React.FC = () => {
         {items.length
           && items
             .slice(pagesVisited, pagesVisited + jobsPerPage)
-            .map(({
-              uuid, title, employer: { name }, published,
-            }) => (
-              <Panel key={uuid} className="panel" border>
+            .map(
+              ({
+                uuid, title, employer: { name }, published, description,
+              }) => (
+                <Panel key={uuid} className="panel" border>
+                  <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    contentLabel="Example Modal"
+                  >
+                    <>
+                      <JobContent description={description} closeModal={closeModal} />
+                    </>
+                  </Modal>
 
-                <Modal
-                  isOpen={modalIsOpen}
-                  onRequestClose={closeModal}
-                  contentLabel="Example Modal"
-                >
-                  <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
-                  <div>I am a modal</div>
-                  <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
-                  </form>
-                </Modal>
-
-                <ModalWrapper
-                  isOpen={modalIsOpen}
-                  onRequestClose={closeModal}
-                  closeButton
-                  contentLabel="Min modalrute"
-                >
-                  <div>Denne skal skjules</div>
-                </ModalWrapper>
-                <span className="panelSpan">{title}</span>
-                <span className="panelSpan">{name}</span>
-                <span className="panelSpan">{formatDate(published)}</span>
-                <span className="panelButton">
-                  <Hovedknapp onClick={openModal}>Vis</Hovedknapp>
-                  <Hovedknapp>Lagre</Hovedknapp>
-                </span>
-              </Panel>
-            ))}
+                  <span className="panelSpan">{title}</span>
+                  <span className="panelSpan">{name}</span>
+                  <span className="panelSpan">{formatDate(published)}</span>
+                  <span className="panelButton">
+                    <Hovedknapp onClick={openModal}>Vis</Hovedknapp>
+                    <Hovedknapp>Lagre</Hovedknapp>
+                  </span>
+                </Panel>
+              ),
+            )}
       </div>
       {items.length && (
         <Pagination
