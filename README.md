@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/45217974/111079321-d5958080-84f9-11eb-8af1-196c275dd30d.png" alt="Screenshot" />
+
 # NAV home assignment
 
 We want you to create a simple app / website that retrieves job advertisements from NAV's REST API and shows them to the user. 
