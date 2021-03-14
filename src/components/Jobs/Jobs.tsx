@@ -7,11 +7,9 @@ import Modal from 'react-modal';
 
 import JobContent from './JobContent';
 
-// import ModalWrapper from 'nav-frontend-modal';
+import { formatDate } from '../../utils/functions';
 
 import './Jobs.css';
-
-type dateType = string | number | Date;
 
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
@@ -37,12 +35,6 @@ const Jobs: React.FC = () => {
     setIsOpen(false);
   };
 
-  const formatDate = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-
   useEffect(() => {
     fetch(
       'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
@@ -59,7 +51,6 @@ const Jobs: React.FC = () => {
       Modal.setAppElement('#root');
     }));
   }, []);
-  // items.length ?
 
   return (
     <div>
@@ -69,7 +60,13 @@ const Jobs: React.FC = () => {
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(
               ({
-                uuid, title, employer: { name }, published, description,
+                uuid,
+                title,
+                employer: { name },
+                published,
+                description,
+                extent,
+                applicationDue,
               }) => (
                 <Panel key={uuid} className="panel" border>
                   <Modal
@@ -77,7 +74,13 @@ const Jobs: React.FC = () => {
                     onRequestClose={closeModal}
                     contentLabel={title}
                   >
-                    <JobContent description={description} name={name} closeModal={closeModal} />
+                    <JobContent
+                      description={description}
+                      extent={extent}
+                      name={name}
+                      applicationDue={applicationDue}
+                      closeModal={closeModal}
+                    />
                   </Modal>
                   <span className="panelSpan">{title}</span>
                   <span className="panelSpan">{name}</span>
