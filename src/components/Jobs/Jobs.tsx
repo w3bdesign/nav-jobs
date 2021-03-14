@@ -6,18 +6,28 @@ import { Hovedknapp } from 'nav-frontend-knapper';
 
 import './Jobs.css';
 
+type dateType = string | number | Date;
+
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const jobsPerPage = 10;
   // Decimal round up for pagecount
   // const pageCount = Math.ceil(items.length / jobsPerPage);
+
+  const jobsPerPage = 10;
+  const pagesVisited = pageNumber * jobsPerPage;
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
     setPageNumber(page);
   };
+
+  const formatTime = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   useEffect(() => {
     fetch(
@@ -40,19 +50,21 @@ const Jobs: React.FC = () => {
     <div>
       <div className="container">
         {items.length
-          && items.map(({
-            uuid, title, employer: { name }, published,
-          }) => (
-            <Panel key={uuid} className="panel" border>
-              <span className="panelSpan">{title}</span>
-              <span className="panelSpan">{name}</span>
-              <span className="panelSpan">{published}</span>
-              <span className="panelButton">
-                <Hovedknapp>Vis</Hovedknapp>
-                <Hovedknapp>Lagre</Hovedknapp>
-              </span>
-            </Panel>
-          ))}
+          && items
+            .slice(pagesVisited, pagesVisited + jobsPerPage)
+            .map(({
+              uuid, title, employer: { name }, published,
+            }) => (
+              <Panel key={uuid} className="panel" border>
+                <span className="panelSpan">{title}</span>
+                <span className="panelSpan">{name}</span>
+                <span className="panelSpan">{formatTime(published)}</span>
+                <span className="panelButton">
+                  <Hovedknapp>Vis</Hovedknapp>
+                  <Hovedknapp>Lagre</Hovedknapp>
+                </span>
+              </Panel>
+            ))}
       </div>
       {items.length && (
         <Pagination
