@@ -7,11 +7,9 @@ import Modal from 'react-modal';
 
 import JobContent from './JobContent';
 
-// import ModalWrapper from 'nav-frontend-modal';
+import { formatDate } from '../../utils/functions';
 
 import './Jobs.css';
-
-type dateType = string | number | Date;
 
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
@@ -36,12 +34,6 @@ const Jobs: React.FC = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
-
-  const formatDate = (date: dateType) => new Date(date).toLocaleDateString('nb-NO', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 
   useEffect(() => {
     fetch(
