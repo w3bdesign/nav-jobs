@@ -3,3 +3,12 @@
 * {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.App {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;  
+  position: relative;
+}

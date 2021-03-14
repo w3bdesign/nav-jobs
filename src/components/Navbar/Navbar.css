@@ -1,32 +1,44 @@
 /* Custom properties */
 :root {
-    --clr-background: #C30000;
-    --clr-job-app: #2b3595;
-    --clr-font: white;
-    --clr-main-markup: #e14594;
-    --clr-secondary-markup: #fed000;
+  --nav-background: #c30000;
+  --clr-job-app: #2b3595;
+  --clr-font: white;
+  --clr-main-markup: #e14594;
+  --clr-secondary-markup: #fed000;
+}
+
+/* Header text */
+.header-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+.sub-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.system-title {
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
   }
-  
-  /* Logo text */
-  .logo {
-    color: var(--clr-font);
-    font-style: italic;
-  }
-  
-  /* Logo container*/
-  nav {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    min-height: 10vh;
-    background-color: var(--clr-background);
-    justify-content: center;
-    margin-top: -2em;
-  }
-  
-  /* Logo */
-  .nav-logo {
-    width: 100px;
-    margin-left: 9px;
-  }
-  
+
+/* Logo container*/
+nav {
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #fff;  
+  justify-content: center;
+  border-bottom: 2px #c6c2bf solid;
+}
+
+.logo {
+    padding: 1rem;
+}
