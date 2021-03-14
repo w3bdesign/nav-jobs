@@ -6,7 +6,16 @@
 }
 
 .panel {
-  min-height: 60px;
+  min-height: 50px;
+}
+
+.panelcontent { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;  
+    position: relative;
+    text-align: left;
 }
 
 .pagination {
