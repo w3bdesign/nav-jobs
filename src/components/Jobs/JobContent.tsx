@@ -1,13 +1,34 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { Hovedknapp } from 'nav-frontend-knapper';
 
-const JobContent: any = ({ closeModal, description }: any) => (
-  <div>
+import './JobContent.css';
+
+type JobContentProps = {
+  closeModal: () => void;
+  description: string;
+  name: string;
+};
+
+const JobContent = ({
+  closeModal,
+  description,
+  name,
+}: JobContentProps): JSX.Element => (
+  <>
     <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
-    <span>{ReactHtmlParser(description)}</span>
-  </div>
+
+    <div className="jobDiv">
+      <span className="jobContent">
+        <span className="jobTitle">
+          {' '}
+          {name}
+        </span>
+        <br />
+        {ReactHtmlParser(description)}
+      </span>
+    </div>
+  </>
 );
 
 export default JobContent;

@@ -1,0 +1,14 @@
+.jobDiv {
+	display: flex;	
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.jobTitle {
+  font-size: 30px;
+}
+
+.jobContent {
+  margin: 0 auto;
+}

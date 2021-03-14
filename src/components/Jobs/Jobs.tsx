@@ -75,13 +75,10 @@ const Jobs: React.FC = () => {
                   <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
-                    contentLabel="Example Modal"
+                    contentLabel={title}
                   >
-                    <>
-                      <JobContent description={description} closeModal={closeModal} />
-                    </>
+                    <JobContent description={description} name={name} closeModal={closeModal} />
                   </Modal>
-
                   <span className="panelSpan">{title}</span>
                   <span className="panelSpan">{name}</span>
                   <span className="panelSpan">{formatDate(published)}</span>
