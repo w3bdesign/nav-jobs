@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering'; // https://navikt.github.io/paginering-doc/build/
 import Panel from 'nav-frontend-paneler';
@@ -45,19 +44,20 @@ const Jobs: React.FC = () => {
             uuid, title, employer: { name }, published,
           }) => (
             <Panel key={uuid} className="panel" border>
-              <span className="panelcontent">
+              <span className="panelspan">
                 {title}
               </span>
-              <span className="panelcontent">
+              <span className="panelspan">
                 {name}
               </span>
 
-              <span className="panelcontent">
+              <span className="panelspan">
                 {published}
               </span>
 
               <span className="panelcontent">
                 <Hovedknapp>Vis Annonse</Hovedknapp>
+
               </span>
 
             </Panel>
