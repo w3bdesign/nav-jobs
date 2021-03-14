@@ -45,16 +45,21 @@ const Jobs: React.FC = () => {
             uuid, title, employer: { name }, published,
           }) => (
             <Panel key={uuid} className="panel" border>
-              {title}
-              <br />
-              <br />
-              {name}
-              <br />
-              <br />
-              {published}
-              <br />
-              <br />
-              <Hovedknapp>Vis Annonse</Hovedknapp>
+              <span className="panelcontent">
+                {title}
+              </span>
+              <span className="panelcontent">
+                {name}
+              </span>
+
+              <span className="panelcontent">
+                {published}
+              </span>
+
+              <span className="panelcontent">
+                <Hovedknapp>Vis Annonse</Hovedknapp>
+              </span>
+
             </Panel>
           ))}
       </div>
