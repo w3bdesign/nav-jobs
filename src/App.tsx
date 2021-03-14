@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const App = () => {
+const App: React.FC = () => {
   useEffect(() => {
     fetch(
       'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=10&page=1',
