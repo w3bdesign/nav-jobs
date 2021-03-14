@@ -26,10 +26,16 @@ const JobContent = ({
     <div className="jobDiv">
       <span className="jobContent">
         <span className="jobTitle">
+          Arbeidsgiver:
+          {' '}
           {name}
           <br />
+          Stillingstype:
+          {' '}
           {extent}
           <br />
+          Frist:
+          {' '}
           {formatDate(applicationDue)}
         </span>
         <br />
