@@ -16,17 +16,19 @@ The app must meet these criteria:
 -   The user should be able to see the last 10 ads when the app is opened
 
 -   Each ad should show:
-    dato (published)
-    job title (jobtitle)
-    ad title
+
+    - dato (published)
+    - job title (jobtitle)
+    - ad title
 
 -   The user should be able to press a button to see the next 10 ads
 
 -   Each ad should have an "Open" button that allows the ad to show:
-    job description (description)
-    employer
-    degree of extent (extent)
-    applicationDue.
+
+    - job description (description)
+    - employer
+    - degree of extent (extent)
+    - applicationDue.
 
 -   Each ad should have a "Save" button. Saved ads must be presented in a separate field.
 
