@@ -2,19 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering'; // https://navikt.github.io/paginering-doc/build/
 import Panel from 'nav-frontend-paneler';
+import NavFrontendSpinner from 'nav-frontend-spinner';
+import { Hovedknapp } from 'nav-frontend-knapper';
 
 import './Jobs.css';
 
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(1);
 
   const jobsPerPage = 10;
   // Decimal round up for pagecount
-  const pageCount = Math.ceil(items.length / jobsPerPage);
+  // const pageCount = Math.ceil(items.length / jobsPerPage);
 
   // Changes page to the current page (on click)
-  const changePage = (page:number) => {
+  const changePage = (page: number) => {
     setPageNumber(page);
   };
 
@@ -38,21 +40,34 @@ const Jobs: React.FC = () => {
   return (
     <div>
       <div className="container">
-        {items.map(({ uuid, title }) => (
-          <Panel key={uuid} className="panel" border>{title}</Panel>
-        ))}
-
+        {items.length
+          && items.map(({
+            uuid, title, employer: { name }, published,
+          }) => (
+            <Panel key={uuid} className="panel" border>
+              {title}
+              <br />
+              <br />
+              {name}
+              <br />
+              <br />
+              {published}
+              <br />
+              <br />
+              <Hovedknapp>Vis Annonse</Hovedknapp>
+            </Panel>
+          ))}
       </div>
-      {items.length
-      && (
-      <Pagination
-        className="pagination"
-        currentPage={1}
-        numberOfItems={items.length}
-        itemsPerPage={jobsPerPage}
-        onChange={(page) => changePage(page)}
-      />
+      {items.length && (
+        <Pagination
+          className="pagination"
+          currentPage={1}
+          numberOfItems={items.length}
+          itemsPerPage={jobsPerPage}
+          onChange={(page) => changePage(page)}
+        />
       )}
+      {!items.length && <NavFrontendSpinner className="pagination" />}
     </div>
   );
 };
