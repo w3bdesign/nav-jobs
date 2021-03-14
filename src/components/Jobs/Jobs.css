@@ -9,20 +9,24 @@
   min-height: 50px;
 }
 
-.panelcontent { 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1em;  
-    position: relative;    
+.panelButton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5em;
+  gap: 1em;
+  position: relative;
+  /*margin-top: 10px;*/
+  /*width: 50px;  */
 }
 
-.panelspan { 
+.panelSpan {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  padding: 1em;  
-  position: relative;    
+  padding: 0.51em;
+  position: relative;
+  min-height: 40px;
 }
 
 .pagination {

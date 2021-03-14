@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/45217974/111079321-d5958080-84f9-11eb-8af1-196c275dd30d.png" alt="Screenshot" />
+
 # NAV home assignment
 
 # ! Work in progress !
