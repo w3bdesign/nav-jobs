@@ -14,8 +14,15 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 1em;  
-    position: relative;
-    text-align: left;
+    position: relative;    
+}
+
+.panelspan { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 1em;  
+  position: relative;    
 }
 
 .pagination {
