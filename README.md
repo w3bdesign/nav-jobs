@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/45217974/111079321-d5958080-84f9-11eb-8af1-196c275dd30d.png" alt="Screenshot" />
+<img src="https://user-images.githubusercontent.com/45217974/111088101-cdebd100-8525-11eb-9937-143c4af03ecd.png" alt="Screenshot" />
 
 # NAV home assignment
 
