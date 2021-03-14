@@ -1,0 +1,32 @@
+/* Custom properties */
+:root {
+    --clr-background: #C30000;
+    --clr-job-app: #2b3595;
+    --clr-font: white;
+    --clr-main-markup: #e14594;
+    --clr-secondary-markup: #fed000;
+  }
+  
+  /* Logo text */
+  .logo {
+    color: var(--clr-font);
+    font-style: italic;
+  }
+  
+  /* Logo container*/
+  nav {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    min-height: 10vh;
+    background-color: var(--clr-background);
+    justify-content: center;
+    margin-top: -2em;
+  }
+  
+  /* Logo */
+  .nav-logo {
+    width: 100px;
+    margin-left: 9px;
+  }
+  
