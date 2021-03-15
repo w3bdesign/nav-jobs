@@ -36,8 +36,8 @@
   position: relative;
 }
 
-.knapp.knapp--hoved, button {
-  width: 150px;
+.hovedKnapp {
+  width: 155px;
 }
 
 .panelSpan {

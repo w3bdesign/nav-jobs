@@ -114,11 +114,12 @@ const Jobs: React.FC = () => {
                   <span className="panelSpan">{formatDate(published)}</span>
                   <span className="panelButton">
                     <Hovedknapp
+                      className="hovedKnapp"
                       onClick={() => openModal(description, extent, name, applicationDue)}
                     >
                       Vis
                     </Hovedknapp>
-                    <Hovedknapp>Lagre</Hovedknapp>
+                    <Hovedknapp className="hovedKnapp">Lagre</Hovedknapp>
                   </span>
                 </Panel>
               ),
