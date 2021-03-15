@@ -1,10 +1,10 @@
-import jobModel, { jobItemModel } from './jobItemModel';
+import jobModel, { JobItemModel } from './JobItemModel';
 
 export interface StoreModel {
   /**
    * Use the jobItemModel in jobs
    */
-  jobs: jobItemModel;
+  jobs: JobItemModel;
 }
 
 const storeModel: StoreModel = {

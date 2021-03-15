@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Pagination from 'paginering'; // https://navikt.github.io/paginering-doc/build/
+import Pagination from 'paginering';
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp } from 'nav-frontend-knapper';
