@@ -11,8 +11,16 @@ import { formatDate } from '../../utils/functions';
 
 import './Jobs.css';
 
+interface IModalContent {
+  description: string;
+  extent: string;
+  name: string;
+  applicationDue: string;
+}
+
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
+  const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState(1);
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -27,13 +35,36 @@ const Jobs: React.FC = () => {
     setPageNumber(page);
   };
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openModal = (
+    description: any,
+    extent: any,
+    name: any,
+    applicationDue: any,
+  ) => {
+    setModalItems([
+      {
+        description,
+        name,
+        extent,
+        applicationDue,
+      }]);
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    if (modalItems && modalItems[0].name) {
+      console.log('Modal items: ');
+      console.log(modalItems[0].name);
+      console.log(modalItems[0].description);
+      console.log(modalItems[0].extent);
+      console.log(modalItems[0].applicationDue);
+
+      setTimeout(() => setIsOpen(true), 3000);
+    }
+  }, [modalItems]);
 
   useEffect(() => {
     fetch(
@@ -54,7 +85,22 @@ const Jobs: React.FC = () => {
 
   return (
     <div>
-      <div className="container">
+      <div id="jobcontainer" className="container">
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="title"
+        >
+          {modalItems && (
+            <JobContent
+              name={modalItems[0].name}
+              description={modalItems[0].description}
+              extent={modalItems[0].extent}
+              applicationDue={modalItems[0].applicationDue}
+              closeModal={closeModal}
+            />
+          )}
+        </Modal>
         {items.length
           && items
             .slice(pagesVisited, pagesVisited + jobsPerPage)
@@ -69,24 +115,15 @@ const Jobs: React.FC = () => {
                 applicationDue,
               }) => (
                 <Panel key={uuid} className="panel" border>
-                  <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                    contentLabel={title}
-                  >
-                    <JobContent
-                      description={description}
-                      extent={extent}
-                      name={name}
-                      applicationDue={applicationDue}
-                      closeModal={closeModal}
-                    />
-                  </Modal>
                   <span className="panelSpan">{title}</span>
                   <span className="panelSpan">{name}</span>
                   <span className="panelSpan">{formatDate(published)}</span>
                   <span className="panelButton">
-                    <Hovedknapp onClick={openModal}>Vis</Hovedknapp>
+                    <Hovedknapp
+                      onClick={() => openModal(description, extent, name, applicationDue)}
+                    >
+                      Vis
+                    </Hovedknapp>
                     <Hovedknapp>Lagre</Hovedknapp>
                   </span>
                 </Panel>
