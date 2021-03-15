@@ -1,10 +1,10 @@
-import todosModel, { TodosModel } from './todos';
+import todosModel, { modalModel } from './todos';
 
 export interface StoreModel {
   /**
    * Use the TodosModel properties in todos
    */
-  todos: TodosModel;
+  todos: modalModel;
 }
 
 const storeModel: StoreModel = {
