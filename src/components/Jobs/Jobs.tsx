@@ -22,7 +22,7 @@ const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
   // Decimal round up for pagecount
   // const pageCount = Math.ceil(items.length / jobsPerPage);
@@ -47,7 +47,8 @@ const Jobs: React.FC = () => {
         name,
         extent,
         applicationDue,
-      }]);
+      },
+    ]);
   };
 
   const closeModal = () => {
