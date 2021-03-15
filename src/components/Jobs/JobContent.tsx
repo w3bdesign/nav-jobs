@@ -14,20 +14,13 @@ type TJobContentProps = {
   applicationDue: string;
 };
 
-/*
-
-name : string,
-  closeModal: () => void,
-  description: string,
-  extent: string,
-  applicationDue: string,
-  */
-
-// eslint-disable-next-line react/prop-types
-const JobContent: any = ({
-  name, description, extent, applicationDue, closeModal,
-}: any): JSX.Element => (
-
+const JobContent = ({
+  name,
+  description,
+  extent,
+  applicationDue,
+  closeModal,
+}: TJobContentProps): JSX.Element => (
   <>
     <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
     <div className="jobDiv">
@@ -43,10 +36,10 @@ const JobContent: any = ({
           <br />
           Frist:
           {' '}
-          {formatDate(applicationDue.toString())}
+          {formatDate(applicationDue)}
         </span>
         <br />
-        {ReactHtmlParser(description.toString())}
+        {ReactHtmlParser(description)}
       </span>
     </div>
   </>
