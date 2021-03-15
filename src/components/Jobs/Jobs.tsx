@@ -65,7 +65,7 @@ const Jobs: React.FC = () => {
 
   useEffect(() => {
     fetch(
-      'https://arbeidsplassen.nav.no/public-feed/xapi/v1/ads?size=100&page=1',
+      'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
       {
         method: 'GET',
         headers: {
@@ -107,7 +107,6 @@ const Jobs: React.FC = () => {
             />
           )}
         </Modal>
-
         {!loading
           && items
             .slice(pagesVisited, pagesVisited + jobsPerPage)
