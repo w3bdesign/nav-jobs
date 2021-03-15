@@ -5,6 +5,12 @@
   padding: 10px;
 }
 
+@media all and (min-width: 1900px) {
+  .panel {
+    min-width: 420px;
+  }
+}
+
 @media all and (max-width: 1350px) {
   .container {
     display: grid;
