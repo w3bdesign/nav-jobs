@@ -43,6 +43,8 @@ The app must meet these criteria:
 
 -   Fix all known bugs
 
+-   Connect CircleCI and DevOps tools
+
 -   Add functionality for saving ads
 
 -   Add animations
