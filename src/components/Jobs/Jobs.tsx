@@ -20,6 +20,8 @@ interface IModalContent {
 
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
@@ -63,7 +65,7 @@ const Jobs: React.FC = () => {
 
   useEffect(() => {
     fetch(
-      'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
+      'https://arbeidsplassen.nav.no/public-feed/xapi/v1/ads?size=100&page=1',
       {
         method: 'GET',
         headers: {
@@ -71,14 +73,24 @@ const Jobs: React.FC = () => {
             'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWJsaWMudG9rZW4udjFAbmF2Lm5vIiwiYXVkIjoiZmVlZC1hcGktdjEiLCJpc3MiOiJuYXYubm8iLCJpYXQiOjE1NTc0NzM0MjJ9.jNGlLUF9HxoHo5JrQNMkweLj_91bgk97ZebLdfx3_UQ',
         },
       },
-    ).then((res) => res.json().then((data) => {
-      setItems(data.content);
-      Modal.setAppElement('#root');
-    }));
+    )
+      .then((res) => res.json().then((data) => {
+        setItems(data.content);
+        Modal.setAppElement('#root');
+        setLoading(false);
+      }))
+      .catch(() => {
+        setError(true);
+      });
   }, []);
 
   return (
     <div>
+      {error && (
+      <span className="errorMessage">
+        Feil under lasting av annonser, prøv igjen senere.
+      </span>
+      )}
       <div id="jobcontainer" className="container">
         <Modal
           isOpen={modalIsOpen}
@@ -95,7 +107,8 @@ const Jobs: React.FC = () => {
             />
           )}
         </Modal>
-        {items.length
+
+        {!loading
           && items
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(
@@ -125,7 +138,7 @@ const Jobs: React.FC = () => {
               ),
             )}
       </div>
-      {items.length && (
+      {!loading && (
         <Pagination
           className="pagination"
           currentPage={1}
@@ -134,7 +147,7 @@ const Jobs: React.FC = () => {
           onChange={(page) => changePage(page)}
         />
       )}
-      {!items.length && <NavFrontendSpinner className="pagination" />}
+      {loading && !error && <NavFrontendSpinner className="pagination" />}
     </div>
   );
 };
