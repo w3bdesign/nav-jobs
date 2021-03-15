@@ -56,7 +56,6 @@ const Jobs: React.FC = () => {
 
   useEffect(() => {
     if (modalItems && modalItems[0].name.length) {
-      // setTimeout(() => setIsOpen(true), 500);
       setIsOpen(true);
     }
   }, [modalItems]);

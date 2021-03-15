@@ -5,6 +5,24 @@
   padding: 10px;
 }
 
+@media all and (max-width: 1350px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 10px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 10px;
+  }
+}
+
 .panel {
   min-height: 50px;
 }
@@ -13,7 +31,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.5em;
+  padding: 0.4em;
   gap: 1em;
   position: relative;
 }

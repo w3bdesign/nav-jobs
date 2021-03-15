@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import { Hovedknapp } from 'nav-frontend-knapper';
+import { Fareknapp } from 'nav-frontend-knapper';
 
 import { formatDate } from '../../utils/functions';
 
@@ -22,7 +22,7 @@ const JobContent = ({
   closeModal,
 }: TJobContentProps): JSX.Element => (
   <>
-    <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
+    <Fareknapp onClick={closeModal}>Lukk</Fareknapp>
     <div className="jobDiv">
       <span className="jobContent">
         <span className="jobTitle">
