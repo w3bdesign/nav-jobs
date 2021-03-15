@@ -1,6 +1,6 @@
 import React from 'react';
+
 import './Navbar.css';
-// import Logo from '../img/Logo.png';
 
 import { ReactComponent as NavbarLogo } from '../../svg/logo.svg';
 

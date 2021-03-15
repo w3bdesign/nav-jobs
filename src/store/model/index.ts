@@ -1,4 +1,4 @@
-import jobModel, { jobItemModel } from './jobs';
+import jobModel, { jobItemModel } from './jobItemModel';
 
 export interface StoreModel {
   /**
