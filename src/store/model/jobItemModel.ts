@@ -1,6 +1,6 @@
 import { Action, action } from 'easy-peasy';
 
-export interface jobItemModel {
+export interface JobItemModel {
   /**
    * List of modalItems.
    */
@@ -8,10 +8,10 @@ export interface jobItemModel {
   /**
    * Action to add modalitems that we will send to modal
    */
-  addjobItems: Action<jobItemModel, string>;
+  addjobItems: Action<JobItemModel, string>;
 }
 
-const jobModel: jobItemModel = {
+const jobModel: JobItemModel = {
   jobItems: [],
   addjobItems: action((state, payload) => {
     state.jobItems.push([payload, new Date().toLocaleString('no-NO'), false]);
