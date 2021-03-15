@@ -36,10 +36,10 @@ const Jobs: React.FC = () => {
   };
 
   const openModal = (
-    description: any,
-    extent: any,
-    name: any,
-    applicationDue: any,
+    description: never,
+    extent: never,
+    name: never,
+    applicationDue: never,
   ) => {
     setModalItems([
       {
@@ -55,14 +55,9 @@ const Jobs: React.FC = () => {
   };
 
   useEffect(() => {
-    if (modalItems && modalItems[0].name) {
-      console.log('Modal items: ');
-      console.log(modalItems[0].name);
-      console.log(modalItems[0].description);
-      console.log(modalItems[0].extent);
-      console.log(modalItems[0].applicationDue);
-
-      setTimeout(() => setIsOpen(true), 3000);
+    if (modalItems && modalItems[0].name.length) {
+      // setTimeout(() => setIsOpen(true), 500);
+      setIsOpen(true);
     }
   }, [modalItems]);
 
@@ -77,7 +72,6 @@ const Jobs: React.FC = () => {
         },
       },
     ).then((res) => res.json().then((data) => {
-      console.log(data);
       setItems(data.content);
       Modal.setAppElement('#root');
     }));
