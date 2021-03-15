@@ -36,6 +36,10 @@
   position: relative;
 }
 
+.knapp.knapp--hoved {
+min-width: 130px;
+}
+
 .panelSpan {
   display: flex;
   flex-wrap: wrap;
