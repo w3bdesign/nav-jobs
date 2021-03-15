@@ -21,7 +21,7 @@ interface IModalContent {
 const Jobs: React.FC = () => {
   const [items, setItems] = useState([]);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState<number>(1);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   // Decimal round up for pagecount
@@ -36,10 +36,10 @@ const Jobs: React.FC = () => {
   };
 
   const openModal = (
-    description: never,
-    extent: never,
-    name: never,
-    applicationDue: never,
+    description: string,
+    extent: string,
+    name: string,
+    applicationDue: string,
   ) => {
     setModalItems([
       {
