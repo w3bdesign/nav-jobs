@@ -2,9 +2,7 @@
 
 # NAV home assignment
 
-# ! Work in progress !
-
-We want you to create a simple app / website that retrieves job advertisements from NAV's REST API and shows them to the user. 
+We want you to create a simple app / website that retrieves job advertisements from NAV's REST API and shows them to the user.
 
 The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
@@ -42,6 +40,8 @@ The app must meet these criteria:
 -   Saved ads should not disappear even if the browser is closed and reopened.
 
 ## TODO
+
+-   Fix all known bugs
 
 -   Add functionality for saving ads
 
