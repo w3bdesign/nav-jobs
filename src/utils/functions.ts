@@ -1,11 +1,7 @@
-// import toDate from 'date-fns/toDate';
-
 /* Typescript typings */
 type TDateType = string | number | Date;
 
 export const formatDate = (date: TDateType): TDateType => {
-  // console.log('toDate: ');
-  // console.log(toDate(date));
   const returnDate = new Date(date).toLocaleDateString('nb-NO', {
     year: 'numeric',
     month: 'long',
