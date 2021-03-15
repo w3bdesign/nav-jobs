@@ -6,21 +6,28 @@ import { formatDate } from '../../utils/functions';
 
 import './JobContent.css';
 
-type JobContentProps = {
+type TJobContentProps = {
   closeModal: () => void;
-  description: string;
   name: string;
+  description: string;
   extent: string;
   applicationDue: string;
 };
 
-const JobContent = ({
-  closeModal,
-  description,
-  name,
-  extent,
-  applicationDue,
-}: JobContentProps): JSX.Element => (
+/*
+
+name : string,
+  closeModal: () => void,
+  description: string,
+  extent: string,
+  applicationDue: string,
+  */
+
+// eslint-disable-next-line react/prop-types
+const JobContent: any = ({
+  name, description, extent, applicationDue, closeModal,
+}: any): JSX.Element => (
+
   <>
     <Hovedknapp onClick={closeModal}>Lukk</Hovedknapp>
     <div className="jobDiv">
@@ -36,13 +43,12 @@ const JobContent = ({
           <br />
           Frist:
           {' '}
-          {formatDate(applicationDue)}
+          {formatDate(applicationDue.toString())}
         </span>
         <br />
-        {ReactHtmlParser(description)}
+        {ReactHtmlParser(description.toString())}
       </span>
     </div>
   </>
 );
-
 export default JobContent;
