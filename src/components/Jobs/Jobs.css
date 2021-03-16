@@ -65,6 +65,10 @@
   min-height: 40px;
 }
 
+.title {
+  font-weight: 600;
+}
+
 .pagination {
   display: flex;
   flex-wrap: wrap;
