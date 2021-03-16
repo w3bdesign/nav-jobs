@@ -1,7 +1,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nav-jobs&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nav-jobs)
 
-<img src="https://user-images.githubusercontent.com/45217974/111088101-cdebd100-8525-11eb-9937-143c4af03ecd.png" alt="Screenshot" />
+<img src="https://user-images.githubusercontent.com/45217974/111244849-fe09a180-8603-11eb-9d79-9c7bd3a68388.png" alt="Screenshot" />
 
 # NAV home assignment
 
