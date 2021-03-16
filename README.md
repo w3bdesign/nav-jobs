@@ -10,6 +10,7 @@ We want you to create a simple app / website that retrieves job advertisements f
 
 The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
+
 ## Features
 
 -   React with Typescript
