@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@types/react-html-parser": "^2.0.1",
-    "@types/styled-components": "^5.1.8",
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.22.0",
