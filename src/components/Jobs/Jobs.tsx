@@ -121,7 +121,7 @@ const Jobs: React.FC = () => {
                 applicationDue,
               }) => (
                 <Panel key={uuid} className="panel" border>
-                  <span className="panelSpan">{title}</span>
+                  <span className="panelSpan title">{title}</span>
                   <span className="panelSpan">{name}</span>
                   <span className="panelSpan">{formatDate(published)}</span>
                   <span className="panelButton">
