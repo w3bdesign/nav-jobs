@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering';
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import { Hovedknapp } from 'nav-frontend-knapper';
+import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 
 import JobContent from './JobContent';
@@ -131,7 +131,7 @@ const Jobs: React.FC = () => {
                     >
                       Vis
                     </Hovedknapp>
-                    <Hovedknapp className="hovedKnapp">Lagre</Hovedknapp>
+                    <Knapp className="hovedKnapp">Lagre</Knapp>
                   </span>
                 </Panel>
               ),

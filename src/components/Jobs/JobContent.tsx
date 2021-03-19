@@ -27,9 +27,9 @@ const JobContent = ({
       <span className="jobContent">
         <span className="jobTitle">
           {name}
-          <br />         
+          <br />
           {extent}
-          <br />          
+          <br />
           {formatDate(applicationDue)}
         </span>
         <br />
