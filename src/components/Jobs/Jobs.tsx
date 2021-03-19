@@ -131,7 +131,7 @@ const Jobs: React.FC = () => {
                     >
                       Vis
                     </Hovedknapp>
-                    <Knapp className="hovedKnapp">Lagre</Knapp>
+                    <Knapp className="sekundKnapp">Lagre</Knapp>
                   </span>
                 </Panel>
               ),

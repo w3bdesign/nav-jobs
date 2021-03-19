@@ -37,14 +37,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.5em;
+  padding: 0.6em;
   gap: 1em;
   position: relative;
 }
 
 .hovedKnapp {
   width: 140px;
-  margin: 0.3em;
+  margin-right: 0.5em;
+  height: 40px;
+}
+
+.sekundKnapp {
+  width: 140px;
+  margin-left: 0.5em;
+  height: 42px;
+  margin-top: -3px;
 }
 
 .errorMessage {
