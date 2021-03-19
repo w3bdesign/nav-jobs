@@ -44,15 +44,15 @@
 
 .hovedKnapp {
   width: 140px;
-  margin-right: 0.3em;
+  margin: 0.3em;
   height: 40px;
 }
 
 .sekundKnapp {
   width: 140px;
-  margin-left: 0.3em;
-  height: 42px;
-  margin-top: -3px;
+  margin: 0.3em;
+  height: 40px;
+  margin-top: 2px;
 }
 
 .errorMessage {
