@@ -19,8 +19,9 @@ https://nav-jobs.vercel.app/
 -   React with Typescript
 -   Typography and colors used by NAV
 -   NAV frontend library implemented with multiple components like Pagination and Button
--   State management with Typescript typings
+-   State management with Easy Peasy and Typescript typings
 -   Responsive design
+-   Saving of job ads
 
 ## Requirements
 
