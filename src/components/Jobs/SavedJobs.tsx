@@ -1,4 +1,5 @@
 import React from 'react';
+import { Knapp } from 'nav-frontend-knapper';
 
 import { useStoreState } from '../../utils/hooks';
 
@@ -10,10 +11,13 @@ const SavedJobs: React.FC = () => {
   const jobItems = useStoreState((state) => state.jobs.jobItems);
   return (
     <div>
-      <div className="savedJobs">
-        {jobItems.length > 0
-          && jobItems.map(({ id, title }) => <div key={id}>{title}</div>)}
-      </div>
+      {jobItems.length > 0 && (
+        <div className="savedJobs">
+          {jobItems.map(({ id, title }) => (
+            <Knapp className="knapp" key={id}>{title}</Knapp>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

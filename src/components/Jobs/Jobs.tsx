@@ -5,8 +5,6 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 
-// import { useStoreActions } from 'easy-peasy';
-
 import JobContent from './JobContent';
 
 import { formatDate } from '../../utils/functions';
