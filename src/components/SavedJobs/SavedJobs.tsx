@@ -28,8 +28,7 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
                   className={style.knapp}
                   key={id}
                 >
-                  {truncateTextLength(title, 50, ' ... ')}
-
+                  {truncateTextLength(title, 40, ' ... ')}
                 </Knapp>
               ),
             )}
