@@ -1,14 +1,14 @@
 import React from 'react';
 
-import './Navbar.css';
+import style from './Navbar.module.scss';
 
-import { ReactComponent as NavbarLogo } from '../../svg/logo.svg';
+import { ReactComponent as NavbarLogo } from '../../assets/svg/logo.svg';
 
 const Navbar: React.FC = () => (
   <div>
     <nav>
-      <div className="system-title">En tjeneste fra</div>
-      <div className="logo">
+      <div className={style.systemtitle}>En tjeneste fra</div>
+      <div className={style.logo}>
         <NavbarLogo />
       </div>
     </nav>

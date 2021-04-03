@@ -8,10 +8,11 @@ import Modal from 'react-modal';
 import JobContent from './JobContent';
 import SavedJobs from './SavedJobs';
 
-import { formatDate } from '../../utils/functions';
-import { useStoreActions } from '../../utils/hooks';
+import { formatDate } from '../../assets/utils/functions';
+import { useStoreActions } from '../../assets/utils/hooks';
 
-import './Jobs.css';
+// import './Jobs.css';
+import styles from './Jobs.module.scss';
 
 interface IModalContent {
   description: string;
@@ -38,7 +39,7 @@ const Jobs: React.FC = () => {
     setPageNumber(page);
   };
 
-  const openModal = (
+  const handleOpenModalClick = (
     description: string,
     extent: string,
     name: string,
@@ -87,13 +88,13 @@ const Jobs: React.FC = () => {
 
   return (
     <div>
-      <SavedJobs openModal={openModal} />
+      <SavedJobs handleOpenModalClick={handleOpenModalClick} />
       {error && (
         <span className="errorMessage">
           Feil under lasting av annonser, prøv igjen senere.
         </span>
       )}
-      <div id="jobcontainer" className="container">
+      <div id="jobcontainer" className={styles.container}>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -122,23 +123,30 @@ const Jobs: React.FC = () => {
                 extent,
                 applicationDue,
               }) => (
-                <Panel key={uuid} className="panel" border>
-                  <span className="panelSpan title">{title}</span>
-                  <span className="panelSpan">{name}</span>
-                  <span className="panelSpan">
+                <Panel key={uuid} className={styles.panel} border>
+                  <span className={`${styles.panelSpan} ${styles.title}`}>
+                    {title}
+                  </span>
+                  <span className={styles.panelSpan}>{name}</span>
+                  <span className={styles.panelSpan}>
                     Publisert:
                     {' '}
                     {formatDate(published)}
                   </span>
-                  <span className="panelButton">
+                  <span className={styles.panelButton}>
                     <Hovedknapp
-                      className="hovedKnapp"
-                      onClick={() => openModal(description, extent, name, applicationDue)}
+                      className={styles.hovedKnapp}
+                      onClick={() => handleOpenModalClick(
+                        description,
+                        extent,
+                        name,
+                        applicationDue,
+                      )}
                     >
                       Vis
                     </Hovedknapp>
                     <Knapp
-                      className="sekundKnapp"
+                      className={styles.sekundKnapp}
                       onClick={() => addJob({
                         title,
                         description,
@@ -156,14 +164,14 @@ const Jobs: React.FC = () => {
       </div>
       {!loading && (
         <Pagination
-          className="pagination"
+          className={styles.pagination}
           currentPage={1}
           numberOfItems={items.length}
           itemsPerPage={jobsPerPage}
           onChange={(page) => changePage(page)}
         />
       )}
-      {loading && !error && <NavFrontendSpinner className="pagination" />}
+      {loading && !error && <NavFrontendSpinner className={styles.pagination} />}
     </div>
   );
 };

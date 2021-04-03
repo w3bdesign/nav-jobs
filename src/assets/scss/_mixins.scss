@@ -1,0 +1,21 @@
+@mixin respond($breakpoint) {
+  // $breakpoint is simply a variable that can have several values
+
+  @if $breakpoint==desktop {
+    @media only screen and (max-width: 1900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 1350px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+}
