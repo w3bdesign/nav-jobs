@@ -139,9 +139,12 @@ const Jobs: React.FC = () => {
                     </Hovedknapp>
                     <Knapp
                       className="sekundKnapp"
-                      // onClick={() => addJob(title, description)}
                       onClick={() => addJob({
-                        title, description, extent, name, applicationDue,
+                        title,
+                        description,
+                        extent,
+                        name,
+                        applicationDue,
                       })}
                     >
                       Lagre

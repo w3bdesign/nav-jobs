@@ -5,8 +5,6 @@ import { useStoreState } from '../../utils/hooks';
 
 import './SavedJobs.css';
 
-// https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-react
-
 interface ISavedJobsProps {
   openModal(
     description: string,
