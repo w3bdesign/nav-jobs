@@ -1,21 +1,22 @@
-/* Header text */
+@import '_variables';
+
 .header-title {
-  color: var(--white);
-  font-weight: 600;
+  color: $white;
+  font-weight: $fontBold;
   font-size: 40px;
   line-height: 44px;
 }
 
 .sub-title {
-  color: #fff;
-  font-weight: 600;
+  color: $white;
+  font-weight: $fontBold;
   font-size: 32px;
   line-height: 36px;
 }
 
 .systemtitle {
-  color: var(--black);
-  font-weight: 600;
+  color: $black;
+  font-weight: $fontBold;
   font-size: 24px;
   line-height: 28px;
 }
@@ -25,9 +26,9 @@ nav {
   display: flex;
   align-items: center;
   min-height: 10vh;
-  background-color: var(--white);
+  background-color: $white;
   justify-content: center;
-  border-bottom: 2px var(--borderColor) solid;
+  border-bottom: 2px $borderColor solid;
 }
 
 .logo {
