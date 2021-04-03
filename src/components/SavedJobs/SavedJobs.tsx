@@ -11,6 +11,18 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
   handleOpenModalClick,
 }: ISavedJobsProps) => {
   const jobItems = useStoreState((state) => state.jobs.jobItems);
+
+  const truncateTextLength = (
+    inputString: string,
+    maxLength: number,
+    suffix: string,
+  ) => (inputString.length < maxLength
+    ? inputString
+    : `${inputString.substr(
+      0,
+      inputString.substr(0, maxLength - suffix.length).lastIndexOf(' '),
+    )}${suffix}`);
+
   return (
     <div>
       {jobItems.length > 0 && (
@@ -26,7 +38,8 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
                   className={style.knapp}
                   key={id}
                 >
-                  {title}
+                  {truncateTextLength(title, 50, ' ... ')}
+
                 </Knapp>
               ),
             )}
