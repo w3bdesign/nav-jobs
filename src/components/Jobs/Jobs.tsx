@@ -11,7 +11,6 @@ import SavedJobs from './SavedJobs';
 import { formatDate } from '../../assets/utils/functions';
 import { useStoreActions } from '../../assets/utils/hooks';
 
-// import './Jobs.css';
 import styles from './Jobs.module.scss';
 
 interface IModalContent {
