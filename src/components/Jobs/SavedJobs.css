@@ -1,0 +1,8 @@
+.savedJobs {
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  background-color: var(--white);
+  justify-content: center;
+  border-bottom: 2px var(--borderColor) solid;
+}

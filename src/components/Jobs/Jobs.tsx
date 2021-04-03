@@ -5,9 +5,12 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 
+// import { useStoreActions } from 'easy-peasy';
+
 import JobContent from './JobContent';
 
 import { formatDate } from '../../utils/functions';
+import { useStoreActions } from '../../utils/hooks';
 
 import './Jobs.css';
 
@@ -24,13 +27,18 @@ const Jobs: React.FC = () => {
   const [error, setError] = useState<boolean>(false);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   // Decimal round up for pagecount
   // const pageCount = Math.ceil(items.length / jobsPerPage);
 
   const jobsPerPage = 10;
   const pagesVisited = pageNumber * jobsPerPage;
+
+  // const addJob = useStoreActions((actions) => actions.jobs.addjobItems);
+  // const addJob = useStoreActions(({ addjobItems }) => addjobItems);
+
+  const addTodo = useStoreActions((actions) => actions.jobs.addJob);
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
@@ -54,12 +62,12 @@ const Jobs: React.FC = () => {
   };
 
   const closeModal = () => {
-    setIsOpen(false);
+    setModalIsOpen(false);
   };
 
   useEffect(() => {
     if (modalItems && modalItems[0].name.length) {
-      setIsOpen(true);
+      setModalIsOpen(true);
     }
   }, [modalItems]);
 
@@ -74,7 +82,7 @@ const Jobs: React.FC = () => {
         },
       },
     )
-      .then((res) => res.json().then((data) => {
+      .then((result) => result.json().then((data) => {
         setItems(data.content);
         Modal.setAppElement('#root');
         setLoading(false);
@@ -87,9 +95,9 @@ const Jobs: React.FC = () => {
   return (
     <div>
       {error && (
-      <span className="errorMessage">
-        Feil under lasting av annonser, prøv igjen senere.
-      </span>
+        <span className="errorMessage">
+          Feil under lasting av annonser, prøv igjen senere.
+        </span>
       )}
       <div id="jobcontainer" className="container">
         <Modal
@@ -123,7 +131,11 @@ const Jobs: React.FC = () => {
                 <Panel key={uuid} className="panel" border>
                   <span className="panelSpan title">{title}</span>
                   <span className="panelSpan">{name}</span>
-                  <span className="panelSpan">{formatDate(published)}</span>
+                  <span className="panelSpan">
+                    Publisert:
+                    {' '}
+                    {formatDate(published)}
+                  </span>
                   <span className="panelButton">
                     <Hovedknapp
                       className="hovedKnapp"
@@ -131,7 +143,9 @@ const Jobs: React.FC = () => {
                     >
                       Vis
                     </Hovedknapp>
-                    <Knapp className="sekundKnapp">Lagre</Knapp>
+                    <Knapp className="sekundKnapp" onClick={() => addTodo(title)}>
+                      Lagre
+                    </Knapp>
                   </span>
                 </Panel>
               ),
