@@ -5,22 +5,17 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 
-import JobContent from './JobContent';
-import SavedJobs from './SavedJobs';
+import JobModalContent from '../JobModalContent/JobModalContent';
+import SavedJobs from '../SavedJobs/SavedJobs';
 
 import { formatDate } from '../../assets/utils/functions';
 import { useStoreActions } from '../../assets/utils/hooks';
 
-import styles from './Jobs.module.scss';
+import styles from './JobListings.module.scss';
 
-interface IModalContent {
-  description: string;
-  extent: string;
-  name: string;
-  applicationDue: string;
-}
+import { IModalContent } from './JobListings.interface';
 
-const Jobs: React.FC = () => {
+const JobListings: React.FC = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -99,7 +94,7 @@ const Jobs: React.FC = () => {
           contentLabel="title"
         >
           {modalItems && (
-            <JobContent
+            <JobModalContent
               name={modalItems[0].name}
               description={modalItems[0].description}
               extent={modalItems[0].extent}
@@ -176,4 +171,4 @@ const Jobs: React.FC = () => {
   );
 };
 
-export default Jobs;
+export default JobListings;
