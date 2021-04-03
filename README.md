@@ -49,12 +49,6 @@ The app must meet these criteria:
 
 ## TODO
 
--   Fix all known bugs
-
--   Connect CircleCI and DevOps tools
-
--   Add functionality for saving ads
+-   Fix bug with "Saved ads should not disappear even if the browser is closed and reopened"
 
 -   Add animations
-
--   Add testing
