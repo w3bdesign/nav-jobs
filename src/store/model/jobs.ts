@@ -8,17 +8,25 @@ interface ICompleteJob {
   rowIndex: number;
 }
 
+/**
+ * Interface for jobItems
+ */
+ interface IJobItem {
+  id: number;
+  title: string;
+}
+
 export interface JobsModel {
   /**
    * List of jobItems.
    */
-  jobItems: (string | boolean)[][];
+  jobItems: IJobItem[];
   /**
-   * Action to add a todo to jobItems array
+   * Action to add a job to jobItems array
    */
   addJob: Action<JobsModel, string>;
   /**
-   * Action to delete all todos from jobItems array
+   * Action to delete all jobs from jobItems array
    */
   deleteAllJobs: Action<JobsModel>;
   /**
@@ -28,9 +36,9 @@ export interface JobsModel {
 }
 
 const JobsModel: JobsModel = {
-  jobItems: [['Test', new Date().toLocaleString('no-NO'), false]],
+  jobItems: [],
   addJob: action((state, payload) => {
-    state.jobItems.push([payload, new Date().toLocaleString('no-NO'), false]);
+    state.jobItems.push({ id: 0, title: payload });
   }),
   deleteJob: action((state, { rowIndex }) => {
     state.jobItems.splice(rowIndex, 1);
