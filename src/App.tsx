@@ -2,7 +2,7 @@ import React from 'react';
 
 import Jobs from './components/Jobs/Jobs';
 
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => (
   <div id="App" className="App">

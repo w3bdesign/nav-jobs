@@ -24,6 +24,7 @@
     "nav-frontend-spinner-style": "^1.0.2",
     "nav-frontend-typografi": "^3.0.4",
     "nav-frontend-typografi-style": "^1.0.35",
+    "node-sass": "^5.0.0",
     "paginering": "^1.0.8",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -32,6 +33,7 @@
     "react-modal": "^3.12.1",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.3",
+    "stylelint-scss": "^3.19.0",
     "typescript": "^4.2.3",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.1"

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 
-import { useStoreState } from '../../utils/hooks';
+import { useStoreState } from '../../assets/utils/hooks';
 
-import './SavedJobs.css';
+import style from './SavedJobs.module.scss';
 
 interface ISavedJobsProps {
-  openModal(
+  handleOpenModalClick(
     description: string,
     extent: string,
     name: string,
@@ -15,22 +15,22 @@ interface ISavedJobsProps {
 }
 
 const SavedJobs: React.FC<ISavedJobsProps> = ({
-  openModal,
+  handleOpenModalClick,
 }: ISavedJobsProps) => {
   const jobItems = useStoreState((state) => state.jobs.jobItems);
   return (
     <div>
       {jobItems.length > 0 && (
         <>
-          <div><h2 className="savedJobTitle">Lagrede jobber: </h2></div>
-          <div className="savedJobs">
+          <div><h2 className={style.savedJobTitle}>Lagrede jobber: </h2></div>
+          <div className={style.savedJobs}>
             {jobItems.map(
               ({
                 id, title, description, extent, name, applicationDue,
               }) => (
                 <Knapp
-                  onClick={() => openModal(description, extent, name, applicationDue)}
-                  className="knapp"
+                  onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
+                  className={style.knapp}
                   key={id}
                 >
                   {title}

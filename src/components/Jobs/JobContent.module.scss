@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .jobDiv {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
 
 .jobTitle {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: $fontBold;
 }
 
 .jobContent {

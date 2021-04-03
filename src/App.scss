@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
-
-/* Global CSS color variables */
-:root {
-  --navGraBakgrunn: #f1f1f1;
-  --borderColor: #c6c2bf;
-  --navRed: #c30000;
-  --white: #fff;
-  --black: #000;
-}
+@import '_variables';
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .App {
-  background-color: var(--navGraBakgrunn);
+  background-color: $navGraBakgrunn;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
