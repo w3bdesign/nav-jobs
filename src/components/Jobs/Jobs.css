@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 10px;  
 }
 
 .panel {
   min-height: 50px;
+  margin-top: 10px;
 }
 
 .panelButton {
