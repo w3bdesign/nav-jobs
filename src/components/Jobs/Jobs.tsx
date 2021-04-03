@@ -6,6 +6,7 @@ import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 
 import JobContent from './JobContent';
+import SavedJobs from './SavedJobs';
 
 import { formatDate } from '../../utils/functions';
 import { useStoreActions } from '../../utils/hooks';
@@ -27,16 +28,10 @@ const Jobs: React.FC = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
-  // Decimal round up for pagecount
-  // const pageCount = Math.ceil(items.length / jobsPerPage);
-
   const jobsPerPage = 10;
   const pagesVisited = pageNumber * jobsPerPage;
 
-  // const addJob = useStoreActions((actions) => actions.jobs.addjobItems);
-  // const addJob = useStoreActions(({ addjobItems }) => addjobItems);
-
-  const addTodo = useStoreActions((actions) => actions.jobs.addJob);
+  const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
@@ -92,6 +87,7 @@ const Jobs: React.FC = () => {
 
   return (
     <div>
+      <SavedJobs openModal={openModal} />
       {error && (
         <span className="errorMessage">
           Feil under lasting av annonser, prøv igjen senere.
@@ -141,7 +137,13 @@ const Jobs: React.FC = () => {
                     >
                       Vis
                     </Hovedknapp>
-                    <Knapp className="sekundKnapp" onClick={() => addTodo(title)}>
+                    <Knapp
+                      className="sekundKnapp"
+                      // onClick={() => addJob(title, description)}
+                      onClick={() => addJob({
+                        title, description, extent, name, applicationDue,
+                      })}
+                    >
                       Lagre
                     </Knapp>
                   </span>

@@ -6,14 +6,13 @@ import store from './store/index';
 
 import App from './App';
 import Navbar from './components/Navbar/Navbar';
-import SavedJobs from './components/Jobs/SavedJobs';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider store={store}>
       <Navbar />
-      <SavedJobs />
       <App />
     </StoreProvider>
   </React.StrictMode>,
