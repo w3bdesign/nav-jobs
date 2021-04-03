@@ -6,6 +6,7 @@ import store from './store/index';
 
 import App from './App';
 import Navbar from './components/Navbar/Navbar';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

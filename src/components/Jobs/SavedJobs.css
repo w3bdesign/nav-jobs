@@ -1,0 +1,31 @@
+.savedJobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 10px;
+  background-color: var(--white);
+  justify-content: center;
+  border-bottom: 2px var(--borderColor) solid;
+}
+
+.savedJobTitle {
+  color: #000;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.knapp {
+  max-width: 450px;
+}
+
+@media all and (max-width: 1350px) {
+  .savedJobs {
+    grid-template-columns: 1fr;
+  }
+
+  .knapp {
+    max-width: 100vw;
+  }
+}
