@@ -20,7 +20,7 @@ const JobListings: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  const [pageNumber, setPageNumber] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const jobsPerPage = 10;
