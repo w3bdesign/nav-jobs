@@ -71,8 +71,7 @@ const Jobs: React.FC = () => {
       {
         method: 'GET',
         headers: {
-          Authorization:
-            'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWJsaWMudG9rZW4udjFAbmF2Lm5vIiwiYXVkIjoiZmVlZC1hcGktdjEiLCJpc3MiOiJuYXYubm8iLCJpYXQiOjE1NTc0NzM0MjJ9.jNGlLUF9HxoHo5JrQNMkweLj_91bgk97ZebLdfx3_UQ',
+          Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
         },
       },
     )
@@ -171,7 +170,9 @@ const Jobs: React.FC = () => {
           onChange={(page) => changePage(page)}
         />
       )}
-      {loading && !error && <NavFrontendSpinner className={styles.pagination} />}
+      {loading && !error && (
+        <NavFrontendSpinner className={styles.pagination} />
+      )}
     </div>
   );
 };
