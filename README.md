@@ -61,7 +61,7 @@ From things that I'd improve:
 
 * Set up a proper redux ( ducks pattern ) and move all the APIs into the store, setting up a middleware to handle it ( using  axios ), the lightweight version you're using seems to be half working and it doesn't enable devtools which helps a lot in debugging stuff 
 
-* It's probably because of my strong habit of doing so, but having an 'assets' folder in the 'src' to keep all the 'svg', 'utils' etc in it might be worth considering. In the current state of things it's not a big deal but once your project scales and you'll add more stuff to it - images, icons some utility functions. To prevent from polluting the 'src' I like to keep them together in the 'assets' folder.
+* ~~ It's probably because of my strong habit of doing so, but having an 'assets' folder in the 'src' to keep all the 'svg', 'utils' etc in it might be worth considering. In the current state of things it's not a big deal but once your project scales and you'll add more stuff to it - images, icons some utility functions. To prevent from polluting the 'src' I like to keep them together in the 'assets' folder. ~~
 
 * Speaking of CSS I'd recommend using modules, it allows you to pack up your css into packages and use those classes only in places where you import it therefore opens you up for more consistency in class naming. 
 
