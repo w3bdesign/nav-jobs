@@ -1,6 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { Action, action } from 'easy-peasy';
 
+import { v4 as uuidv4 } from 'uuid';
+
 /**
  * Interface for completeTodo with rowIndex: number
  */
@@ -12,7 +14,7 @@ interface ICompleteJob {
  * Interface for jobItems
  */
  interface IJobItem {
-  id: number;
+  id: string;
   title: string;
 }
 
@@ -38,7 +40,7 @@ export interface JobsModel {
 const JobsModel: JobsModel = {
   jobItems: [],
   addJob: action((state, payload) => {
-    state.jobItems.push({ id: 0, title: payload });
+    state.jobItems.push({ id: uuidv4(), title: payload });
   }),
   deleteJob: action((state, { rowIndex }) => {
     state.jobItems.splice(rowIndex, 1);

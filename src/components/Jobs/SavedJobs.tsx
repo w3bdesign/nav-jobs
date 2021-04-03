@@ -8,26 +8,11 @@ import './SavedJobs.css';
 
 const SavedJobs: React.FC = () => {
   const jobItems = useStoreState((state) => state.jobs.jobItems);
-  console.log(jobItems);
-
   return (
     <div>
-
       <div className="savedJobs">
-        Lagrede jobber kommer her -
-        {jobItems.length && (
-          jobItems.map(
-            ({
-              id,
-              title,
-
-            }) => (
-              <div key={id}>
-                {title}
-              </div>
-            ),
-          ))}
-
+        {jobItems.length > 0
+          && jobItems.map(({ id, title }) => <div key={id}>{title}</div>)}
       </div>
     </div>
   );
