@@ -50,6 +50,6 @@ The app must meet these criteria:
 
 ## TODO
 
--   Fix bug with "Saved ads should not disappear even if the browser is closed and reopened"
+-   Implement "Saved ads should not disappear even if the browser is closed and reopened"
 
 -   Add animations
