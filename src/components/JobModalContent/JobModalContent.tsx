@@ -4,17 +4,11 @@ import { Fareknapp } from 'nav-frontend-knapper';
 
 import { formatDate } from '../../assets/utils/functions';
 
-import style from './JobContent.module.scss';
+import style from './JobModalContent.module.scss';
 
-type TJobContentProps = {
-  closeModal: () => void;
-  name: string;
-  description: string;
-  extent: string;
-  applicationDue: string;
-};
+import { TJobContentProps } from './JobModalContent.type';
 
-const JobContent = ({
+const JobModalContent = ({
   name,
   description,
   extent,
@@ -38,4 +32,4 @@ const JobContent = ({
     </div>
   </>
 );
-export default JobContent;
+export default JobModalContent;

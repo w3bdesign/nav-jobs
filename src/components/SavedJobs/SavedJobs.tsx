@@ -5,14 +5,7 @@ import { useStoreState } from '../../assets/utils/hooks';
 
 import style from './SavedJobs.module.scss';
 
-interface ISavedJobsProps {
-  handleOpenModalClick(
-    description: string,
-    extent: string,
-    name: string,
-    applicationDue: string
-  ): void;
-}
+import { ISavedJobsProps } from './SavedJobs.interface';
 
 const SavedJobs: React.FC<ISavedJobsProps> = ({
   handleOpenModalClick,
