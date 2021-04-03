@@ -2,6 +2,7 @@ import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 
 import { useStoreState } from '../../assets/utils/hooks';
+import { truncateTextLength } from '../../assets/utils/functions';
 
 import style from './SavedJobs.module.scss';
 
@@ -11,17 +12,6 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
   handleOpenModalClick,
 }: ISavedJobsProps) => {
   const jobItems = useStoreState((state) => state.jobs.jobItems);
-
-  const truncateTextLength = (
-    inputString: string,
-    maxLength: number,
-    suffix: string,
-  ) => (inputString.length < maxLength
-    ? inputString
-    : `${inputString.substr(
-      0,
-      inputString.substr(0, maxLength - suffix.length).lastIndexOf(' '),
-    )}${suffix}`);
 
   return (
     <div>
