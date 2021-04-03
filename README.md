@@ -65,13 +65,13 @@ From things that I'd improve:
 
 * ~~Speaking of CSS I'd recommend using modules, it allows you to pack up your css into packages and use those classes only in places where you import it therefore opens you up for more consistency in class naming.~~ 
 
-You can create a folder for each of your component and create inside: 
+~~You can create a folder for each of your component and create inside: 
 ComponentName.tsx
 ComponentName.module.css
 It'll prevent you from accessing the class from components that you don't really want to is it and messing your css around leaving you a few hours to figure out what's what :wink: 
-https://medium.com/@ralph1786/using-css-modules-in-react-app-c2079eadbb87
+https://medium.com/@ralph1786/using-css-modules-in-react-app-c2079eadbb87~~
 
-* I've noticed some CSS variables in your code hence it looks like you're pushing your css to do some extra stuff as it supposed to do, but the CSS is a bit messy when you expect it to do some extra. 
+* ~~I've noticed some CSS variables in your code hence it looks like you're pushing your css to do some extra stuff as it supposed to do, but the CSS is a bit messy when you expect it to do some extra.~~ 
 
-I've started to use SASS recently and honestly that's what CSS should have done long ago, clear a syntax, simplify your work and lots more. Take a look at their quick start guide, it's a decent one: 
+~~I've started to use SASS recently and honestly that's what CSS should have done long ago, clear a syntax, simplify your work and lots more. Take a look at their quick start guide, it's a decent one: 
 https://sass-lang.com/guide~~
