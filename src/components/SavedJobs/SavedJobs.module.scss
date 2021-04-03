@@ -28,7 +28,7 @@
   max-width: 450px;
 
   @include respond(tablet) {
-    max-width: 80vw;
-    margin-left: 40px;
+    max-width: 90vw;
+    margin-left: 50px;
   }
 }
