@@ -68,9 +68,9 @@ From things that I'd improve:
 ComponentName.tsx
 ComponentName.module.css
 It'll prevent you from accessing the class from components that you don't really want to is it and messing your css around leaving you a few hours to figure out what's what :wink: 
-https://medium.com/@ralph1786/using-css-modules-in-react-app-c2079eadbb87~~
+https://medium.com/@ralph1786/using-css-modules-in-react-app-c2079eadbb87
 
-* ~~I've noticed some CSS variables in your code hence it looks like you're pushing your css to do some extra stuff as it supposed to do, but the CSS is a bit messy when you expect it to do some extra. ~~
+* ~~I've noticed some CSS variables in your code hence it looks like you're pushing your css to do some extra stuff as it supposed to do, but the CSS is a bit messy when you expect it to do some extra. 
 
 ~~I've started to use SASS recently and honestly that's what CSS should have done long ago, clear a syntax, simplify your work and lots more. Take a look at their quick start guide, it's a decent one: 
 https://sass-lang.com/guide~~
