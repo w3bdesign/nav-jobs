@@ -3,7 +3,6 @@
   "version": "0.1.5",
   "private": true,
   "dependencies": {
-    "@headlessui/react": "^0.3.2",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
