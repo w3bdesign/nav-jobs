@@ -25,6 +25,7 @@ const JobListings: React.FC = () => {
 
   const jobsPerPage = 10;
   const pagesVisited = pageNumber * jobsPerPage;
+  const maxNumberOfPageButtons = 5;
 
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
@@ -158,8 +159,9 @@ const JobListings: React.FC = () => {
       {!loading && (
         <Pagination
           className={styles.pagination}
-          currentPage={1}
+          currentPage={0}
           numberOfItems={items.length}
+          maxPageButtons={maxNumberOfPageButtons}
           itemsPerPage={jobsPerPage}
           onChange={(page) => changePage(page)}
         />
