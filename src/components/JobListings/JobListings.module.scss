@@ -19,9 +19,10 @@
 .panel {
   min-height: 50px;
   margin-top: 10px;
+  min-width: 450px;
 
-  @include respond(desktop) {
-    min-width: 420px;
+  @include respond(mobile) {
+    min-width: 315px;
   }
 }
 
