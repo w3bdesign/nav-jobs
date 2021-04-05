@@ -50,7 +50,7 @@ The app must meet these criteria:
 
 ## TODO
 
--   Refactor, restructure and improve code and file structure
+-   Maybe save jobItems to global state (https://github.com/ctrlplusb/easy-peasy/issues/126)
 -   Implement "Saved ads should not disappear even if the browser is closed and reopened"
 -   Prevent duplicate jobs from being saved
 -   Add animations
