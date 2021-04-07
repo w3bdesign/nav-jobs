@@ -4,14 +4,16 @@ import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
+import { ToastContainer, toast } from 'react-toastify';
 
 import JobModalContent from '../JobModalContent/JobModalContent';
 import SavedJobs from '../SavedJobs/SavedJobs';
 
 import { formatDate } from '../../assets/utils/functions';
-import { useStoreActions } from '../../assets/utils/hooks';
+import { useStoreActions, useStoreState } from '../../assets/utils/hooks';
 
 import styles from './JobListings.module.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { IModalContent } from './JobListings.interface';
 
@@ -27,7 +29,13 @@ const JobListings: React.FC = () => {
   const pagesVisited = pageNumber * jobsPerPage;
   const maxNumberOfPageButtons = 5;
 
+  const jobItems = useStoreState((state) => state.jobs.jobItems);
+
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
+
+  const jobExistsToast = () => toast.error('Jobb er allerede lagret ...');
+
+  const jobExists = (search: string) => jobItems.findIndex((value) => value.title === search);
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
@@ -83,6 +91,7 @@ const JobListings: React.FC = () => {
   return (
     <div>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
+      <ToastContainer position="top-center" />
       {error && (
         <span className="errorMessage">
           Feil under lasting av annonser, prøv igjen senere.
@@ -141,13 +150,20 @@ const JobListings: React.FC = () => {
                     </Hovedknapp>
                     <Knapp
                       className={styles.sekundKnapp}
-                      onClick={() => addJob({
-                        title,
-                        description,
-                        extent,
-                        name,
-                        applicationDue,
-                      })}
+                      onClick={() => {
+                        // Check if we try to add an existing job, if yes, show error message
+                        if (jobExists(title) === -1) {
+                          addJob({
+                            title,
+                            description,
+                            extent,
+                            name,
+                            applicationDue,
+                          });
+                        } else {
+                          jobExistsToast();
+                        }
+                      }}
                     >
                       Lagre
                     </Knapp>
