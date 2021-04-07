@@ -52,7 +52,7 @@ The app must meet these criteria:
 
 ## TODO
 
--   Maybe save jobItems to global state (<https://github.com/ctrlplusb/easy-peasy/issues/126>)
+-   Maybe save jobModalItems to global state (<https://github.com/ctrlplusb/easy-peasy/issues/126>)
 -   Implement "Saved ads should not disappear even if the browser is closed and reopened"
 -   Add animations
 

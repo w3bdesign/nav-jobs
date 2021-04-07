@@ -11,15 +11,15 @@ import { ISavedJobsProps } from './SavedJobs.interface';
 const SavedJobs: React.FC<ISavedJobsProps> = ({
   handleOpenModalClick,
 }: ISavedJobsProps) => {
-  const jobItems = useStoreState((state) => state.jobs.jobItems);
+  const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
 
   return (
     <div>
-      {jobItems.length > 0 && (
+      {jobModalItems.length > 0 && (
         <>
           <div><h2 className={style.savedJobTitle}>Lagrede jobber: </h2></div>
           <div className={style.savedJobs}>
-            {jobItems.map(
+            {jobModalItems.map(
               ({
                 id, title, description, extent, name, applicationDue,
               }) => (

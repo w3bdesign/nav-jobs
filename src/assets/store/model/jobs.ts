@@ -11,7 +11,7 @@ interface ICompleteJob {
 }
 
 /**
- * Interface for jobItems
+ * Interface for jobModalItems
  */
 interface IJobItem {
   id: string;
@@ -32,33 +32,33 @@ interface IJobType {
 
 export interface JobsModel {
   /**
-   * List of jobItems.
+   * List of jobModalItems.
    */
-  jobItems: IJobItem[];
+  jobModalItems: IJobItem[];
 
   /**
-   * Action to add a job to jobItems array
+   * Action to add a job to jobModalItems array
    */
   addJob: Action<JobsModel, IJobType>;
 
   /**
-   * Action to delete all jobs from jobItems array
+   * Action to delete all jobs from jobModalItems array
    */
   deleteAllJobs: Action<JobsModel>;
 
   /**
-   * Action to delete a single todo from jobItems array
+   * Action to delete a single todo from jobModalItems array
    */
   deleteJob: Action<JobsModel, ICompleteJob>;
 }
 
 const JobsModel: JobsModel = {
-  jobItems: [],
+  jobModalItems: [],
   addJob: action(
     (state, {
       title, description, extent, name, applicationDue,
     }) => {
-      state.jobItems.push({
+      state.jobModalItems.push({
         id: uuidv4(),
         title,
         description,
@@ -70,10 +70,10 @@ const JobsModel: JobsModel = {
   ),
   // TODO Delete individual jobs and all saved jobs
   deleteJob: action((state, { rowIndex }) => {
-    state.jobItems.splice(rowIndex, 1);
+    state.jobModalItems.splice(rowIndex, 1);
   }),
   deleteAllJobs: action((state) => {
-    state.jobItems.length = 0;
+    state.jobModalItems.length = 0;
   }),
 };
 
