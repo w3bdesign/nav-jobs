@@ -29,13 +29,13 @@ const JobListings: React.FC = () => {
   const pagesVisited = pageNumber * jobsPerPage;
   const maxNumberOfPageButtons = 5;
 
-  const jobItems = useStoreState((state) => state.jobs.jobItems);
+  const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
 
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
   const jobExistsToast = () => toast.error('Jobb er allerede lagret ...');
 
-  const jobExists = (search: string) => jobItems.findIndex((value) => value.title === search);
+  const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search);
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
