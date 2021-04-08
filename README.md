@@ -24,6 +24,7 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 -   Responsive design
 -   Saving of job ads
 -   State-based API error handler with React-toastify
+-   Fetched API results is saved in Redux state for easier debugging
 -   Prevent duplicate jobs from being saved (shows error with React-toastify)
 
 ## Requirements
@@ -53,7 +54,6 @@ The app must meet these criteria:
 
 ## TODO
 
--   Maybe save jobModalItems to global state (<https://github.com/ctrlplusb/easy-peasy/issues/126>)
 -   Implement "Saved ads should not disappear even if the browser is closed and reopened"
 -   Add animations
 
@@ -61,7 +61,7 @@ The app must meet these criteria:
 
 From things that I'd improve:
 
--   Set up a proper redux ( ducks pattern ) and move all the APIs into the store, setting up a middleware to handle it ( using  axios ), the lightweight version you're using seems to be half working and it doesn't enable devtools which helps a lot in debugging stuff 
+-   ~~Set up a proper redux ( ducks pattern ) and move all the APIs into the store, setting up a middleware to handle it ( using  axios ), the lightweight version you're using seems to be half working and it doesn't enable devtools which helps a lot in debugging stuff~~
 
 -   ~~It's probably because of my strong habit of doing so, but having an 'assets' folder in the 'src' to keep all the 'svg', 'utils' etc in it might be worth considering. In the current state of things it's not a big deal but once your project scales and you'll add more stuff to it - images, icons some utility functions. To prevent from polluting the 'src' I like to keep them together in the 'assets' folder.~~
 
