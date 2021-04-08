@@ -132,7 +132,7 @@ const JobListings: React.FC = () => {
                   <span className={`${styles.panelSpan} ${styles.title}`}>
                     {title}
                   </span>
-                  <span className={styles.panelSpan}>{name && name}</span>
+                  <span className={styles.panelSpan}>{name.length && name}</span>
                   <span className={styles.panelSpan}>
                     Publisert:
                     {' '}
