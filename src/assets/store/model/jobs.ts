@@ -1,7 +1,15 @@
 /* eslint-disable no-param-reassign */
-import { Action, action } from 'easy-peasy';
+import {
+  Action, action, thunk, Thunk,
+} from 'easy-peasy';
 
 import { v4 as uuidv4 } from 'uuid';
+
+/**
+ * Error type
+ */
+
+type TError = string
 
 /**
  * Interface for completeTodo with rowIndex: number
@@ -10,11 +18,21 @@ interface ICompleteJob {
   rowIndex: number;
 }
 
+interface Employer {
+  name: string | undefined;
+  orgnr: string;
+  description: string | null;
+  homepage: string | null;
+}
+
 /**
  * Interface for jobModalItems
  */
 interface IJobItem {
+  uuid?: string;
   id: string;
+  employer?: Employer | any; // TODO Fix this any type
+  published?: Date;
   title: string;
   description: string;
   extent: string;
@@ -32,9 +50,33 @@ interface IJobType {
 
 export interface JobsModel {
   /**
-   * List of jobModalItems.
+   * Globally stored array of jobItems
+   */
+  jobItems: IJobItem[];
+  /**
+   * List of jobModalItems used in modal to show content
    */
   jobModalItems: IJobItem[];
+
+  /**
+   * Store error from API fetching in state
+   */
+  error: TError;
+
+  /**
+   * Save error to state
+   */
+  setError: Action<JobsModel, TError>;
+
+  /**
+   * Action to store all jobs from API to state
+   */
+  saveFetchedJobs: Action<JobsModel, IJobItem[]>;
+
+  /**
+   * Thunk to fetch all jobs from API
+   */
+  fetchRemoteJobs: Thunk<JobsModel>;
 
   /**
    * Action to add a job to jobModalItems array
@@ -53,7 +95,34 @@ export interface JobsModel {
 }
 
 const JobsModel: JobsModel = {
+  jobItems: [],
   jobModalItems: [],
+  error: '',
+  setError: action((state, payload) => {
+    state.error = payload;
+  }),
+  saveFetchedJobs: action((state, payload) => {
+    state.jobItems = payload;
+  }),
+  fetchRemoteJobs: thunk(async (actions) => {
+    try {
+      // TODO This could be replaced with Axios if wanted
+      await fetch(
+        'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
+        // 'https://arbeidsplassenx.navtet.no/public-feed/api/v1/ads?size=100&page=1', // <- Trigger error handler with this
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
+          },
+        },
+      ).then((result) => result.json().then((data) => {
+        actions.saveFetchedJobs(data.content);
+      }));
+    } catch (error) {
+      actions.setError(error.message);
+    }
+  }),
   addJob: action(
     (state, {
       title, description, extent, name, applicationDue,
