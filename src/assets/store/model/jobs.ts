@@ -9,29 +9,43 @@ import { v4 as uuidv4 } from 'uuid';
  * Error type
  */
 
-type TError = string
+type TError = string;
 
 /**
- * Interface for completeTodo with rowIndex: number
+ * Interface for completeJob with rowIndex: number
  */
 interface ICompleteJob {
   rowIndex: number;
 }
 
-interface Employer {
-  name: string | undefined;
-  orgnr: string;
-  description: string | null;
-  homepage: string | null;
-}
+/**
+ * Type for employer
+ */
+type Employer = {
+  name: string;
+};
 
 /**
  * Interface for jobModalItems
  */
+interface IJobModalItem {
+  uuid?: string;
+  id: string;
+  published?: Date;
+  title: string;
+  description: string;
+  extent: string;
+  name: string;
+  applicationDue: string;
+}
+
+/**
+ * Interface for jobItems
+ */
 interface IJobItem {
   uuid?: string;
   id: string;
-  employer?: Employer | any; // TODO Fix this any type
+  employer: Employer;
   published?: Date;
   title: string;
   description: string;
@@ -56,7 +70,7 @@ export interface JobsModel {
   /**
    * List of jobModalItems used in modal to show content
    */
-  jobModalItems: IJobItem[];
+  jobModalItems: IJobModalItem[];
 
   /**
    * Store error from API fetching in state
