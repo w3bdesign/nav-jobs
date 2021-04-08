@@ -1,15 +1,15 @@
-import JobModel, { JobsModel } from './jobs';
+import JobModel, { IJobsModel } from './jobs';
 
 export interface StoreModel {
   /**
-   * Use the JobsModel properties in todos
+   * Use the IJobsModel properties in jobs
    */
-  jobs: JobsModel;
+  jobs: IJobsModel;
 }
 
 const storeModel: StoreModel = {
   /**
-   * Use the JobsModel properties in todos
+   * Use the IJobsModel properties in jobs
    */
   jobs: JobModel,
 };
