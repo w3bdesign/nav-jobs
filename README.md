@@ -23,6 +23,7 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 -   State management with Easy Peasy and Typescript typings
 -   Responsive design
 -   Saving of job ads
+-   State-based API error handler with React-toastify
 -   Prevent duplicate jobs from being saved (shows error with React-toastify)
 
 ## Requirements

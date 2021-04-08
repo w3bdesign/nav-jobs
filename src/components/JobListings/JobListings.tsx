@@ -18,9 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { IModalContent } from './JobListings.interface';
 
 const JobListings: React.FC = () => {
-  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
@@ -29,11 +27,21 @@ const JobListings: React.FC = () => {
   const pagesVisited = pageNumber * jobsPerPage;
   const maxNumberOfPageButtons = 5;
 
+  const remoteError = useStoreState((state) => state.jobs.error);
+
+  const jobItems = useStoreState((state) => state.jobs.jobItems);
+
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
 
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
+  const fetchRemoteJobs = useStoreActions(
+    (actions) => actions.jobs.fetchRemoteJobs,
+  );
+
   const jobExistsToast = () => toast.error('Jobb er allerede lagret ...');
+
+  const errorFetchingJobsToast = (errorMessage: string) => toast.error(`Feil ved henting av ekstern data ${errorMessage}`);
 
   const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search);
 
@@ -63,40 +71,34 @@ const JobListings: React.FC = () => {
   };
 
   useEffect(() => {
+    if (remoteError.length > 0) {
+      errorFetchingJobsToast(remoteError);
+    }
+  }, [remoteError]);
+
+  useEffect(() => {
     if (modalItems && modalItems[0].name.length) {
       setModalIsOpen(true);
     }
   }, [modalItems]);
 
   useEffect(() => {
-    fetch(
-      'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
-      {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
-        },
-      },
-    )
-      .then((result) => result.json().then((data) => {
-        setItems(data.content);
-        Modal.setAppElement('#root');
-        setLoading(false);
-      }))
-      .catch(() => {
-        setError(true);
-      });
+    fetchRemoteJobs();
   }, []);
+
+  useEffect(() => {
+    if (jobItems.length) {
+      Modal.setAppElement('#root');
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+  }, [jobItems]);
 
   return (
     <div>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
       <ToastContainer position="top-center" />
-      {error && (
-        <span className="errorMessage">
-          Feil under lasting av annonser, prøv igjen senere.
-        </span>
-      )}
       <div id="jobcontainer" className={styles.container}>
         <Modal
           isOpen={modalIsOpen}
@@ -114,7 +116,7 @@ const JobListings: React.FC = () => {
           )}
         </Modal>
         {!loading
-          && items
+          && jobItems
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(
               ({
@@ -130,11 +132,11 @@ const JobListings: React.FC = () => {
                   <span className={`${styles.panelSpan} ${styles.title}`}>
                     {title}
                   </span>
-                  <span className={styles.panelSpan}>{name}</span>
+                  <span className={styles.panelSpan}>{name && name}</span>
                   <span className={styles.panelSpan}>
                     Publisert:
                     {' '}
-                    {formatDate(published)}
+                    {published && formatDate(published)}
                   </span>
                   <span className={styles.panelButton}>
                     <Hovedknapp
@@ -176,13 +178,13 @@ const JobListings: React.FC = () => {
         <Pagination
           className={styles.pagination}
           currentPage={0}
-          numberOfItems={items.length}
+          numberOfItems={jobItems.length}
           maxPageButtons={maxNumberOfPageButtons}
           itemsPerPage={jobsPerPage}
           onChange={(page) => changePage(page)}
         />
       )}
-      {loading && !error && (
+      {loading && !remoteError && (
         <NavFrontendSpinner className={styles.pagination} />
       )}
     </div>

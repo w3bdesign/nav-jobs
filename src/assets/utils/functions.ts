@@ -1,4 +1,3 @@
-/* Typescript typings */
 type TDateType = string | number | Date;
 
 export const formatDate = (date: TDateType): TDateType => {
