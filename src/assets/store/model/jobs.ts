@@ -62,7 +62,7 @@ interface IJobType {
   applicationDue: string;
 }
 
-export interface JobsModel {
+export interface IJobsModel {
   /**
    * Globally stored array of jobItems
    */
@@ -80,35 +80,35 @@ export interface JobsModel {
   /**
    * Save error to state
    */
-  setError: Action<JobsModel, TError>;
+  setError: Action<IJobsModel, TError>;
 
   /**
    * Action to store all jobs from API to state
    */
-  saveFetchedJobs: Action<JobsModel, IJobItem[]>;
+  saveFetchedJobs: Action<IJobsModel, IJobItem[]>;
 
   /**
    * Thunk to fetch all jobs from API
    */
-  fetchRemoteJobs: Thunk<JobsModel>;
+  fetchRemoteJobs: Thunk<IJobsModel>;
 
   /**
    * Action to add a job to jobModalItems array
    */
-  addJob: Action<JobsModel, IJobType>;
+  addJob: Action<IJobsModel, IJobType>;
 
   /**
    * Action to delete all jobs from jobModalItems array
    */
-  deleteAllJobs: Action<JobsModel>;
+  deleteAllJobs: Action<IJobsModel>;
 
   /**
    * Action to delete a single todo from jobModalItems array
    */
-  deleteJob: Action<JobsModel, ICompleteJob>;
+  deleteJob: Action<IJobsModel, ICompleteJob>;
 }
 
-const JobsModel: JobsModel = {
+const JobModel: IJobsModel = {
   jobItems: [],
   jobModalItems: [],
   error: '',
@@ -160,4 +160,4 @@ const JobsModel: JobsModel = {
   }),
 };
 
-export default JobsModel;
+export default JobModel;
