@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_mixins';
+@import 'animate.min.css';
 
 .savedJobs {
   display: grid;
@@ -30,4 +31,8 @@
   @include respond(tablet) {
     max-width: 90vw;
   }
+}
+
+.animate {
+  background-color: rgb(128, 108, 108);
 }
