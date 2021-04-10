@@ -17,8 +17,10 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 ## Features
 
 -   React with Typescript
+-   ESLint with AirBnb ruleset
 -   Typography and colors used by NAV
--   SASS with modules
+-   Styling with SASS and CSS-modules
+-   Custom responsive @mixins
 -   NAV frontend library implemented with multiple components like Pagination and Button
 -   State management with Easy Peasy and Typescript typings
 -   Responsive design
