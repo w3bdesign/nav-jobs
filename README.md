@@ -21,6 +21,7 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 -   Typography and colors used by NAV
 -   Styling with SASS and CSS-modules
 -   Custom responsive @mixins
+-   Animations with React Transition Group and Animate.css
 -   NAV frontend library implemented with multiple components like Pagination and Button
 -   State management with Easy Peasy and Typescript typings
 -   Responsive design
