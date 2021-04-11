@@ -34,6 +34,7 @@
 
   @include respond(mobile) {
     max-width: 95vw;
+    padding: 10px;
   }
 }
 
