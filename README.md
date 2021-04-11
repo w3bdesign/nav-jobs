@@ -13,7 +13,7 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
 ## Live URL
 
-<https://nav-jobs.vercel.app/>
+<https://nav.dfweb.no/>
 
 ## Features
 
