@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 @import '_variables';
+@import '_mixins';
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
@@ -11,4 +12,11 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+}
+
+.knapp {
+  @include respond(mobile) {
+    max-width: 96vw;
+    padding: 10px;
+  }
 }

@@ -6,6 +6,7 @@ import { useStoreState } from '../../assets/utils/hooks';
 import { truncateTextLength } from '../../assets/utils/functions';
 
 import style from './SavedJobs.module.scss';
+
 import './animate.min.css';
 
 import { ISavedJobsProps } from './SavedJobs.interface';
@@ -41,7 +42,6 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
                       name,
                       applicationDue,
                     )}
-                    className={style.knapp}
                     key={id}
                   >
                     {truncateTextLength(title, 40, ' ... ')}

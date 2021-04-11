@@ -25,19 +25,6 @@
   text-align: center;
 }
 
-.knapp {
-  max-width: 450px;
-
-  @include respond(tablet) {
-    max-width: 95vw;
-  }
-
-  @include respond(mobile) {
-    max-width: 95vw;
-    padding: 10px;
-  }
-}
-
 .animate {
   background-color: rgb(128, 108, 108);
 }
