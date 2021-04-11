@@ -29,7 +29,11 @@
   max-width: 450px;
 
   @include respond(tablet) {
-    max-width: 90vw;
+    max-width: 95vw;
+  }
+
+  @include respond(mobile) {
+    max-width: 95vw;
   }
 }
 
