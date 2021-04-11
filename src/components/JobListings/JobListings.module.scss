@@ -7,6 +7,10 @@
   gap: 1rem;
   padding: 10px;
 
+  @include respond(desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   @include respond(tablet) {
     grid-template-columns: 1fr 1fr;
   }
@@ -19,7 +23,6 @@
 .panel {
   min-height: 50px;
   margin-top: 10px;
-  min-width: 420px;
 
   @include respond(mobile) {
     min-width: 315px;
