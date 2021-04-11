@@ -25,14 +25,6 @@
   text-align: center;
 }
 
-.knapp {
-  max-width: 450px;
-
-  @include respond(tablet) {
-    max-width: 90vw;
-  }
-}
-
 .animate {
   background-color: rgb(128, 108, 108);
 }
