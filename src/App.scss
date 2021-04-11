@@ -16,7 +16,6 @@
 
 .knapp {
   @include respond(mobile) {
-    max-width: 96vw;
-    padding: 10px;
+    padding: 5px;
   }
 }
