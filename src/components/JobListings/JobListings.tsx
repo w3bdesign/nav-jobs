@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering';
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
+import { Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 
