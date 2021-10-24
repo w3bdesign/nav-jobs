@@ -11,6 +11,7 @@ We want you to create a simple app / website that retrieves job advertisements f
 
 The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
+Authentication is handled via a Bearer token saved as the environment variable REACT_APP_AUTH which needs to be retrieved from Nav.no (don't ask me how to retrieve it as it was provided in the assignment).
 ## Live URL
 
 <https://nav.dfweb.no/>
@@ -20,7 +21,7 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 -   React with Typescript
 -   ESLint with AirBnb ruleset
 -   Typography and colors used by NAV
--   Styling with SASS and CSS-modules
+-   Styling with SASS and modules
 -   Custom responsive @mixins
 -   Animations with React Transition Group and Animate.css
 -   NAV frontend library implemented with multiple components like Pagination and Button

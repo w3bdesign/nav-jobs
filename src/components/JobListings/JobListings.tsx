@@ -139,7 +139,7 @@ const JobListings: React.FC = () => {
                     {published && formatDate(published)}
                   </span>
                   <span className={styles.panelButton}>
-                    <Hovedknapp
+                    <Knapp
                       className={styles.hovedKnapp}
                       onClick={() => handleOpenModalClick(
                         description,
@@ -149,7 +149,7 @@ const JobListings: React.FC = () => {
                       )}
                     >
                       Vis
-                    </Hovedknapp>
+                    </Knapp>
                     <Knapp
                       className={styles.sekundKnapp}
                       onClick={() => {
