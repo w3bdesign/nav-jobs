@@ -23,6 +23,9 @@
 .panel {
   min-height: 50px;
   margin-top: 10px;
+  background-color: $white;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 4px;
 
   @include respond(mobile) {
     min-width: 315px;
