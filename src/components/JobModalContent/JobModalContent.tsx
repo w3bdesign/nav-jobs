@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import { Fareknapp } from 'nav-frontend-knapper';
 
 import { formatDate } from '../../assets/utils/functions';
@@ -27,7 +27,7 @@ const JobModalContent = ({
           {formatDate(applicationDue)}
         </span>
         <br />
-        {ReactHtmlParser(description)}
+        {parse(description)}
       </span>
     </div>
   </>

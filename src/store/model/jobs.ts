@@ -134,7 +134,9 @@ const JobModel: IJobsModel = {
         actions.saveFetchedJobs(data.content);
       }));
     } catch (error) {
-      actions.setError(error.message);
+      if (error instanceof Error) {
+        actions.setError(error.message);
+      }
     }
   }),
   addJob: action(
