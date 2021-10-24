@@ -23,6 +23,7 @@
 .panel {
   min-height: 50px;
   margin-top: 10px;
+  background-color: $white;
 
   @include respond(mobile) {
     min-width: 315px;
@@ -48,7 +49,6 @@
   width: 140px;
   margin: 0.3em;
   height: 40px;
-  margin-top: 2px;
 }
 
 .errorMessage {

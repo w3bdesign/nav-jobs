@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from 'paginering';
 import Panel from 'nav-frontend-paneler';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import { Hovedknapp, Knapp } from 'nav-frontend-knapper';
+import { Knapp } from 'nav-frontend-knapper';
 import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -139,7 +139,7 @@ const JobListings: React.FC = () => {
                     {published && formatDate(published)}
                   </span>
                   <span className={styles.panelButton}>
-                    <Hovedknapp
+                    <Knapp
                       className={styles.hovedKnapp}
                       onClick={() => handleOpenModalClick(
                         description,
@@ -149,7 +149,7 @@ const JobListings: React.FC = () => {
                       )}
                     >
                       Vis
-                    </Hovedknapp>
+                    </Knapp>
                     <Knapp
                       className={styles.sekundKnapp}
                       onClick={() => {
