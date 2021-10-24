@@ -103,7 +103,7 @@ export interface IJobsModel {
   deleteAllJobs: Action<IJobsModel>;
 
   /**
-   * Action to delete a single todo from jobModalItems array
+   * Action to delete a single job from jobModalItems array
    */
   deleteJob: Action<IJobsModel, ICompleteJob>;
 }
@@ -120,7 +120,7 @@ const JobModel: IJobsModel = {
   }),
   fetchRemoteJobs: thunk(async (actions) => {
     try {
-      // TODO This could be replaced with Axios if wanted
+      // This could be replaced with Axios if wanted
       await fetch(
         'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
         // 'https://arbeidsplassenx.navtet.no/public-feed/api/v1/ads?size=100&page=1', // <- Trigger error handler with this
@@ -153,7 +153,7 @@ const JobModel: IJobsModel = {
       });
     },
   ),
-  // TODO Delete individual jobs and all saved jobs
+  // Should also be able to delete individual jobs and all saved jobs
   deleteJob: action((state, { rowIndex }) => {
     state.jobModalItems.splice(rowIndex, 1);
   }),
