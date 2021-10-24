@@ -34,7 +34,13 @@
   ],
   "settings": {
     "import/resolver": {
-      "node": {}
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
     }
   }
+  
 }
