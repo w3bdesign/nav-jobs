@@ -18,7 +18,14 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "import/extensions": "off",
-    "linebreak-style": "warn"
+    "linebreak-style": "warn",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "function-expression"
+      }
+    ]
   },
   "overrides": [
     {
