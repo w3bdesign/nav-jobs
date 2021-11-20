@@ -20,7 +20,7 @@
     "import/extensions": "off",
     "linebreak-style": "warn",
     "react/function-component-definition": [
-      "warn",
+      "off",
       {
         "namedComponents": "function-declaration",
         "unnamedComponents": "function-expression"
