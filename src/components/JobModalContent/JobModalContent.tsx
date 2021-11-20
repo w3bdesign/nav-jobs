@@ -8,28 +8,30 @@ import style from './JobModalContent.module.scss';
 
 import { TJobContentProps } from './JobModalContent.type';
 
-const JobModalContent = ({
+function JobModalContent({
   name,
   description,
   extent,
   applicationDue,
   closeModal,
-}: TJobContentProps): JSX.Element => (
-  <>
-    <Fareknapp onClick={closeModal}>Lukk</Fareknapp>
-    <div className={style.jobDiv}>
-      <span className={style.jobContent}>
-        <span className={style.jobTitle}>
-          {name}
+}: TJobContentProps): JSX.Element {
+  return (
+    <>
+      <Fareknapp onClick={closeModal}>Lukk</Fareknapp>
+      <div className={style.jobDiv}>
+        <span className={style.jobContent}>
+          <span className={style.jobTitle}>
+            {name}
+            <br />
+            {extent}
+            <br />
+            {formatDate(applicationDue)}
+          </span>
           <br />
-          {extent}
-          <br />
-          {formatDate(applicationDue)}
+          {parse(description)}
         </span>
-        <br />
-        {parse(description)}
-      </span>
-    </div>
-  </>
-);
+      </div>
+    </>
+  );
+}
 export default JobModalContent;
