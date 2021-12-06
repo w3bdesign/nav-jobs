@@ -28,11 +28,8 @@ const JobListings: React.FC = () => {
   const maxNumberOfPageButtons = 5;
 
   const remoteError = useStoreState((state) => state.jobs.error);
-
   const jobItems = useStoreState((state) => state.jobs.jobItems);
-
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
-
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
   const fetchRemoteJobs = useStoreActions(
@@ -40,9 +37,7 @@ const JobListings: React.FC = () => {
   );
 
   const jobExistsToast = () => toast.error('Jobb er allerede lagret ...');
-
   const errorFetchingJobsToast = (errorMessage: string) => toast.error(`Feil ved henting av ekstern data ${errorMessage}`);
-
   const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search);
 
   // Changes page to the current page (on click)
@@ -132,7 +127,9 @@ const JobListings: React.FC = () => {
                   <span className={`${styles.panelSpan} ${styles.title}`}>
                     {title}
                   </span>
-                  <span className={styles.panelSpan}>{name.length && name}</span>
+                  <span className={styles.panelSpan}>
+                    {name.length && name}
+                  </span>
                   <span className={styles.panelSpan}>
                     Publisert:
                     {' '}
