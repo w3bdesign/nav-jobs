@@ -15,7 +15,7 @@
     "classnames": "^2.3.1",
     "craco-less": "^1.20.0",
     "easy-peasy": "^5.0.4",
-    "html-react-parser": "^1.4.1",
+    "html-react-parser": "^1.4.2",
     "lodash.throttle": "^4.1.1",
     "nav-frontend-core": "^6.0.1",
     "nav-frontend-ikoner-assets": "^3.0.1",
