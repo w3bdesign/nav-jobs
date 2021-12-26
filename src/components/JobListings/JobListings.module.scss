@@ -1,11 +1,12 @@
-@import '_variables';
-@import '_mixins';
+@use "_variables";
+@use "_mixins";
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   padding: 10px;
+
 
   @include respond(desktop) {
     grid-template-columns: 1fr 1fr 1fr;

@@ -1,6 +1,6 @@
-@import '_variables';
-@import '_mixins';
-@import 'animate.min.css';
+@use "_variables";
+@use "_mixins";
+@use "animate.min.css";
 
 .savedJobs {
   display: grid;
@@ -26,5 +26,5 @@
 }
 
 .animate {
-  background-color: rgb(128, 108, 108);
+  background-color: rgb(128 108 108);
 }
