@@ -57,3 +57,4 @@ The app must meet these criteria:
 ## TODO
 
 -   Implement "Saved ads should not disappear even if the browser is closed and reopened"
+-   Look into fetching a new access token from NAV so the site can be deployed again
