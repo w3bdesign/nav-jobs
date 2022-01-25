@@ -9,8 +9,6 @@ export default function fetchNavJobs(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-
-
   // This could be replaced with Axios if wanted
   fetch(
     "https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1",
@@ -24,7 +22,6 @@ export default function fetchNavJobs(
     }
   ).then((result) =>
     result.json().then((data) => {
-      //console.log(data.content);
       res.status(200).json(data.content);
     })
   );
