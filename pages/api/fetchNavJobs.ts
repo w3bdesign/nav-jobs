@@ -5,7 +5,7 @@ type Data = {
   name: string;
 };
 
-export default function handler(
+export default function fetchNavJobs(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -18,7 +18,7 @@ export default function handler(
     {
       method: "GET",
       headers: {
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwdWJsaWMudG9rZW4udjFAbmF2Lm5vIiwiYXVkIjoiZmVlZC1hcGktdjEiLCJpc3MiOiJuYXYubm8iLCJpYXQiOjE1NTc0NzM0MjJ9.jNGlLUF9HxoHo5JrQNMkweLj_91bgk97ZebLdfx3_UQ`,
+        Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
       },
       mode: "cors",
     }
