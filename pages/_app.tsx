@@ -4,6 +4,9 @@ import store from "../store/index";
 
 import type { AppProps } from "next/app";
 
+import "@navikt/ds-css";
+import "@navikt/ds-css-internal";
+
 import "../assets/scss/App.scss";
 import "../assets/css/animate.min.css";
 

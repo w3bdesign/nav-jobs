@@ -80,7 +80,7 @@ const JobListings: React.FC = () => {
 
   useEffect(() => {
     fetchRemoteJobs();
-  }, []);
+  }, [fetchRemoteJobs]);
 
   useEffect(() => {
     if (jobItems.length) {
@@ -125,6 +125,7 @@ const JobListings: React.FC = () => {
                 applicationDue,
               }) => (
                 <Panel key={uuid} className={styles.panel} border>
+                 
                   <span className={`${styles.panelSpan} ${styles.title}`}>
                     {title}
                   </span>

@@ -1,4 +1,4 @@
-@import 'variables';
+@import "../../assets/scss/variables";
 
 .header-title {
   color: $white;
@@ -22,15 +22,15 @@
 }
 
 /* Logo container */
-nav {
+
+.navigation {
   display: flex;
   align-items: center;
   min-height: 10vh;
   background-color: $white;
   justify-content: center;
   border-bottom: 2px $borderColor solid;
-}
-
-.logo {
-  padding: 1rem;
+  .logo {
+    padding: 1rem;
+  }
 }
