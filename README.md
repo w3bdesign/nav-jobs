@@ -15,7 +15,7 @@ Authentication is handled via a Bearer token saved as the environment variable R
 
 ## Features
 
--   React with Typescript
+-   Next.js with Typescript
 -   ESLint with AirBnb ruleset
 -   Typography and colors used by NAV
 -   Styling with SASS and modules
@@ -57,4 +57,3 @@ The app must meet these criteria:
 ## TODO
 
 -   Implement "Saved ads should not disappear even if the browser is closed and reopened"
--   Look into fetching a new access token from NAV so the site can be deployed again

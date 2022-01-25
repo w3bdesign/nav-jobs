@@ -1,4 +1,4 @@
-@import '../../assets/scss/variables';
+@import "../../assets/scss/variables";
 
 .jobDiv {
   display: flex;
@@ -8,11 +8,11 @@
 }
 
 .jobTitle {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: $fontBold;
 }
 
 .jobContent {
   max-width: 65vw;
-  margin: 0 auto;
+  margin-top: 15px;
 }

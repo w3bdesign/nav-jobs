@@ -74,6 +74,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1em;
   position: relative;
+  margin: 2em !important;
+
+  & * {
+    height: 45px !important;
+    width: 45px !important;
+  }
+
+  a {
+    font-size: 22px !important;
+    padding: 5px !important;
+    font-weight: 700;
+  }
 }

@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import style from "./Navbar.module.scss";
 
-//import { ReactComponent as NavbarLogo } from '../../assets/svg/logo.svg';
-
 const Navbar: React.FC = () => (
   <div>
     <nav className={style.navigation}>

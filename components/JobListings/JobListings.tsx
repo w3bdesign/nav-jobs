@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-//mport Pagination from "paginering";
+
+import Pagination from "rc-pagination";
 import { Button, Panel, Loader } from "@navikt/ds-react";
 
 import Modal from "react-modal";
@@ -10,21 +11,22 @@ import SavedJobs from "../SavedJobs/SavedJobs";
 
 import { formatDate } from "../../assets/utils/functions";
 import { useStoreActions, useStoreState } from "../../assets/utils/hooks";
+import locale_nb_NO from "rc-pagination/lib/locale/nb_NO";
 
 import styles from "./JobListings.module.scss";
 import "react-toastify/dist/ReactToastify.css";
+import "rc-pagination/assets/index.css";
 
 import { IModalContent } from "./JobListings.interface";
 
 const JobListings: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
-  const [pageNumber, setPageNumber] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState<number>(1);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const jobsPerPage = 10;
   const pagesVisited = pageNumber * jobsPerPage;
-  const maxNumberOfPageButtons = 5;
 
   const remoteError = useStoreState((state) => state.jobs.error);
   const jobItems = useStoreState((state) => state.jobs.jobItems);
@@ -125,7 +127,6 @@ const JobListings: React.FC = () => {
                 applicationDue,
               }) => (
                 <Panel key={uuid} className={styles.panel} border>
-                 
                   <span className={`${styles.panelSpan} ${styles.title}`}>
                     {title}
                   </span>
@@ -173,18 +174,16 @@ const JobListings: React.FC = () => {
               )
             )}
       </div>
-      {/*
-      !loading && (
+      {!loading && (
         <Pagination
           className={styles.pagination}
-          currentPage={0}
-          numberOfItems={jobItems.length}
-          maxPageButtons={maxNumberOfPageButtons}
-          itemsPerPage={jobsPerPage}
+          current={pageNumber}
+          total={jobItems.length - 10}
+          pageSize={jobsPerPage}
+          locale={locale_nb_NO}
           onChange={(page) => changePage(page)}
         />
-      )
-      */}
+      )}
       {loading && !remoteError && <Loader className={styles.pagination} />}
     </div>
   );

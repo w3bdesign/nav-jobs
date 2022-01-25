@@ -1,13 +1,13 @@
-import React from 'react';
-import parse from 'html-react-parser';
-//import { Fareknapp } from 'nav-frontend-knapper';
-import {Button} from "@navikt/ds-react"
+import React from "react";
+import parse from "html-react-parser";
 
-import { formatDate } from '../../assets/utils/functions';
+import { Button } from "@navikt/ds-react";
 
-import style from './JobModalContent.module.scss';
+import { formatDate } from "../../assets/utils/functions";
 
-import { TJobContentProps } from './JobModalContent.type';
+import style from "./JobModalContent.module.scss";
+
+import { TJobContentProps } from "./JobModalContent.type";
 
 function JobModalContent({
   name,
@@ -18,7 +18,9 @@ function JobModalContent({
 }: TJobContentProps): JSX.Element {
   return (
     <>
-      <Button onClick={closeModal}>Lukk</Button>
+      <Button variant="danger" onClick={closeModal}>
+        Lukk
+      </Button>
       <div className={style.jobDiv}>
         <span className={style.jobContent}>
           <span className={style.jobTitle}>
