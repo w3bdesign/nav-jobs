@@ -1,6 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import { Fareknapp } from 'nav-frontend-knapper';
+//import { Fareknapp } from 'nav-frontend-knapper';
+import {Button} from "@navikt/ds-react"
 
 import { formatDate } from '../../assets/utils/functions';
 
@@ -17,7 +18,7 @@ function JobModalContent({
 }: TJobContentProps): JSX.Element {
   return (
     <>
-      <Fareknapp onClick={closeModal}>Lukk</Fareknapp>
+      <Button onClick={closeModal}>Lukk</Button>
       <div className={style.jobDiv}>
         <span className={style.jobContent}>
           <span className={style.jobTitle}>

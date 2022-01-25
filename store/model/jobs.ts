@@ -1,9 +1,7 @@
 /* eslint-disable no-param-reassign */
-import {
-  Action, action, thunk, Thunk,
-} from 'easy-peasy';
+import { Action, action, thunk, Thunk } from "easy-peasy";
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Error type
@@ -111,7 +109,7 @@ export interface IJobsModel {
 const JobModel: IJobsModel = {
   jobItems: [],
   jobModalItems: [],
-  error: '',
+  error: "",
   setError: action((state, payload) => {
     state.error = payload;
   }),
@@ -120,20 +118,12 @@ const JobModel: IJobsModel = {
   }),
   fetchRemoteJobs: thunk(async (actions) => {
     try {
-      // This could be replaced with Axios if wanted
-      await fetch(
-        'https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1',
-        // 'https://arbeidsplassenx.navtet.no/public-feed/api/v1/ads?size=100&page=1', // <- Trigger error handler with this
-        {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
-          },
-          mode: 'cors',
-        },
-      ).then((result) => result.json().then((data) => {
-        actions.saveFetchedJobs(data.content);
-      }));
+      // Fetch data from NextJS API route 
+      await fetch("/api/fetchNavJobs").then((result) =>
+        result.json().then((data) => {
+          actions.saveFetchedJobs(data);
+        })
+      );
     } catch (error) {
       if (error instanceof Error) {
         actions.setError(error.message);
@@ -141,9 +131,7 @@ const JobModel: IJobsModel = {
     }
   }),
   addJob: action(
-    (state, {
-      title, description, extent, name, applicationDue,
-    }) => {
+    (state, { title, description, extent, name, applicationDue }) => {
       state.jobModalItems.push({
         id: uuidv4(),
         title,
@@ -152,7 +140,7 @@ const JobModel: IJobsModel = {
         name,
         applicationDue,
       });
-    },
+    }
   ),
   // Should also be able to delete individual jobs and all saved jobs
   deleteJob: action((state, { rowIndex }) => {

@@ -1,95 +1,38 @@
 {
-  "name": "nav-jobs",
-  "version": "0.2.6",
+  "name": "nav-jobs-nextjs",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
+  },
   "dependencies": {
-    "@craco/craco": "^6.4.3",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.0",
-    "@types/node": "^17.0.12",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-modal": "^3.13.1",
-    "classnames": "^2.3.1",
-    "craco-less": "1.20.0",
+    "@navikt/ds-css": "^0.12.14",
+    "@navikt/ds-react": "^0.14.15",
     "easy-peasy": "^5.0.4",
     "html-react-parser": "^1.4.5",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
     "lodash.throttle": "^4.1.1",
-    "nav-frontend-core": "^6.0.1",
-    "nav-frontend-ikoner-assets": "^3.0.1",
-    "nav-frontend-js-utils": "^1.0.20",
-    "nav-frontend-knapper": "^3.1.2",
-    "nav-frontend-knapper-style": "^2.1.1",
-    "nav-frontend-lukknapp": "^2.0.1",
-    "nav-frontend-lukknapp-style": "^2.0.1",
-    "nav-frontend-paneler": "^3.0.1",
-    "nav-frontend-paneler-style": "^2.0.1",
-    "nav-frontend-spinner": "^3.0.1",
-    "nav-frontend-spinner-style": "^1.0.2",
-    "nav-frontend-typografi": "^4.0.1",
-    "nav-frontend-typografi-style": "^2.0.1",
-    "paginering": "1.1.2",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next": "12.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-modal": "^3.14.4",
-    "react-scripts": "4.0.3",
     "react-toastify": "^8.1.0",
     "react-transition-group": "^4.4.2",
+    "sass": "^1.49.0",
     "styled-components": "^5.3.3",
-    "typescript": "^4.5.5",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "stylelint": "npx stylelint **/*.scss --fix",
-    "eslint": "eslint --fix --ext .js,.ts,.tsx .",
-    "sass": "sass src/assets/scss:src/assets/css --watch --no-source-map"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/react-html-parser": "^2.0.2",
+    "@types/node": "17.0.12",
+    "@types/react": "17.0.38",
+    "@types/react-modal": "^3.13.1",
     "@types/react-transition-group": "^4.4.4",
-    "@types/styled-components": "^5.1.21",
-    "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
-    "eslint": "7.32.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1",
-    "sass": "^1.49.0",
-    "stylelint": "^14.3.0",
-    "stylelint-config-standard": "^24.0.0",
-    "stylelint-scss": "^4.1.0"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
+    "typescript": "4.5.5"
   }
 }

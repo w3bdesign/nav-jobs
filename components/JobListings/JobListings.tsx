@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import Pagination from 'paginering';
-import Panel from 'nav-frontend-paneler';
-import NavFrontendSpinner from 'nav-frontend-spinner';
-import { Knapp } from 'nav-frontend-knapper';
-import Modal from 'react-modal';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useState, useEffect } from "react";
+//mport Pagination from "paginering";
+import { Button, Panel, Loader } from "@navikt/ds-react";
 
-import JobModalContent from '../JobModalContent/JobModalContent';
-import SavedJobs from '../SavedJobs/SavedJobs';
+import Modal from "react-modal";
+import { ToastContainer, toast } from "react-toastify";
 
-import { formatDate } from '../../assets/utils/functions';
-import { useStoreActions, useStoreState } from '../../assets/utils/hooks';
+import JobModalContent from "../JobModalContent/JobModalContent";
+import SavedJobs from "../SavedJobs/SavedJobs";
 
-import styles from './JobListings.module.scss';
-import 'react-toastify/dist/ReactToastify.css';
+import { formatDate } from "../../assets/utils/functions";
+import { useStoreActions, useStoreState } from "../../assets/utils/hooks";
 
-import { IModalContent } from './JobListings.interface';
+import styles from "./JobListings.module.scss";
+import "react-toastify/dist/ReactToastify.css";
+
+import { IModalContent } from "./JobListings.interface";
 
 const JobListings: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -33,12 +32,14 @@ const JobListings: React.FC = () => {
   const addJob = useStoreActions((actions) => actions.jobs.addJob);
 
   const fetchRemoteJobs = useStoreActions(
-    (actions) => actions.jobs.fetchRemoteJobs,
+    (actions) => actions.jobs.fetchRemoteJobs
   );
 
-  const jobExistsToast = () => toast.error('Jobb er allerede lagret ...');
-  const errorFetchingJobsToast = (errorMessage: string) => toast.error(`Feil ved henting av ekstern data ${errorMessage}`);
-  const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search);
+  const jobExistsToast = () => toast.error("Jobb er allerede lagret ...");
+  const errorFetchingJobsToast = (errorMessage: string) =>
+    toast.error(`Feil ved henting av ekstern data ${errorMessage}`);
+  const jobExists = (search: string) =>
+    jobModalItems.findIndex((value) => value.title === search);
 
   // Changes page to the current page (on click)
   const changePage = (page: number) => {
@@ -49,7 +50,7 @@ const JobListings: React.FC = () => {
     description: string,
     extent: string,
     name: string,
-    applicationDue: string,
+    applicationDue: string
   ) => {
     setModalItems([
       {
@@ -83,7 +84,7 @@ const JobListings: React.FC = () => {
 
   useEffect(() => {
     if (jobItems.length) {
-      Modal.setAppElement('#root');
+      Modal.setAppElement("#root");
       setLoading(false);
     } else {
       setLoading(true);
@@ -110,8 +111,8 @@ const JobListings: React.FC = () => {
             />
           )}
         </Modal>
-        {!loading
-          && jobItems
+        {!loading &&
+          jobItems
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(
               ({
@@ -131,23 +132,23 @@ const JobListings: React.FC = () => {
                     {name.length && name}
                   </span>
                   <span className={styles.panelSpan}>
-                    Publisert:
-                    {' '}
-                    {published && formatDate(published)}
+                    Publisert: {published && formatDate(published)}
                   </span>
                   <span className={styles.panelButton}>
-                    <Knapp
+                    <Button
                       className={styles.hovedKnapp}
-                      onClick={() => handleOpenModalClick(
-                        description,
-                        extent,
-                        name,
-                        applicationDue,
-                      )}
+                      onClick={() =>
+                        handleOpenModalClick(
+                          description,
+                          extent,
+                          name,
+                          applicationDue
+                        )
+                      }
                     >
                       Vis
-                    </Knapp>
-                    <Knapp
+                    </Button>
+                    <Button
                       className={styles.sekundKnapp}
                       onClick={() => {
                         // Check if we try to add an existing job, if yes, show error message
@@ -165,13 +166,14 @@ const JobListings: React.FC = () => {
                       }}
                     >
                       Lagre
-                    </Knapp>
+                    </Button>
                   </span>
                 </Panel>
-              ),
+              )
             )}
       </div>
-      {!loading && (
+      {/*
+      !loading && (
         <Pagination
           className={styles.pagination}
           currentPage={0}
@@ -180,10 +182,9 @@ const JobListings: React.FC = () => {
           itemsPerPage={jobsPerPage}
           onChange={(page) => changePage(page)}
         />
-      )}
-      {loading && !remoteError && (
-        <NavFrontendSpinner className={styles.pagination} />
-      )}
+      )
+      */}
+      {loading && !remoteError && <Loader className={styles.pagination} />}
     </div>
   );
 };

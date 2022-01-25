@@ -1,15 +1,14 @@
-import React from 'react';
-import { Knapp } from 'nav-frontend-knapper';
-import { CSSTransition } from 'react-transition-group';
+import React from "react";
 
-import { useStoreState } from '../../assets/utils/hooks';
-import { truncateTextLength } from '../../assets/utils/functions';
+import { Button } from "@navikt/ds-react";
+import { CSSTransition } from "react-transition-group";
 
-import style from './SavedJobs.module.scss';
+import { useStoreState } from "../../assets/utils/hooks";
+import { truncateTextLength } from "../../assets/utils/functions";
 
-import './animate.min.css';
+import style from "./SavedJobs.module.scss";
 
-import { ISavedJobsProps } from './SavedJobs.interface';
+import { ISavedJobsProps } from "./SavedJobs.interface";
 
 const SavedJobs: React.FC<ISavedJobsProps> = ({
   handleOpenModalClick,
@@ -25,29 +24,30 @@ const SavedJobs: React.FC<ISavedJobsProps> = ({
           </div>
           <div className={style.savedJobs}>
             {jobModalItems.map(
-              ({
-                id, title, description, extent, name, applicationDue,
-              }) => (
+              ({ id, title, description, extent, name, applicationDue }) => (
                 <CSSTransition
+                  key={id}
                   in={jobModalItems.length > 0}
                   timeout={500}
                   className="animate__animated animate__fadeInLeft"
                   unmountOnExit
                   appear
                 >
-                  <Knapp
-                    onClick={() => handleOpenModalClick(
-                      description,
-                      extent,
-                      name,
-                      applicationDue,
-                    )}
+                  <Button
+                    onClick={() =>
+                      handleOpenModalClick(
+                        description,
+                        extent,
+                        name,
+                        applicationDue
+                      )
+                    }
                     key={id}
                   >
-                    {truncateTextLength(title, 40, ' ... ')}
-                  </Knapp>
+                    {truncateTextLength(title, 40, " ... ")}
+                  </Button>
                 </CSSTransition>
-              ),
+              )
             )}
           </div>
         </>
