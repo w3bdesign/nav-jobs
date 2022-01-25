@@ -11,7 +11,7 @@ import SavedJobs from "../SavedJobs/SavedJobs";
 
 import { formatDate } from "../../assets/utils/functions";
 import { useStoreActions, useStoreState } from "../../assets/utils/hooks";
-import locale_nb_NO from "rc-pagination/lib/locale/nb_NO";
+import locale from "../../assets/locale/nb_NO";
 
 import styles from "./JobListings.module.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -180,7 +180,7 @@ const JobListings: React.FC = () => {
           current={pageNumber}
           total={jobItems.length - 10}
           pageSize={jobsPerPage}
-          locale={locale_nb_NO}
+          locale={locale}
           onChange={(page) => changePage(page)}
         />
       )}
