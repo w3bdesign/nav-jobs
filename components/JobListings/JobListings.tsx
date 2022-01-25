@@ -11,7 +11,7 @@ import SavedJobs from "../SavedJobs/SavedJobs";
 
 import { formatDate } from "../../assets/utils/functions";
 import { useStoreActions, useStoreState } from "../../assets/utils/hooks";
-import locale from "../../assets/locale/nb_NO";
+import locale from "../../assets/locale/localenb_NO";
 
 import styles from "./JobListings.module.scss";
 import "react-toastify/dist/ReactToastify.css";

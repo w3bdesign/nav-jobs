@@ -11,7 +11,7 @@ interface ILocale {
   page_size: string;
 }
 
-const locale: ILocale = {
+const localenb_NO: ILocale = {
   items_per_page: "/ side",
   jump_to: "Gå til side",
   page: "Side",
@@ -24,4 +24,4 @@ const locale: ILocale = {
   page_size: "sidestørrelse",
 };
 
-export default locale;
+export default localenb_NO;
