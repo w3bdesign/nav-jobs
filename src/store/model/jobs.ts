@@ -129,6 +129,7 @@ const JobModel: IJobsModel = {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
           },
+          mode: 'cors',
         },
       ).then((result) => result.json().then((data) => {
         actions.saveFetchedJobs(data.content);
