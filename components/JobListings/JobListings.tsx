@@ -185,7 +185,11 @@ const JobListings: React.FC = () => {
           onChange={(page) => changePage(page)}
         />
       )}
-      {loading && !remoteError && <Loader className={styles.loader} />}
+      {loading && !remoteError && (
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      )}
     </div>
   );
 };
