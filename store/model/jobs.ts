@@ -118,7 +118,7 @@ const JobModel: IJobsModel = {
   }),
   fetchRemoteJobs: thunk(async (actions) => {
     try {
-      // Fetch data from NextJS API route 
+      // Fetch data from NextJS API route
       await fetch("/api/fetchNavJobs").then((result) =>
         result.json().then((data) => {
           actions.saveFetchedJobs(data);

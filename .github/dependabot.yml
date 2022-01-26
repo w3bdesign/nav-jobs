@@ -1,38 +1,38 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "04:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: "@types/node"
-    versions:
-    - 14.14.35
-    - 14.14.41
-    - 15.0.0
-  - dependency-name: "@testing-library/user-event"
-    versions:
-    - 13.0.1
-    - 13.0.16
-    - 13.0.9
-    - 13.1.1
-    - 13.1.5
-  - dependency-name: "@testing-library/react"
-    versions:
-    - 11.2.6
-  - dependency-name: classnames
-    versions:
-    - 2.3.0
-  - dependency-name: "@typescript-eslint/eslint-plugin"
-    versions:
-    - 4.18.0
-    - 4.20.0
-  - dependency-name: "@typescript-eslint/parser"
-    versions:
-    - 4.18.0
-    - 4.20.0
-  - dependency-name: "@types/styled-components"
-    versions:
-    - 5.1.9
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:00"
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "@types/node"
+        versions:
+          - 14.14.35
+          - 14.14.41
+          - 15.0.0
+      - dependency-name: "@testing-library/user-event"
+        versions:
+          - 13.0.1
+          - 13.0.16
+          - 13.0.9
+          - 13.1.1
+          - 13.1.5
+      - dependency-name: "@testing-library/react"
+        versions:
+          - 11.2.6
+      - dependency-name: classnames
+        versions:
+          - 2.3.0
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+        versions:
+          - 4.18.0
+          - 4.20.0
+      - dependency-name: "@typescript-eslint/parser"
+        versions:
+          - 4.18.0
+          - 4.20.0
+      - dependency-name: "@types/styled-components"
+        versions:
+          - 5.1.9

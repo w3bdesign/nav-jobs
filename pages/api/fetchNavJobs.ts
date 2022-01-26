@@ -6,7 +6,7 @@ type Data = {
 };
 
 export default function fetchNavJobs(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   // This could be replaced with Axios if wanted
