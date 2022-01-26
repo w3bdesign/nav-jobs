@@ -5,13 +5,13 @@ interface IData {
   toString: () => string;
 }
 
-interface IReq {
-  headers: { host: any };
+interface IRequest {
+  headers: { host: string };
 }
 
-interface IRes {
+interface IResult {
   writeHead: (arg0: number, arg1: { "Content-Type": string }) => void;
-  end: (arg0: any) => void;
+  end: (arg0: string) => void;
 }
 
 interface ILinks {
@@ -20,16 +20,12 @@ interface ILinks {
   priority: number;
 }
 
-const siteMapGenerator = async (req: IReq, res: IRes) => {
-  // An array with your links
-
+const siteMapGenerator = async (request: IRequest, result: IResult) => {
   const links: ILinks[] = [{ url: "/", changefreq: "daily", priority: 0.3 }];
 
-  // Create a stream to write to
+  const stream = new SitemapStream({ hostname: `https://${request.headers.host}` });
 
-  const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
-
-  res.writeHead(200, {
+  result.writeHead(200, {
     "Content-Type": "application/xml",
   });
 
@@ -37,7 +33,7 @@ const siteMapGenerator = async (req: IReq, res: IRes) => {
     Readable.from(links).pipe(stream)
   ).then((data: IData) => data.toString());
 
-  res.end(xmlString);
+  result.end(xmlString);
 };
 
 export default siteMapGenerator;
