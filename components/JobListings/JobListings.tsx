@@ -187,9 +187,6 @@ const JobListings: React.FC = () => {
       )}
       {loading && !remoteError && (
         <div className={styles.loader}>
-          {"  "}
-          Laster inn data ...{"  "}
-          {"  "}
           <Loader />
         </div>
       )}
