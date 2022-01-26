@@ -81,6 +81,21 @@
   position: relative;
   margin: 2em !important;
 
+  @include respond(mobile) {
+    & * {
+      height: 37px !important;
+      width: 37px !important;
+    }
+
+    a {
+      font-size: 19px !important;
+      padding: 2px !important;
+      font-weight: 700;
+    }
+  }
+
+
+
   @include respond(tabletAndUp) {
     & * {
       height: 45px !important;
