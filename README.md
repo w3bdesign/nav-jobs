@@ -14,6 +14,8 @@ The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
 Authentication is handled via a Bearer token saved as the environment variable REACT_APP_AUTH which needs to be retrieved from Nav.no (don't ask me how to retrieve it as it was provided in the assignment).
 
+## Live url: https://nav.dfweb.no
+
 ## Features
 
 - Next.js with Typescript
