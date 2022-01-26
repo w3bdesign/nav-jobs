@@ -10,7 +10,7 @@ interface IRequest {
 }
 
 interface IResult {
-  writeHead: (arg0: string, arg1: { "Content-Type": string }) => void;
+  writeHead: (arg0: number, arg1: { "Content-Type": string }) => void;
   end: (arg0: string) => void;
 }
 
@@ -20,10 +20,10 @@ interface ILinks {
   priority: number;
 }
 
-const siteMapGenerator = async (_request: IRequest, result: IResult) => {
+const siteMapGenerator = async (request: IRequest, result: IResult) => {
   const links: ILinks[] = [{ url: "/", changefreq: "daily", priority: 0.3 }];
 
-  const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
+  const stream = new SitemapStream({ hostname: `https://${request.headers.host}` });
 
   result.writeHead(200, {
     "Content-Type": "application/xml",
