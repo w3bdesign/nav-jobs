@@ -1,0 +1,30 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+// @import 'animate.min.css';
+
+.savedJobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 20px;
+  color: $white;
+  background-color: $white;
+  justify-content: center;
+  border-bottom: 2px $borderColor solid;
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.savedJobTitle {
+  color: $black;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.animate {
+  background-color: rgb(128, 108, 108);
+}

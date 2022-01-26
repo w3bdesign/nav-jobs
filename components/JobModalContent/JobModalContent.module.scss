@@ -1,0 +1,18 @@
+@import "../../assets/scss/variables";
+
+.jobDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.jobTitle {
+  font-size: 25px;
+  font-weight: $fontBold;
+}
+
+.jobContent {
+  max-width: 65vw;
+  margin-top: 15px;
+}

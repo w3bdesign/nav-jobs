@@ -1,0 +1,90 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 10px;
+
+  @include respond(desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  min-height: 50px;
+  margin-top: 10px;
+  background-color: $white;
+
+  @include respond(mobile) {
+    min-width: 315px;
+  }
+}
+
+.panelButton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5em;
+  gap: 1em;
+  position: relative;
+}
+
+.hovedKnapp {
+  width: 140px;
+  margin: 0.3em;
+}
+
+.sekundKnapp {
+  width: 140px;
+  margin: 0.3em;
+}
+
+.errorMessage {
+  color: $black;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: center;
+  height: 50px;
+}
+
+.panelSpan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.4em;
+  min-height: 40px;
+}
+
+.title {
+  font-weight: $fontBold;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  margin: 2em !important;
+
+  & * {
+    height: 45px !important;
+    width: 45px !important;
+  }
+
+  a {
+    font-size: 22px !important;
+    padding: 5px !important;
+    font-weight: 700;
+  }
+}
