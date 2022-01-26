@@ -95,6 +95,7 @@ const JobListings: React.FC = () => {
 
   return (
     <div>
+      <h1 className={styles.header}>NAV Jobb Utforsker</h1>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
       <ToastContainer position="top-center" />
       <div id="jobcontainer" className={styles.container}>
