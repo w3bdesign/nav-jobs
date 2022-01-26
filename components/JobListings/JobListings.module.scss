@@ -94,8 +94,6 @@
     }
   }
 
-
-
   @include respond(tabletAndUp) {
     & * {
       height: 45px !important;
