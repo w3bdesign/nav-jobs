@@ -9,7 +9,9 @@ import style from "./SavedJobs.module.scss";
 import { ISavedJobsProps } from "./SavedJobs.interface";
 import { NextPage } from "next";
 
-const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
+const SavedJobs: NextPage<ISavedJobsProps> = ({
+  handleOpenModalClick,
+}): JSX.Element => {
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
 
   return (

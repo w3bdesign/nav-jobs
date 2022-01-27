@@ -11,7 +11,7 @@ import "../assets/scss/App.scss";
 import "../assets/css/animate.min.css";
 import { NextPage } from "next";
 
-const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+const MyApp: NextPage<AppProps> = ({ Component, pageProps }): JSX.Element => {
   return (
     <>
       <StoreProvider store={store}>
