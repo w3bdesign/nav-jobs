@@ -8,9 +8,6 @@ export interface StoreModel {
 }
 
 const storeModel: StoreModel = {
-  /**
-   * Use the IJobsModel properties in jobs
-   */
   jobs: JobModel,
 }
 
