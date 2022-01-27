@@ -9,8 +9,9 @@ import "@navikt/ds-css-internal";
 
 import "../assets/scss/App.scss";
 import "../assets/css/animate.min.css";
+import { NextPage } from "next";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <StoreProvider store={store}>
@@ -18,6 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </StoreProvider>
     </>
   );
-}
+};
 
 export default MyApp;
