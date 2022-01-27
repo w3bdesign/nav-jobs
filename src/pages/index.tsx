@@ -1,11 +1,11 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
 
-import JobListings from "../components/JobListings/JobListings";
-import Navbar from "../components/Navbar/Navbar";
+import JobListings from '../components/JobListings/JobListings'
+import Navbar from '../components/Navbar/Navbar'
 
-const Home: NextPage = () => {
+const Home: NextPage = (): JSX.Element => {
   return (
     <div id="root">
       <Head>
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <Navbar />
       <JobListings />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
