@@ -23,7 +23,9 @@ interface ILinks {
 const siteMapGenerator = async (request: IRequest, result: IResult) => {
   const links: ILinks[] = [{ url: "/", changefreq: "daily", priority: 0.3 }];
 
-  const stream = new SitemapStream({ hostname: `https://${request.headers.host}` });
+  const stream = new SitemapStream({
+    hostname: `https://${request.headers.host}`,
+  });
 
   result.writeHead(200, {
     "Content-Type": "application/xml",
