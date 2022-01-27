@@ -20,7 +20,7 @@ const JobModalContent = ({ name, description, extent, applicationDue, closeModal
             <br />
             {extent}
             <br />
-            {formatDate(applicationDue)}
+            Søknadsfrist: {formatDate(applicationDue)}
           </span>
           <br />
           {parse(description)}
