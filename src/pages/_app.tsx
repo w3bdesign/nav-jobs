@@ -9,7 +9,7 @@ import '@navikt/ds-css-internal'
 import '../assets/scss/App.scss'
 import '../assets/css/animate.min.css'
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next'
 import type { NextPage } from 'next'
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }): JSX.Element => {
