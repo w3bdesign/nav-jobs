@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="NAV Jobb Utforsker" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
