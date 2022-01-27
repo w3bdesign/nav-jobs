@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import style from "./Navbar.module.scss";
 
-const Navbar: React.FC = () => (
+const Navbar = () => (
   <div>
     <nav className={style.navigation}>
       <div className={style.systemtitle}>En tjeneste fra</div>
