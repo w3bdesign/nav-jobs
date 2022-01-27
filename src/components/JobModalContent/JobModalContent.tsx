@@ -1,5 +1,4 @@
 import parse from 'html-react-parser'
-
 import { Button } from '@navikt/ds-react'
 
 import { formatDate } from '../../assets/utils/functions'
