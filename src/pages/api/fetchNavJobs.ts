@@ -20,8 +20,13 @@ export default function fetchNavJobs(
       mode: "cors",
     }
   ).then((result) =>
-    result.json().then((data) => {
-      res.status(200).json(data.content);
-    })
+    result
+      .json()
+      .then((data) => {
+        res.status(200).json(data.content);
+      })
+      .catch((error) => {
+        return res.status(500).json(error);
+      })
   );
 }
