@@ -20,7 +20,7 @@ Authentication is handled via a Bearer token saved as the environment variable R
 ## Features
 
 - Next.js with Typescript
-- ESLint with AirBnb ruleset
+- ESLint (included with Next.js by default)
 - Typography and colors used by NAV
 - Styling with SASS and modules
 - Custom responsive @mixins
