@@ -1,20 +1,14 @@
-import parse from "html-react-parser";
+import parse from 'html-react-parser'
 
-import { Button } from "@navikt/ds-react";
+import { Button } from '@navikt/ds-react'
 
-import { formatDate } from "../../assets/utils/functions";
+import { formatDate } from '../../assets/utils/functions'
 
-import style from "./JobModalContent.module.scss";
+import style from './JobModalContent.module.scss'
 
-import { TJobContentProps } from "./JobModalContent.type";
+import { TJobContentProps } from './JobModalContent.type'
 
-const JobModalContent = ({
-  name,
-  description,
-  extent,
-  applicationDue,
-  closeModal,
-}: TJobContentProps): JSX.Element => {
+const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps): JSX.Element => {
   return (
     <>
       <Button variant="danger" onClick={closeModal}>
@@ -34,6 +28,6 @@ const JobModalContent = ({
         </span>
       </div>
     </>
-  );
-};
-export default JobModalContent;
+  )
+}
+export default JobModalContent

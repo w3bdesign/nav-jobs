@@ -1,154 +1,152 @@
 /* eslint-disable no-param-reassign */
-import { Action, action, thunk, Thunk } from "easy-peasy";
+import { Action, action, thunk, Thunk } from 'easy-peasy'
 
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid'
 
 /**
  * Error type
  */
 
-type TError = string;
+type TError = string
 
 /**
  * Interface for completeJob with rowIndex: number
  */
 interface ICompleteJob {
-  rowIndex: number;
+  rowIndex: number
 }
 
 /**
  * Type for employer
  */
 type Employer = {
-  name: string;
-};
+  name: string
+}
 
 /**
  * Interface for jobModalItems
  */
 interface IJobModalItem {
-  uuid?: string;
-  id: string;
-  published?: Date;
-  title: string;
-  description: string;
-  extent: string;
-  name: string;
-  applicationDue: string;
+  uuid?: string
+  id: string
+  published?: Date
+  title: string
+  description: string
+  extent: string
+  name: string
+  applicationDue: string
 }
 
 /**
  * Interface for jobItems
  */
 interface IJobItem {
-  uuid?: string;
-  id: string;
-  employer: Employer;
-  published?: Date;
-  title: string;
-  description: string;
-  extent: string;
-  name: string;
-  applicationDue: string;
+  uuid?: string
+  id: string
+  employer: Employer
+  published?: Date
+  title: string
+  description: string
+  extent: string
+  name: string
+  applicationDue: string
 }
 
 interface IJobType {
-  title: string;
-  description: string;
-  extent: string;
-  name: string;
-  applicationDue: string;
+  title: string
+  description: string
+  extent: string
+  name: string
+  applicationDue: string
 }
 
 export interface IJobsModel {
   /**
    * Globally stored array of jobItems
    */
-  jobItems: IJobItem[];
+  jobItems: IJobItem[]
   /**
    * List of jobModalItems used in modal to show content
    */
-  jobModalItems: IJobModalItem[];
+  jobModalItems: IJobModalItem[]
 
   /**
    * Store error from API fetching in state
    */
-  error: TError;
+  error: TError
 
   /**
    * Save error to state
    */
-  setError: Action<IJobsModel, TError>;
+  setError: Action<IJobsModel, TError>
 
   /**
    * Action to store all jobs from API to state
    */
-  saveFetchedJobs: Action<IJobsModel, IJobItem[]>;
+  saveFetchedJobs: Action<IJobsModel, IJobItem[]>
 
   /**
    * Thunk to fetch all jobs from API
    */
-  fetchRemoteJobs: Thunk<IJobsModel>;
+  fetchRemoteJobs: Thunk<IJobsModel>
 
   /**
    * Action to add a job to jobModalItems array
    */
-  addJob: Action<IJobsModel, IJobType>;
+  addJob: Action<IJobsModel, IJobType>
 
   /**
    * Action to delete all jobs from jobModalItems array
    */
-  deleteAllJobs: Action<IJobsModel>;
+  deleteAllJobs: Action<IJobsModel>
 
   /**
    * Action to delete a single job from jobModalItems array
    */
-  deleteJob: Action<IJobsModel, ICompleteJob>;
+  deleteJob: Action<IJobsModel, ICompleteJob>
 }
 
 const JobModel: IJobsModel = {
   jobItems: [],
   jobModalItems: [],
-  error: "",
+  error: '',
   setError: action((state, payload) => {
-    state.error = payload;
+    state.error = payload
   }),
   saveFetchedJobs: action((state, payload) => {
-    state.jobItems = payload;
+    state.jobItems = payload
   }),
   fetchRemoteJobs: thunk(async (actions) => {
     try {
       // Fetch data from NextJS API route
-      await fetch("/api/fetchNavJobs").then((result) =>
+      await fetch('/api/fetchNavJobs').then((result) =>
         result.json().then((data) => {
-          actions.saveFetchedJobs(data);
-        })
-      );
+          actions.saveFetchedJobs(data)
+        }),
+      )
     } catch (error) {
       if (error instanceof Error) {
-        actions.setError(error.message);
+        actions.setError(error.message)
       }
     }
   }),
-  addJob: action(
-    (state, { title, description, extent, name, applicationDue }) => {
-      state.jobModalItems.push({
-        id: uuidv4(),
-        title,
-        description,
-        extent,
-        name,
-        applicationDue,
-      });
-    }
-  ),
+  addJob: action((state, { title, description, extent, name, applicationDue }) => {
+    state.jobModalItems.push({
+      id: uuidv4(),
+      title,
+      description,
+      extent,
+      name,
+      applicationDue,
+    })
+  }),
   // Should also be able to delete individual jobs and all saved jobs
   deleteJob: action((state, { rowIndex }) => {
-    state.jobModalItems.splice(rowIndex, 1);
+    state.jobModalItems.splice(rowIndex, 1)
   }),
   deleteAllJobs: action((state) => {
-    state.jobModalItems.length = 0;
+    state.jobModalItems.length = 0
   }),
-};
+}
 
-export default JobModel;
+export default JobModel
