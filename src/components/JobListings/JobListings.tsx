@@ -182,7 +182,7 @@ const JobListings: React.FC = () => {
           total={jobItems.length - 10}
           pageSize={jobsPerPage}
           locale={locale}
-          onChange={(page) => changePage(page)}
+          onChange={(page: number) => changePage(page)}
         />
       )}
       {loading && !remoteError && (
