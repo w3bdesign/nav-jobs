@@ -7,10 +7,9 @@ import { truncateTextLength } from "../../assets/utils/functions";
 import style from "./SavedJobs.module.scss";
 
 import { ISavedJobsProps } from "./SavedJobs.interface";
+import { NextPage } from "next";
 
-const SavedJobs: React.FC<ISavedJobsProps> = ({
-  handleOpenModalClick,
-}: ISavedJobsProps) => {
+const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems);
 
   return (

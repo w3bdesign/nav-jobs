@@ -8,13 +8,13 @@ import style from "./JobModalContent.module.scss";
 
 import { TJobContentProps } from "./JobModalContent.type";
 
-function JobModalContent({
+const JobModalContent = ({
   name,
   description,
   extent,
   applicationDue,
   closeModal,
-}: TJobContentProps): JSX.Element {
+}: TJobContentProps): JSX.Element => {
   return (
     <>
       <Button variant="danger" onClick={closeModal}>
@@ -35,5 +35,5 @@ function JobModalContent({
       </div>
     </>
   );
-}
+};
 export default JobModalContent;

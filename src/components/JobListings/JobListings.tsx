@@ -19,7 +19,7 @@ import "rc-pagination/assets/index.css";
 
 import { IModalContent } from "./JobListings.interface";
 
-const JobListings: React.FC = () => {
+const JobListings= () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [modalItems, setModalItems] = useState<IModalContent[]>();
   const [pageNumber, setPageNumber] = useState<number>(1);
