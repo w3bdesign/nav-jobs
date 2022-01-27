@@ -118,6 +118,7 @@ const JobListings = (): JSX.Element => {
                     Vis
                   </Button>
                   <Button
+                    variant="secondary"
                     className={styles.sekundKnapp}
                     onClick={() => {
                       // Check if we try to add an existing job, if yes, show error message
