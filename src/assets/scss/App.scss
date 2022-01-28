@@ -7,10 +7,10 @@
   box-sizing: initial;
 }
 
-*, body {
+*,
+body {
   font-family: 'Source Sans Pro', sans-serif;
 
- 
   @include respond(mobile) {
     font-size: 1.6rem;
   }
