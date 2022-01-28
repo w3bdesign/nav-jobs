@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .container {
   display: grid;
@@ -57,8 +57,10 @@
 .sekundKnapp {
   width: 140px;
   margin: 0.3em;
+
   @include respond(mobile) {
     width: 200px;
+
     span {
       font-size: 1.7rem;
     }

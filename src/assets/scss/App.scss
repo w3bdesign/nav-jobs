@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 *,
 ::before,
@@ -9,7 +9,7 @@
 
 *,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 
   @include respond(mobile) {
     font-size: 1.61rem;
