@@ -107,19 +107,19 @@ const JobListings = () => {
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
               <Panel key={uuid} className={styles.panel} border>
-                <span className={`${styles.panelSpan} ${styles.title}`}>{title}</span>
-                <span className={styles.panelSpan}>{name.length && name}</span>
-                <span className={styles.panelSpan}>Publisert: {published && formatDate(published)}</span>
-                <span className={styles.panelButton}>
+                <span className={`${styles['panel-span']} ${styles.title}`}>{title}</span>
+                <span className={styles['panel-span']}>{name.length && name}</span>
+                <span className={styles['panel-span']}>Publisert: {published && formatDate(published)}</span>
+                <span className={styles['panel-button']}>
                   <Button
-                    className={styles.hovedKnapp}
+                    className={styles['hoved-knapp']}
                     onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
                   >
                     Vis
                   </Button>
                   <Button
                     variant="secondary"
-                    className={styles.sekundKnapp}
+                    className={styles['sekund-knapp']}
                     onClick={() => {
                       // Check if we try to add an existing job, if yes, show error message
                       if (jobExists(title) === -1) {
