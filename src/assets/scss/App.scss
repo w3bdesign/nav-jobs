@@ -1,14 +1,14 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 * {
-  font-family: "Source Sans Pro", sans-serif;
-  
+  font-family: 'Source Sans Pro', sans-serif;
+
   @include respond(tabletAndUp) {
     font-size: 1.125rem;
   }
   @include respond(mobile) {
-    font-size: 1.125rem;
+    font-size: 1.6rem;
   }
 }
 
