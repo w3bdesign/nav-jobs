@@ -3,7 +3,13 @@
 
 * {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.6rem;
+  
+  @include respond(tabletAndUp) {
+    font-size: 1.125rem;
+  }
+  @include respond(mobile) {
+    font-size: 1.125rem;
+  }
 }
 
 .App {
