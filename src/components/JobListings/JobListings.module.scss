@@ -44,7 +44,7 @@
   }
 }
 
-.panelButton {
+.panel-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,8 +53,8 @@
   position: relative;
 }
 
-.hovedKnapp,
-.sekundKnapp {
+.hoved-knapp,
+.sekund-knapp {
   width: 140px;
   margin: 0.3em;
 
@@ -76,7 +76,7 @@
   height: 50px;
 }
 
-.panelSpan {
+.panel-span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -13,13 +13,13 @@ import { formatDate } from '../../assets/utils/functions'
 import { useStoreActions, useStoreState } from '../../assets/utils/hooks'
 import locale from '../../assets/locale/localenb_NO'
 
-import styles from './JobListings.module.scss'
+import style from './JobListings.module.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import 'rc-pagination/assets/index.css'
 
 import { IModalContent } from './JobListings.interface'
 
-const JobListings = (): JSX.Element => {
+const JobListings = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [modalItems, setModalItems] = useState<IModalContent[]>()
   const [pageNumber, setPageNumber] = useState<number>(1)
@@ -87,10 +87,10 @@ const JobListings = (): JSX.Element => {
 
   return (
     <div>
-      <h2 className={styles.header}>NAV Jobb Utforsker</h2>
+      <h2 className={style.header}>NAV Jobb Utforsker</h2>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
       <ToastContainer position="top-center" />
-      <div id="jobcontainer" className={styles.container}>
+      <div id="jobcontainer" className={style.container}>
         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="title">
           {modalItems && (
             <JobModalContent
@@ -106,20 +106,20 @@ const JobListings = (): JSX.Element => {
           jobItems
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
-              <Panel key={uuid} className={styles.panel} border>
-                <span className={`${styles.panelSpan} ${styles.title}`}>{title}</span>
-                <span className={styles.panelSpan}>{name.length && name}</span>
-                <span className={styles.panelSpan}>Publisert: {published && formatDate(published)}</span>
-                <span className={styles.panelButton}>
+              <Panel key={uuid} className={style.panel} border>
+                <span className={`${style['panel-span']} ${style.title}`}>{title}</span>
+                <span className={style['panel-span']}>{name.length && name}</span>
+                <span className={style['panel-span']}>Publisert: {published && formatDate(published)}</span>
+                <span className={style['panel-button']}>
                   <Button
-                    className={styles.hovedKnapp}
+                    className={style['hoved-knapp']}
                     onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
                   >
                     Vis
                   </Button>
                   <Button
                     variant="secondary"
-                    className={styles.sekundKnapp}
+                    className={style['sekund-knapp']}
                     onClick={() => {
                       // Check if we try to add an existing job, if yes, show error message
                       if (jobExists(title) === -1) {
@@ -143,7 +143,7 @@ const JobListings = (): JSX.Element => {
       </div>
       {!loading && (
         <Pagination
-          className={styles.pagination}
+          className={style.pagination}
           current={pageNumber}
           total={jobItems.length - 10}
           pageSize={jobsPerPage}
@@ -152,7 +152,7 @@ const JobListings = (): JSX.Element => {
         />
       )}
       {loading && !remoteError && (
-        <div className={styles.loader}>
+        <div className={style.loader}>
           <Loader />
         </div>
       )}

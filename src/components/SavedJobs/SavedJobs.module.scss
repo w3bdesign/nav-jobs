@@ -1,7 +1,7 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/mixins";
 
-.savedJobs {
+.saved-jobs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.5rem;
@@ -16,7 +16,7 @@
   }
 }
 
-.savedJobTitle {
+.saved-job-title {
   color: $black;
   font-weight: 600;
   font-size: 24px;
