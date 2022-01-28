@@ -87,7 +87,7 @@ const JobListings = (): JSX.Element => {
 
   return (
     <div>
-      <h1 className={styles.header}>NAV Jobb Utforsker</h1>
+      <h2 className={styles.header}>NAV Jobb Utforsker</h2>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
       <ToastContainer position="top-center" />
       <div id="jobcontainer" className={styles.container}>
