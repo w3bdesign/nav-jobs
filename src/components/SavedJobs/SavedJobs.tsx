@@ -17,9 +17,9 @@ const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
       {jobModalItems.length > 0 && (
         <>
           <div>
-            <h2 className={style.savedJobTitle}>Lagrede jobber: </h2>
+            <h2 className={style['saved-job-title']}>Lagrede jobber: </h2>
           </div>
-          <div className={style.savedJobs}>
+          <div className={style['saved-jobs']}>
             {jobModalItems.map(({ id, title, description, extent, name, applicationDue }) => (
               <CSSTransition
                 key={id}
