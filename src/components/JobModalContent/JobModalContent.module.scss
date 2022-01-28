@@ -1,7 +1,7 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/variables";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
 
-.jobDiv {
+.job-div {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -9,11 +9,11 @@
   margin-top: 1em;
 }
 
-.jobTitle {
+.job-title {
   font-weight: $fontBold;
 }
 
-.jobContent {
+.job-content {
   max-width: 65vw;
   margin-top: 15px;
 }
