@@ -10,7 +10,7 @@ import { TJobContentProps } from './JobModalContent.type'
 const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps) => {
   return (
     <>
-      <Button className="lukkeKnapp" variant="danger" onClick={closeModal}>
+      <Button className={style.lukkeKnapp} variant="danger" onClick={closeModal}>
         Lukk
       </Button>
       <div className={style.jobDiv}>
