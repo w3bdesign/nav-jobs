@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { Action, action, thunk, Thunk } from 'easy-peasy'
+import { Action, action, thunk, Thunk } from "easy-peasy"
 
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from "uuid"
 
 /**
  * Error type
@@ -109,7 +109,7 @@ export interface IJobsModel {
 const JobModel: IJobsModel = {
   jobItems: [],
   jobModalItems: [],
-  error: '',
+  error: "",
   setError: action((state, payload) => {
     state.error = payload
   }),
@@ -119,7 +119,7 @@ const JobModel: IJobsModel = {
   fetchRemoteJobs: thunk(async (actions) => {
     try {
       // Fetch data from NextJS API route
-      await fetch('/api/fetchNavJobs').then((result) =>
+      await fetch("/api/fetchNavJobs").then((result) =>
         result.json().then((data) => {
           actions.saveFetchedJobs(data)
         }),

@@ -1,21 +1,21 @@
-import parse from 'html-react-parser'
-import { Button } from '@navikt/ds-react'
+import parse from "html-react-parser"
+import { Button } from "@navikt/ds-react"
 
-import { formatDate } from '../../assets/utils/functions'
+import { formatDate } from "../../assets/utils/functions"
 
-import style from './JobModalContent.module.scss'
+import style from "./JobModalContent.module.scss"
 
-import { TJobContentProps } from './JobModalContent.type'
+import { TJobContentProps } from "./JobModalContent.type"
 
 const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps) => {
   return (
     <>
-      <Button className={style['lukke-knapp']} variant="danger" onClick={closeModal}>
+      <Button className={style["lukke-knapp"]} variant="danger" onClick={closeModal}>
         Lukk
       </Button>
-      <div className={style['job-div']}>
-        <span className={style['job-content']}>
-          <span className={style['job-title']}>
+      <div className={style["job-div"]}>
+        <span className={style["job-content"]}>
+          <span className={style["job-title"]}>
             {name}
             <br />
             {extent}
