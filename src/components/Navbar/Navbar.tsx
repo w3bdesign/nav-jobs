@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import style from './Navbar.module.scss'
 
-const Navbar = (): JSX.Element => (
+const Navbar = () => (
   <div>
     <nav className={style.navigation}>
       <h1 className={style.systemtitle}>En tjeneste fra</h1>

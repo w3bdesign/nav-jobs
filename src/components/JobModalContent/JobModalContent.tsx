@@ -7,10 +7,10 @@ import style from './JobModalContent.module.scss'
 
 import { TJobContentProps } from './JobModalContent.type'
 
-const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps): JSX.Element => {
+const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps) => {
   return (
     <>
-      <Button variant="danger" onClick={closeModal}>
+      <Button className="lukkeKnapp" variant="danger" onClick={closeModal}>
         Lukk
       </Button>
       <div className={style.jobDiv}>
