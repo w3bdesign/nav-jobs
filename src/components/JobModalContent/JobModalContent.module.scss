@@ -1,5 +1,5 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
 
 .jobDiv {
   display: flex;
@@ -18,7 +18,7 @@
   margin-top: 15px;
 }
 
-.lukkeKnapp {
+.lukke-knapp {
   width: 140px;
   margin: 0.3em;
 
