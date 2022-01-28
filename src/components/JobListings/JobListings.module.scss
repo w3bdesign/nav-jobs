@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .container {
   display: grid;
@@ -53,14 +53,18 @@
   position: relative;
 }
 
-.hovedKnapp {
-  width: 140px;
-  margin: 0.3em;
-}
-
+.hovedKnapp,
 .sekundKnapp {
   width: 140px;
   margin: 0.3em;
+
+  @include respond(mobile) {
+    width: 200px;
+
+    span {
+      font-size: 1.7rem;
+    }
+  }
 }
 
 .errorMessage {
