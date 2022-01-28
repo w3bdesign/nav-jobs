@@ -4,10 +4,10 @@ const nextConfig = {
   i18n: {
     // These are all the locales you want to support in
     // your application
-    locales: ['nb-NO'],
+    locales: ["nb-NO"],
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'nb-NO',
+    defaultLocale: "nb-NO",
   },
 }
 

@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 
-import Pagination from 'rc-pagination'
-import { Button, Panel, Loader } from '@navikt/ds-react'
+import Pagination from "rc-pagination"
+import { Button, Panel, Loader } from "@navikt/ds-react"
 
-import Modal from 'react-modal'
-import { ToastContainer, toast } from 'react-toastify'
+import Modal from "react-modal"
+import { ToastContainer, toast } from "react-toastify"
 
-import JobModalContent from '../JobModalContent/JobModalContent'
-import SavedJobs from '../SavedJobs/SavedJobs'
+import JobModalContent from "../JobModalContent/JobModalContent"
+import SavedJobs from "../SavedJobs/SavedJobs"
 
-import { formatDate } from '../../assets/utils/functions'
-import { useStoreActions, useStoreState } from '../../assets/utils/hooks'
-import locale from '../../assets/locale/localenb_NO'
+import { formatDate } from "../../assets/utils/functions"
+import { useStoreActions, useStoreState } from "../../assets/utils/hooks"
+import locale from "../../assets/locale/localenb_NO"
 
-import style from './JobListings.module.scss'
-import 'react-toastify/dist/ReactToastify.css'
-import 'rc-pagination/assets/index.css'
+import style from "./JobListings.module.scss"
+import "react-toastify/dist/ReactToastify.css"
+import "rc-pagination/assets/index.css"
 
-import { IModalContent } from './JobListings.interface'
+import { IModalContent } from "./JobListings.interface"
 
 const JobListings = () => {
   const [loading, setLoading] = useState<boolean>(true)
@@ -35,7 +35,7 @@ const JobListings = () => {
 
   const fetchRemoteJobs = useStoreActions((actions) => actions.jobs.fetchRemoteJobs)
 
-  const jobExistsToast = () => toast.error('Jobb er allerede lagret ...')
+  const jobExistsToast = () => toast.error("Jobb er allerede lagret ...")
   const errorFetchingJobsToast = (errorMessage: string) =>
     toast.error(`Feil ved henting av ekstern data ${errorMessage}`)
   const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search)
@@ -78,7 +78,7 @@ const JobListings = () => {
 
   useEffect(() => {
     if (jobItems.length) {
-      Modal.setAppElement('#root')
+      Modal.setAppElement("#root")
       setLoading(false)
     } else {
       setLoading(true)
@@ -107,19 +107,19 @@ const JobListings = () => {
             .slice(pagesVisited, pagesVisited + jobsPerPage)
             .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
               <Panel key={uuid} className={style.panel} border>
-                <span className={`${style['panel-span']} ${style.title}`}>{title}</span>
-                <span className={style['panel-span']}>{name.length && name}</span>
-                <span className={style['panel-span']}>Publisert: {published && formatDate(published)}</span>
-                <span className={style['panel-button']}>
+                <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
+                <span className={style["panel-span"]}>{name.length && name}</span>
+                <span className={style["panel-span"]}>Publisert: {published && formatDate(published)}</span>
+                <span className={style["panel-button"]}>
                   <Button
-                    className={style['hoved-knapp']}
+                    className={style["hoved-knapp"]}
                     onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
                   >
                     Vis
                   </Button>
                   <Button
                     variant="secondary"
-                    className={style['sekund-knapp']}
+                    className={style["sekund-knapp"]}
                     onClick={() => {
                       // Check if we try to add an existing job, if yes, show error message
                       if (jobExists(title) === -1) {

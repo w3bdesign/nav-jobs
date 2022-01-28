@@ -1,13 +1,13 @@
-import { Button } from '@navikt/ds-react'
-import { CSSTransition } from 'react-transition-group'
+import { Button } from "@navikt/ds-react"
+import { CSSTransition } from "react-transition-group"
 
-import { useStoreState } from '../../assets/utils/hooks'
-import { truncateTextLength } from '../../assets/utils/functions'
+import { useStoreState } from "../../assets/utils/hooks"
+import { truncateTextLength } from "../../assets/utils/functions"
 
-import style from './SavedJobs.module.scss'
+import style from "./SavedJobs.module.scss"
 
-import { ISavedJobsProps } from './SavedJobs.interface'
-import { NextPage } from 'next'
+import { ISavedJobsProps } from "./SavedJobs.interface"
+import { NextPage } from "next"
 
 const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems)
@@ -17,9 +17,9 @@ const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
       {jobModalItems.length > 0 && (
         <>
           <div>
-            <h2 className={style['saved-job-title']}>Lagrede jobber: </h2>
+            <h2 className={style["saved-job-title"]}>Lagrede jobber: </h2>
           </div>
-          <div className={style['saved-jobs']}>
+          <div className={style["saved-jobs"]}>
             {jobModalItems.map(({ id, title, description, extent, name, applicationDue }) => (
               <CSSTransition
                 key={id}
@@ -30,7 +30,7 @@ const SavedJobs: NextPage<ISavedJobsProps> = ({ handleOpenModalClick }) => {
                 appear
               >
                 <Button onClick={() => handleOpenModalClick(description, extent, name, applicationDue)} key={id}>
-                  {truncateTextLength(title, 40, ' ... ')}
+                  {truncateTextLength(title, 40, " ... ")}
                 </Button>
               </CSSTransition>
             ))}
