@@ -1,6 +1,12 @@
 @import 'variables';
 @import 'mixins';
 
+*,
+::before,
+::after {
+  box-sizing: initial;
+}
+
 * {
   font-family: 'Source Sans Pro', sans-serif;
 

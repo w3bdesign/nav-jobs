@@ -25,6 +25,7 @@
 
 .header {
   text-align: center;
+  font-size: 1.4em;
 }
 
 .panel {
@@ -32,6 +33,7 @@
   margin-top: 5px;
   background-color: $white;
   transition: all 0.18s ease-in-out;
+  
 
   &:hover {
     transform: translateY(-1px);
