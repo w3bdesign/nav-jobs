@@ -16,8 +16,8 @@
   }
 
   @include respond(mobile) {
-    margin-left: 5em;
-    margin-right: 5em;
+    margin-left: 3em;
+    margin-right: 3em;
     justify-content: center;
     grid-template-columns: 1fr;
   }
