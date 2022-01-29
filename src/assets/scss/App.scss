@@ -12,7 +12,11 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.6rem;
 
-  @include respond(md) {
+  @include respond(sm) {
+    font-size: 1.2rem;
+  }
+
+  @include respond(lg) {
     font-size: 1.125rem;
   }
 }
