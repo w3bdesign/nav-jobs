@@ -10,9 +10,13 @@
 *,
 body {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 
   @include respond(sm) {
+    font-size: 1.6rem;
+  }
+
+  @include respond(md) {
     font-size: 1.2rem;
   }
 
