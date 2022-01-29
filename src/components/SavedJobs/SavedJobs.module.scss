@@ -9,7 +9,7 @@
   color: $white;
   background-color: $white;
   justify-content: center;
-  border-bottom: 2px $borderColor solid;
+  border-bottom: 2px $border-color solid;
 
   @include respond(tablet) {
     grid-template-columns: 1fr;
