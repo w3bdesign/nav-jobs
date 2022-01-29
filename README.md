@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/38b4132125714998870a2b6fdcf29ff8)](https://app.codacy.com/gh/w3bdesign/nav-jobs?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nav-jobs&utm_campaign=Badge_Grade_Settings)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/nav-jobs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/nav-jobs/context:javascript)
 [![CircleCI](https://circleci.com/gh/w3bdesign/nav-jobs/tree/master.svg?style=shield)](https://circleci.com/gh/w3bdesign/nav-jobs)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/?branch=master)
