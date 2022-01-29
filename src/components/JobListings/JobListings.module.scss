@@ -100,29 +100,42 @@
   justify-content: center;
   position: relative;
   margin: 2em !important;
+  & li {
+    height: 50px;
+    margin-top: 15px;
+  }
 
   @include respond(mobile) {
-    & * {
-      height: 30px !important;
-      width: 30px !important;
+    & li {
+      margin-top: 15px;
+      width: 80px !important;
+      border: none;
     }
 
     a {
-      font-size: 17px !important;
+      font-size: 1.7rem !important;
+      padding: 2px !important;
+      font-weight: 700;
+    }
+  }
+
+  @include respond(desktop) {
+    a {
       padding: 2px !important;
       font-weight: 700;
     }
   }
 
   @include respond(tabletAndUp) {
-    & * {
-      height: 45px !important;
-      width: 45px !important;
+    & li {
+      margin-top: 15px;
+      height: 50px;
+      width: 60px;
     }
 
     a {
-      font-size: 22px !important;
-      padding: 5px !important;
+      font-size: 1.2rem;
+      padding: 10px !important;
       font-weight: 700;
     }
   }
