@@ -61,10 +61,6 @@
 
   @include respond(mobile) {
     width: 200px;
-
-    span {
-      font-size: 1.7rem;
-    }
   }
 }
 
