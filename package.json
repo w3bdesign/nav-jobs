@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,10 +12,10 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "dependencies": {
-    "@navikt/ds-css": "^0.15.4",
+    "@navikt/ds-css": "^0.15.7",
     "@navikt/ds-css-internal": "^0.7.1",
-    "@navikt/ds-react": "^0.16.8",
-    "@navikt/ds-react-internal": "^0.11.8",
+    "@navikt/ds-react": "^0.16.13",
+    "@navikt/ds-react-internal": "^0.11.13",
     "easy-peasy": "^5.0.4",
     "html-react-parser": "^1.4.8",
     "next": "^12.1.0",
@@ -29,7 +29,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.18",
+    "@types/node": "^17.0.19",
     "@types/react": "17.0.39",
     "@types/react-modal": "^3.13.1",
     "@types/react-transition-group": "^4.4.4",
@@ -38,7 +38,7 @@
     "eslint-config-next": "^12.1.0",
     "prettier": "2.5.1",
     "sitemap": "^7.1.1",
-    "stylelint": "^14.5.1",
+    "stylelint": "^14.5.2",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",

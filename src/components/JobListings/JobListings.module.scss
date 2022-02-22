@@ -61,10 +61,6 @@
 
   @include respond(mobile) {
     width: 200px;
-
-    span {
-      font-size: 1.7rem;
-    }
   }
 }
 
@@ -114,7 +110,7 @@
     }
 
     a {
-      font-size: 1.7rem !important;
+      font-size: 1.15rem !important;
       padding: 2px !important;
       font-weight: 700;
     }
