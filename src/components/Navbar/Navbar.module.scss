@@ -1,4 +1,5 @@
 @import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .header-title {
   color: $white;
@@ -18,7 +19,11 @@
   color: $black;
   font-weight: $font-bold;
   line-height: 28px;
-  font-size: 1.5em;
+  font-size: 1.2em;
+
+  @include respond(lg) {
+    font-size: 1.5em;
+  }
 }
 
 /* Logo container */
