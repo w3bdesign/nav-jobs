@@ -1,5 +1,5 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/nav-jobs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/nav-jobs/context:javascript)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/67769ec3b4c94f2d92617d31c2981445)](https://www.codacy.com/gh/w3bdesign/nav-jobs/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=w3bdesign/nav-jobs&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/67769ec3b4c94f2d92617d31c2981445)](https://www.codacy.com/gh/w3bdesign/nav-jobs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nav-jobs&utm_campaign=Badge_Grade)
 [![CircleCI](https://circleci.com/gh/w3bdesign/nav-jobs/tree/master.svg?style=shield)](https://circleci.com/gh/w3bdesign/nav-jobs)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nav-jobs&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nav-jobs)
@@ -19,45 +19,45 @@ Authentication is handled via a Bearer token saved as the environment variable R
 
 ## Features
 
--   Next.js with Typescript
--   ESLint (included with Next.js by default)
--   Typography and colors used by NAV
--   Styling with SASS and modules
--   Custom responsive @mixins
--   Animations with React Transition Group and Animate.css
--   NAV frontend library implemented with multiple components like Pagination and Button
--   State management with Easy Peasy and Typescript typings
--   Responsive design
--   Saving of job ads
--   State-based API error handler with React-toastify
--   Fetched API results is saved in Redux state for easier debugging
--   Prevent duplicate jobs from being saved (shows error with React-toastify)
+- Next.js with Typescript
+- ESLint (included with Next.js by default)
+- Typography and colors used by NAV
+- Styling with SASS and modules
+- Custom responsive @mixins
+- Animations with React Transition Group and Animate.css
+- NAV frontend library implemented with multiple components like Pagination and Button
+- State management with Easy Peasy and Typescript typings
+- Responsive design
+- Saving of job ads
+- State-based API error handler with React-toastify
+- Fetched API results is saved in Redux state for easier debugging
+- Prevent duplicate jobs from being saved (shows error with React-toastify)
 
 ## Requirements
 
 The app must meet these criteria:
 
--   The user should be able to see the last 10 ads when the app is opened
+- The user should be able to see the last 10 ads when the app is opened
 
--   Each ad should show:
+- Each ad should show:
 
-    -   dato (published)
-    -   job title (jobtitle)
-    -   ad title
+  - dato (published)
+  - job title (jobtitle)
+  - ad title
 
--   The user should be able to press a button to see the next 10 ads
+- The user should be able to press a button to see the next 10 ads
 
--   Each ad should have an "Open" button that allows the ad to show:
+- Each ad should have an "Open" button that allows the ad to show:
 
-    -   job description (description)
-    -   employer
-    -   degree of extent (extent)
-    -   applicationDue.
+  - job description (description)
+  - employer
+  - degree of extent (extent)
+  - applicationDue.
 
--   Each ad should have a "Save" button. Saved ads must be presented in a separate field.
+- Each ad should have a "Save" button. Saved ads must be presented in a separate field.
 
--   Saved ads should not disappear even if the browser is closed and reopened.
+- Saved ads should not disappear even if the browser is closed and reopened.
 
 ## TODO
 
--   Implement "Saved ads should not disappear even if the browser is closed and reopened"
+- Implement "Saved ads should not disappear even if the browser is closed and reopened"

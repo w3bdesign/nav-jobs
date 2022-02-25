@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // TODO Skru av denne når stabil fiks er lansert for Next.js
+    "react/jsx-key": "off"
+  }
 }
