@@ -4,7 +4,7 @@ type Data = {
   name: string
 }
 
-export default function fetchNavJobs(_req: NextApiRequest, res: NextApiResponse<Data>) {
+export default function fetchNavJobs(_req: NextApiRequest, res: NextApiResponse<Data>): void {
   // This could be replaced with Axios if wanted
   fetch(
     "https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1",
