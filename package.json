@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.0.9",
+  "version": "1.0.91",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,14 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "stylelint": "stylelint **/*.scss --fix",
-    "prettier": "prettier --write .",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
+    "format": "prettier --write \"**/*.{ts,tsx,json}\"",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "^0.16.4",
+    "@navikt/ds-css": "^0.16.5",
     "@navikt/ds-css-internal": "^0.7.1",
-    "@navikt/ds-react": "^0.17.4",
-    "@navikt/ds-react-internal": "^0.12.4",
+    "@navikt/ds-react": "^0.17.6",
+    "@navikt/ds-react-internal": "^0.12.6",
     "easy-peasy": "^5.0.4",
     "html-react-parser": "^1.4.8",
     "next": "^12.1.0",
@@ -36,9 +36,9 @@
     "@types/uuid": "^8.3.4",
     "eslint": "8.11.0",
     "eslint-config-next": "^12.1.0",
-    "prettier": "2.5.1",
+    "prettier": "^2.6.0",
     "sitemap": "^7.1.1",
-    "stylelint": "^14.5.3",
+    "stylelint": "^14.6.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
