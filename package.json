@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.0.97",
+  "version": "1.0.98",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "^0.16.17",
+    "@navikt/ds-css": "^0.16.18",
     "@navikt/ds-css-internal": "^0.7.3",
     "@navikt/ds-react": "^0.17.21",
     "@navikt/ds-react-internal": "^0.12.22",
