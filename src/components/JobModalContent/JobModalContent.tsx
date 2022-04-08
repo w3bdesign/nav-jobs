@@ -16,11 +16,13 @@ const JobModalContent = ({ name, description, extent, applicationDue, closeModal
       <div className={style["job-div"]}>
         <span className={style["job-content"]}>
           <span className={style["job-title"]}>
+            <>
             {name}
             <br />
             {extent}
             <br />
             Søknadsfrist: {formatDate(applicationDue)}
+            </>
           </span>
           <br />
           {parse(description)}
