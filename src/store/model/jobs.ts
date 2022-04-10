@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { Action, action, thunk, Thunk } from "easy-peasy"
 
 import { v4 as uuidv4 } from "uuid"
