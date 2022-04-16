@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,7 +17,7 @@
     "@navikt/ds-react": "^0.17.25",
     "@navikt/ds-react-internal": "^0.12.27",
     "easy-peasy": "^5.0.4",
-    "html-react-parser": "^1.4.10",
+    "html-react-parser": "^1.4.11",
     "next": "^12.1.5",
     "rc-pagination": "^3.1.15",
     "react": "^18.0.0",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.24",
-    "@types/react": "17.0.44",
+    "@types/react": "^18.0.5",
     "@types/react-modal": "^3.13.1",
     "@types/react-transition-group": "^4.4.4",
     "@types/uuid": "^8.3.4",
@@ -38,7 +38,7 @@
     "eslint-config-next": "^12.1.5",
     "prettier": "^2.6.2",
     "sitemap": "^7.1.1",
-    "stylelint": "^14.6.1",
+    "stylelint": "^14.7.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
