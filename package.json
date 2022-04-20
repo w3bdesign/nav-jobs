@@ -15,7 +15,7 @@
     "@navikt/ds-css": "^0.16.19",
     "@navikt/ds-css-internal": "^0.7.3",
     "@navikt/ds-react": "^0.17.25",
-    "@navikt/ds-react-internal": "^0.12.27",
+    "@navikt/ds-react-internal": "^0.12.28",
     "easy-peasy": "^5.0.4",
     "html-react-parser": "^1.4.11",
     "next": "^12.1.5",
