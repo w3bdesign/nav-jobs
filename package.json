@@ -35,7 +35,7 @@
     "@types/react-transition-group": "^4.4.4",
     "@types/uuid": "^8.3.4",
     "eslint": "^8.14.0",
-    "eslint-config-next": "^12.1.5",
+    "eslint-config-next": "^12.1.6",
     "prettier": "^2.6.2",
     "sitemap": "^7.1.1",
     "stylelint": "^14.8.1",
