@@ -11,6 +11,7 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.35rem;
+  /*overflow-x: hidden;*/
 
   @include respond(md) {
     font-size: 1.5rem;
@@ -27,6 +28,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  min-height:100vh;
+  overflow-x: hidden;
 }
 
 .knapp {
