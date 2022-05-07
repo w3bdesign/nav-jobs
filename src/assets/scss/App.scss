@@ -28,6 +28,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  min-height:100vh;
+  overflow-x: hidden;
 }
 
 .knapp {
