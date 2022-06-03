@@ -1,5 +1,7 @@
 import { StoreProvider } from "easy-peasy"
 import Head from "next/head"
+import React from "react"
+import { NextPage } from "next/types"
 
 import store from "../store/index"
 
@@ -9,8 +11,11 @@ import "@navikt/ds-css-internal"
 import "../assets/scss/App.scss"
 import "../assets/css/animate.min.css"
 
-import { NextPage } from "next"
 import { AppProps } from "next/app"
+
+type Props = StoreProvider["props"] & { children: React.ReactNode }
+
+const StoreProviderCasted = StoreProvider as unknown as React.ComponentType<Props>
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -18,9 +23,9 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
-      <StoreProvider store={store}>
+      <StoreProviderCasted store={store}>
         <Component {...pageProps} />
-      </StoreProvider>
+      </StoreProviderCasted>
     </>
   )
 }
