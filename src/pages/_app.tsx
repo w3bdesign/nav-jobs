@@ -11,13 +11,13 @@ import "@navikt/ds-css-internal"
 import "../assets/scss/App.scss"
 import "../assets/css/animate.min.css"
 
-//import { AppProps } from "next/app"
+import { AppProps } from "next/app"
 
 type Props = StoreProvider["props"] & { children: React.ReactNode }
 
 const StoreProviderCasted = StoreProvider as unknown as React.ComponentType<Props>
 
-const MyApp: NextPage<Props> = ({ Component, pageProps }) => {
+const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
