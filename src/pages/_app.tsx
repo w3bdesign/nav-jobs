@@ -1,6 +1,7 @@
 import { StoreProvider } from "easy-peasy"
 import Head from "next/head"
-import  React  from "react"
+import React from "react"
+import { NextPage } from "next/types"
 
 import store from "../store/index"
 
@@ -16,7 +17,7 @@ type Props = StoreProvider["props"] & { children: React.ReactNode }
 
 const StoreProviderCasted = StoreProvider as unknown as React.ComponentType<Props>
 
-const MyApp = ({ Component, pageProps }: Props) => {
+const MyApp: NextPage<Props> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
