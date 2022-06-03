@@ -1,6 +1,6 @@
-import { StoreProvider, ComponentType } from "easy-peasy"
+import { StoreProvider } from "easy-peasy"
 import Head from "next/head"
-import { ReactNode } from "react"
+import { ReactNode, ComponentType } from "react"
 
 import store from "../store/index"
 
