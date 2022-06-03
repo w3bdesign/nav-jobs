@@ -1,4 +1,4 @@
-import { StoreProvider } from "easy-peasy"
+import { StoreProvider, ComponentType } from "easy-peasy"
 import Head from "next/head"
 import { ReactNode } from "react"
 
@@ -14,7 +14,7 @@ import { AppProps } from "next/app"
 
 type Props = AppProps & { children: ReactNode }
 
-const StoreProviderCasted = StoreProvider as unknown as React.ComponentType<Props>
+const StoreProviderCasted = StoreProvider as unknown as ComponentType<Props>
 
 const MyApp = ({ Component, pageProps }: Props) => {
   return (
