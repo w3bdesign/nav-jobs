@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,10 +12,10 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i --legacy-peer-deps && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "0.17.2",
+    "@navikt/ds-css": "0.17.3",
     "@navikt/ds-css-internal": "0.7.3",
-    "@navikt/ds-react": "0.18.6",
-    "@navikt/ds-react-internal": "0.13.6",
+    "@navikt/ds-react": "0.18.7",
+    "@navikt/ds-react-internal": "0.13.7",
     "easy-peasy": "5.0.4",
     "html-react-parser": "1.4.14",
     "next": "12.1.6",
@@ -25,12 +25,12 @@
     "react-modal": "3.15.1",
     "react-toastify": "9.0.3",
     "react-transition-group": "4.4.2",
-    "sass": "1.52.1",
+    "sass": "1.52.2",
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@types/node": "17.0.38",
-    "@types/react": "17.0.45",
+    "@types/node": "17.0.39",
+    "@types/react": "18.0.10",
     "@types/react-modal": "3.13.1",
     "@types/react-transition-group": "4.4.4",
     "@types/uuid": "8.3.4",
