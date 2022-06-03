@@ -14,9 +14,9 @@ import { AppProps } from "next/app"
 
 type Props = AppProps & { children: ReactNode }
 
-const StoreProviderCasted = StoreProvider as unknown as ComponentType<Props>
+const StoreProviderCasted = StoreProvider as unknown as ComponentType<React.PropsWithChildren<React.PropsWithChildren<Props>>>
 
-const MyApp = ({ Component, pageProps }: any) => {
+const MyApp = ({ Component, pageProps }: Props) => {
   return (
     <>
       <Head>
