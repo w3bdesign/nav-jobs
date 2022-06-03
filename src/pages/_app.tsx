@@ -1,6 +1,6 @@
 import { StoreProvider } from "easy-peasy"
 import Head from "next/head"
-import { ReactNode, ComponentType, PropsWithChildren } from "react"
+import  React  from "react"
 
 import store from "../store/index"
 
@@ -10,13 +10,13 @@ import "@navikt/ds-css-internal"
 import "../assets/scss/App.scss"
 import "../assets/css/animate.min.css"
 
-import { AppProps } from "next/app"
+//import { AppProps } from "next/app"
 
-type Props = AppProps & { children: ReactNode }
+type Props = StoreProvider["props"] & { children: React.ReactNode }
 
-const StoreProviderCasted = StoreProvider as unknown as ComponentType<PropsWithChildren<Props>>
+const StoreProviderCasted = StoreProvider as unknown as React.ComponentType<Props>
 
-const MyApp = ({ Component, pageProps }: Props) => {
+const MyApp = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
