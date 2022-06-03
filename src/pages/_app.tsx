@@ -16,7 +16,7 @@ type Props = AppProps & { children: ReactNode }
 
 const StoreProviderCasted = StoreProvider as unknown as ComponentType<Props>
 
-const MyApp = ({ Component, pageProps }: Props) => {
+const MyApp = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
