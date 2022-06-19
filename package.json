@@ -17,7 +17,7 @@
     "@navikt/ds-react": "0.19.14",
     "@navikt/ds-react-internal": "0.14.15",
     "easy-peasy": "5.0.4",
-    "html-react-parser": "1.4.14",
+    "html-react-parser": "2.0.0",
     "next": "12.1.6",
     "rc-pagination": "3.1.16",
     "react": "18.2.0",
