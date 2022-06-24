@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,12 +12,12 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i --legacy-peer-deps && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "0.18.15",
+    "@navikt/ds-css": "0.18.16",
     "@navikt/ds-css-internal": "0.7.7",
     "@navikt/ds-react": "0.19.14",
     "@navikt/ds-react-internal": "0.14.15",
     "easy-peasy": "5.0.4",
-    "html-react-parser": "1.4.14",
+    "html-react-parser": "2.0.0",
     "next": "12.1.6",
     "rc-pagination": "3.1.17",
     "react": "18.2.0",
@@ -32,7 +32,7 @@
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-modal": "3.13.1",
-    "@types/react-transition-group": "4.4.4",
+    "@types/react-transition-group": "4.4.5",
     "@types/uuid": "8.3.4",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
