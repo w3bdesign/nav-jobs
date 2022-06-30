@@ -14,7 +14,7 @@
   "dependencies": {
     "@navikt/ds-css": "0.18.23",
     "@navikt/ds-css-internal": "0.7.7",
-    "@navikt/ds-react": "0.19.14",
+    "@navikt/ds-react": "0.19.18",
     "@navikt/ds-react-internal": "0.14.15",
     "easy-peasy": "5.0.4",
     "html-react-parser": "2.0.0",
