@@ -12,7 +12,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i --legacy-peer-deps && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "1.0.0-rc.6",
+    "@navikt/ds-css": "1.0.0-rc.7",
     "@navikt/ds-css-internal": "1.0.0-rc.6",
     "@navikt/ds-react": "1.0.0-rc.6",
     "@navikt/ds-react-internal": "1.0.0-rc.7",
