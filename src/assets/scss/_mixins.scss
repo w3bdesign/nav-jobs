@@ -1,19 +1,52 @@
 @mixin respond($breakpoint) {
-  // $breakpoint is simply a variable that can have several values
-  @if $breakpoint==desktop {
+  /* $breakpoint is simply a variable that can have several values */
+
+  @if $breakpoint == desktop {
     @media only screen and (max-width: 1900px) {
       @content;
     }
   }
 
-  @if $breakpoint==tablet {
+  @if $breakpoint == tablet {
     @media only screen and (max-width: 1350px) {
       @content;
     }
   }
 
-  @if $breakpoint==mobile {
-    @media only screen and (max-width: 800px) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabletAndUp {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
+
+  /* Tailwind */
+
+  @if $breakpoint == sm {
+    @media only screen and (min-width: 640px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media only screen and (min-width: 1280px) {
       @content;
     }
   }

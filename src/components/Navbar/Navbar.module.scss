@@ -1,36 +1,43 @@
-@use "_variables";
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .header-title {
   color: $white;
-  font-weight: $fontBold;
+  font-weight: $font-bold;
   font-size: 40px;
   line-height: 44px;
 }
 
 .sub-title {
   color: $white;
-  font-weight: $fontBold;
+  font-weight: $font-bold;
   font-size: 32px;
   line-height: 36px;
 }
 
-.systemtitle {
+.system-title {
   color: $black;
-  font-weight: $fontBold;
-  font-size: 24px;
+  font-weight: $font-bold;
   line-height: 28px;
+  font-size: 1.2em;
+
+  @include respond(lg) {
+    font-size: 1.5em;
+  }
 }
 
 /* Logo container */
-nav {
+
+.navigation {
   display: flex;
   align-items: center;
   min-height: 10vh;
+  width: 100vw;
   background-color: $white;
   justify-content: center;
-  border-bottom: 2px $borderColor solid;
-}
+  border-bottom: 2px $border-color solid;
 
-.logo {
-  padding: 1rem;
+  .logo {
+    padding: 1rem;
+  }
 }

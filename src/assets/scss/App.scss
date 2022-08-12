@@ -1,19 +1,36 @@
-@use "_variables";
-@use "_mixins";
+@import "variables";
+@import "mixins";
 
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
-
-
-* {
-  font-family: "Source Sans Pro", sans-serif;
+*,
+::before,
+::after {
+  box-sizing: initial;
 }
 
-.App {
-  background-color: $navGraBakgrunn;
+*,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.35rem;
+
+  /* overflow-x: hidden; */
+
+  @include respond(md) {
+    font-size: 1.5rem;
+  }
+
+  @include respond(lg) {
+    font-size: 1.025rem;
+  }
+}
+
+#root {
+  background-color: $nav-bakgrunn;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .knapp {

@@ -1,18 +1,32 @@
-@use "_variables.scss";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
 
-.jobDiv {
+.job-div {
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  margin-top: 1em;
 }
 
-.jobTitle {
-  font-size: 30px;
-  font-weight: $fontBold;
+.job-title {
+  font-weight: $font-bold;
 }
 
-.jobContent {
+.job-content {
   max-width: 65vw;
-  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.lukke-knapp {
+  width: 140px;
+  margin: 0.3em;
+
+  @include respond(mobile) {
+    width: 200px;
+
+    span {
+      font-size: 1.6rem;
+    }
+  }
 }

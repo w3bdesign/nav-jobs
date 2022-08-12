@@ -1,18 +1,16 @@
-import React from 'react';
+import Image from "next/image"
 
-import style from './Navbar.module.scss';
+import style from "./Navbar.module.scss"
 
-import { ReactComponent as NavbarLogo } from '../../assets/svg/logo.svg';
-
-const Navbar: React.FC = () => (
+const Navbar = () => (
   <div>
-    <nav>
-      <div className={style.systemtitle}>En tjeneste fra</div>
+    <nav className={style.navigation}>
+      <h1 className={style["system-title"]}>NAV jobb utforsker - en tjeneste fra</h1>
       <div className={style.logo}>
-        <NavbarLogo />
+        <Image alt="NAV Logo" src="/logo.svg" width={130} height={60} priority />
       </div>
     </nav>
   </div>
-);
+)
 
-export default Navbar;
+export default Navbar

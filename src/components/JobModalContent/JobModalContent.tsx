@@ -1,37 +1,34 @@
-import React from 'react';
-import parse from 'html-react-parser';
-import { Fareknapp } from 'nav-frontend-knapper';
+import parse from "html-react-parser"
+import { Button } from "@navikt/ds-react"
 
-import { formatDate } from '../../assets/utils/functions';
+import { formatDate } from "../../assets/utils/functions"
 
-import style from './JobModalContent.module.scss';
+import style from "./JobModalContent.module.scss"
 
-import { TJobContentProps } from './JobModalContent.type';
+import { TJobContentProps } from "./JobModalContent.type"
 
-function JobModalContent({
-  name,
-  description,
-  extent,
-  applicationDue,
-  closeModal,
-}: TJobContentProps): JSX.Element {
+const JobModalContent = ({ name, description, extent, applicationDue, closeModal }: TJobContentProps) => {
   return (
     <>
-      <Fareknapp onClick={closeModal}>Lukk</Fareknapp>
-      <div className={style.jobDiv}>
-        <span className={style.jobContent}>
-          <span className={style.jobTitle}>
-            {name}
-            <br />
-            {extent}
-            <br />
-            {formatDate(applicationDue)}
+      <Button className={style["lukke-knapp"]} variant="danger" onClick={closeModal}>
+        Lukk
+      </Button>
+      <div className={style["job-div"]}>
+        <span className={style["job-content"]}>
+          <span className={style["job-title"]}>
+            <>
+              {name}
+              <br />
+              {extent}
+              <br />
+              Søknadsfrist: {formatDate(applicationDue)}
+            </>
           </span>
           <br />
           {parse(description)}
         </span>
       </div>
     </>
-  );
+  )
 }
-export default JobModalContent;
+export default JobModalContent

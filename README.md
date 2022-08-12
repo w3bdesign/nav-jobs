@@ -1,7 +1,9 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/w3bdesign/nav-jobs.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/w3bdesign/nav-jobs/context:javascript)
-[![CircleCI](https://circleci.com/gh/w3bdesign/nav-jobs/tree/master.svg?style=shield)](https://circleci.com/gh/w3bdesign/nav-jobs)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/67769ec3b4c94f2d92617d31c2981445)](https://www.codacy.com/gh/w3bdesign/nav-jobs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nav-jobs&utm_campaign=Badge_Grade)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nav-jobs&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nav-jobs)
+[![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nav-jobs/badge)](https://www.codefactor.io/repository/github/w3bdesign/nav-jobs)
+[![DeepSource](https://deepsource.io/gh/w3bdesign/nav-jobs.svg/?label=active+issues&token=32Ptsv4QrHgs8heBUIGjCj0w)](https://deepsource.io/gh/w3bdesign/nav-jobs/?ref=repository-badge)
 
 <img src="https://user-images.githubusercontent.com/45217974/113947801-c27d8400-980b-11eb-924b-b8ae9e455e33.png" alt="Screenshot" />
 
@@ -11,15 +13,13 @@ We want you to create a simple app / website that retrieves job advertisements f
 
 The ads are downloaded from NAV's website <https://arbeidsplassen.nav.no/>
 
-Authentication is handled via a Bearer token saved as the environment variable REACT_APP_AUTH which needs to be retrieved from Nav.no (don't ask me how to retrieve it as it was provided in the assignment).
-## Live URL
+Authentication is handled via a Bearer token saved as the environment variable REACT_APP_AUTH which needs to be retrieved from Nav.no (see <https://github.com/navikt/pam-public-feed#authentication> to retrieve an updated token).
 
-<https://nav.dfweb.no/>
+## Live url: <https://nav.dfweb.no>
 
 ## Features
 
--   React with Typescript
--   ESLint with AirBnb ruleset
+-   Next.js with Typescript
 -   Typography and colors used by NAV
 -   Styling with SASS and modules
 -   Custom responsive @mixins

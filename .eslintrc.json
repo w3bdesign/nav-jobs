@@ -1,50 +1,7 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint"],
+  "extends": "next/core-web-vitals",
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "import/extensions": "off",
-    "linebreak-style": "warn",
-    "react/function-component-definition": [
-      "off",
-      {
-        "namedComponents": "function-declaration",
-        "unnamedComponents": "function-expression"
-      }
-    ]
-  },
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/typescript"
-      ],
-      "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint"]
-    }
-  ],
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "src/"]
-      }
-    }
+    // TODO Skru av denne når stabil fiks er lansert for Next.js
+    "react/jsx-key": "off"
   }
 }
