@@ -25,7 +25,7 @@
     "react-modal": "3.15.1",
     "react-toastify": "9.0.8",
     "react-transition-group": "4.4.5",
-    "sass": "1.54.9",
+    "sass": "1.55.0",
     "uuid": "9.0.0"
   },
   "devDependencies": {
