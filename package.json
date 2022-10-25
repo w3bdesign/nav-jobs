@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "18.11.4",
-    "@types/react": "18.0.22",
+    "@types/react": "18.0.23",
     "@types/react-modal": "3.13.1",
     "@types/react-transition-group": "4.4.5",
     "@types/uuid": "8.3.4",
