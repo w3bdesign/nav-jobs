@@ -23,7 +23,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-modal": "3.16.1",
-    "react-toastify": "9.0.8",
+    "react-toastify": "9.1.0",
     "react-transition-group": "4.4.5",
     "sass": "1.55.0",
     "uuid": "9.0.0"
