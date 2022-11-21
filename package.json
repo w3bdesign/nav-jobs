@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@navikt/ds-css": "2.0.0",
-    "@navikt/ds-css-internal": "1.5.9",
+    "@navikt/ds-css-internal": "1.5.10",
     "@navikt/ds-react": "1.5.10",
     "@navikt/ds-react-internal": "1.5.9",
     "easy-peasy": "5.1.0",
