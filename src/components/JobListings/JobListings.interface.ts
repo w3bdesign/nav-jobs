@@ -48,7 +48,3 @@ export interface IJobRootObject {
   positioncount: string
   sector: string
 }
-
-export interface IJobListings {
-  IJobRootObject
-}
