@@ -1,6 +1,6 @@
 type TDateType = string | number | Date
 
-export const formatDate = (date: TDateType): TDateType => {
+export const formatDate = (date: TDateType) => {
   const returnDate = new Date(date).toLocaleDateString("nb-NO", {
     year: "numeric",
     month: "long",
@@ -15,7 +15,7 @@ export const formatDate = (date: TDateType): TDateType => {
   return returnDate
 }
 
-export const truncateTextLength = (inputString: string, maxLength: number, suffix: string): string =>
+export const truncateTextLength = (inputString: string, maxLength: number, suffix: string) =>
   inputString.length < maxLength
     ? inputString
     : `${inputString.substr(0, inputString.substr(0, maxLength - suffix.length).lastIndexOf(" "))}${suffix}`
