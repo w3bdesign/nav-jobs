@@ -1,4 +1,4 @@
-import { Action, action, thunk, Thunk } from "easy-peasy"
+import { Action, action } from "easy-peasy"
 
 import { v4 as uuidv4 } from "uuid"
 
@@ -85,11 +85,6 @@ export interface IJobsModel {
   saveFetchedJobs: Action<IJobsModel, IJobItem[]>
 
   /**
-   * Thunk to fetch all jobs from API
-   */
-  fetchRemoteJobs: Thunk<IJobsModel>
-
-  /**
    * Action to add a job to jobModalItems array
    */
   addJob: Action<IJobsModel, IJobType>
@@ -114,20 +109,6 @@ const JobModel: IJobsModel = {
   }),
   saveFetchedJobs: action((state, payload) => {
     state.jobItems = payload
-  }),
-  fetchRemoteJobs: thunk(async (actions) => {
-    try {
-      // Fetch data from NextJS API route
-      await fetch("/api/fetchNavJobs").then((result) =>
-        result.json().then((data) => {
-          actions.saveFetchedJobs(data)
-        }),
-      )
-    } catch (error) {
-      if (error instanceof Error) {
-        actions.setError(error.message)
-      }
-    }
   }),
   addJob: action((state, { title, description, extent, name, applicationDue }) => {
     state.jobModalItems.push({
