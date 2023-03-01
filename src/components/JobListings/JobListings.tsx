@@ -100,7 +100,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
           .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
             <Panel key={uuid} className={style.panel} border>
               <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
-              <span className={style["panel-span"]}>{name.length && name}</span>
+              <span className={style["panel-span"]}>{!!name.length && name}</span>
               <span className={style["panel-span"]}>
                 <>Publisert: {published && formatDate(published)}</>
               </span>
