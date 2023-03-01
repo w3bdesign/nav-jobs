@@ -9,8 +9,9 @@ import { ToastContainer, toast } from "react-toastify"
 import JobModalContent from "../JobModalContent/JobModalContent"
 import SavedJobs from "../SavedJobs/SavedJobs"
 
-import { formatDate } from "../../assets/utils/functions"
-import { useStoreActions, useStoreState } from "../../assets/utils/hooks"
+
+import { formatDate} from "@/assets/utils/functions"
+import { useStoreActions, useStoreState } from "@/assets/utils/hooks"
 import locale from "../../assets/locale/localenb_NO"
 
 import style from "./JobListings.module.scss"

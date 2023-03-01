@@ -8,8 +8,8 @@ import store from "../store/index"
 import "@navikt/ds-css"
 import "@navikt/ds-css-internal"
 
-import "../assets/scss/App.scss"
-import "../assets/css/animate.min.css"
+import "@/assets/scss/App.scss"
+import "@/assets/css/animate.min.css"
 
 import { AppProps } from "next/app"
 

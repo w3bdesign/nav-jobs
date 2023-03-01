@@ -1,8 +1,8 @@
 import { Button } from "@navikt/ds-react"
 import { CSSTransition } from "react-transition-group"
 
-import { useStoreState } from "../../assets/utils/hooks"
-import { truncateTextLength } from "../../assets/utils/functions"
+import { useStoreState } from "@/assets/utils/hooks"
+import { truncateTextLength } from "@/assets/utils/functions"
 
 import style from "./SavedJobs.module.scss"
 
