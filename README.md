@@ -29,7 +29,7 @@ Authentication is handled via a Bearer token saved as the environment variable R
 -   Responsive design
 -   Saving of job ads
 -   State-based API error handler with React-toastify
--   Fetched API results is saved in Redux state for easier debugging
+-   API data is handled with React Query
 -   Prevent duplicate jobs from being saved (shows error with React-toastify)
 
 ## Requirements

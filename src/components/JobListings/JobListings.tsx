@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 import Pagination from "rc-pagination"
-import { Button, Panel, Loader } from "@navikt/ds-react"
+import { Button, Panel } from "@navikt/ds-react"
 
 import Modal from "react-modal"
 import { ToastContainer, toast } from "react-toastify"
@@ -9,8 +9,7 @@ import { ToastContainer, toast } from "react-toastify"
 import JobModalContent from "../JobModalContent/JobModalContent"
 import SavedJobs from "../SavedJobs/SavedJobs"
 
-
-import { formatDate} from "@/assets/utils/functions"
+import { formatDate } from "@/assets/utils/functions"
 import { useStoreActions, useStoreState } from "@/assets/utils/hooks"
 import locale from "../../assets/locale/localenb_NO"
 
@@ -18,10 +17,13 @@ import style from "./JobListings.module.scss"
 import "react-toastify/dist/ReactToastify.css"
 import "rc-pagination/assets/index.css"
 
-import { IModalContent } from "./JobListings.interface"
+import { IJobRootObject, IModalContent } from "./JobListings.interface"
 
-const JobListings = () => {
-  const [loading, setLoading] = useState<boolean>(true)
+interface IJobListingsProps {
+  jobItems: IJobRootObject[]
+}
+
+const JobListings = ({ jobItems }: IJobListingsProps) => {
   const [modalItems, setModalItems] = useState<IModalContent[]>()
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
@@ -30,11 +32,9 @@ const JobListings = () => {
   const pagesVisited = pageNumber * jobsPerPage
 
   const remoteError = useStoreState((state) => state.jobs.error)
-  const jobItems = useStoreState((state) => state.jobs.jobItems)
+
   const jobModalItems = useStoreState((state) => state.jobs.jobModalItems)
   const addJob = useStoreActions((actions) => actions.jobs.addJob)
-
-  const fetchRemoteJobs = useStoreActions((actions) => actions.jobs.fetchRemoteJobs)
 
   const jobExistsToast = () => toast.error("Jobb er allerede lagret ...")
   const errorFetchingJobsToast = (errorMessage: string) =>
@@ -74,15 +74,8 @@ const JobListings = () => {
   }, [modalItems])
 
   useEffect(() => {
-    fetchRemoteJobs()
-  }, [fetchRemoteJobs])
-
-  useEffect(() => {
     if (jobItems.length) {
       Modal.setAppElement("#root")
-      setLoading(false)
-    } else {
-      setLoading(true)
     }
   }, [jobItems])
 
@@ -102,62 +95,55 @@ const JobListings = () => {
             />
           )}
         </Modal>
-        {!loading &&
-          jobItems
-            .slice(pagesVisited, pagesVisited + jobsPerPage)
-            .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
-              <Panel key={uuid} className={style.panel} border>
-                <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
-                <span className={style["panel-span"]}>{name.length && name}</span>
-                <span className={style["panel-span"]}>
-                  <>Publisert: {published && formatDate(published)}</>
-                </span>
-                <span className={style["panel-button"]}>
-                  <Button
-                    className={style["hoved-knapp"]}
-                    onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
-                  >
-                    Vis
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    className={style["sekund-knapp"]}
-                    onClick={() => {
-                      // Check if we try to add an existing job, if yes, show error message
-                      if (jobExists(title) === -1) {
-                        addJob({
-                          title,
-                          description,
-                          extent,
-                          name,
-                          applicationDue,
-                        })
-                      } else {
-                        jobExistsToast()
-                      }
-                    }}
-                  >
-                    Lagre
-                  </Button>
-                </span>
-              </Panel>
-            ))}
+        {jobItems
+          .slice(pagesVisited, pagesVisited + jobsPerPage)
+          .map(({ uuid, title, employer: { name }, published, description, extent, applicationDue }) => (
+            <Panel key={uuid} className={style.panel} border>
+              <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
+              <span className={style["panel-span"]}>{Boolean(name.length) && name}</span>
+              <span className={style["panel-span"]}>
+                <>Publisert: {published && formatDate(published)}</>
+              </span>
+              <span className={style["panel-button"]}>
+                <Button
+                  className={style["hoved-knapp"]}
+                  onClick={() => handleOpenModalClick(description, extent, name, applicationDue)}
+                >
+                  Vis
+                </Button>
+                <Button
+                  variant="secondary"
+                  className={style["sekund-knapp"]}
+                  onClick={() => {
+                    // Check if we try to add an existing job, if yes, show error message
+                    if (jobExists(title) === -1) {
+                      addJob({
+                        title,
+                        description,
+                        extent,
+                        name,
+                        applicationDue,
+                      })
+                    } else {
+                      jobExistsToast()
+                    }
+                  }}
+                >
+                  Lagre
+                </Button>
+              </span>
+            </Panel>
+          ))}
       </div>
-      {!loading && (
-        <Pagination
-          className={style.pagination}
-          current={pageNumber}
-          total={jobItems.length - 10}
-          pageSize={jobsPerPage}
-          locale={locale}
-          onChange={(page: number) => changePage(page)}
-        />
-      )}
-      {loading && !remoteError && (
-        <div className={style.loader}>
-          <Loader />
-        </div>
-      )}
+
+      <Pagination
+        className={style.pagination}
+        current={pageNumber}
+        total={jobItems.length - 10}
+        pageSize={jobsPerPage}
+        locale={locale}
+        onChange={(page: number) => changePage(page)}
+      />
     </div>
   )
 }
