@@ -21,7 +21,7 @@ export interface IOccupationCategory {
 
 export interface IEmployer {
   name: string
-  orgnr?: any
+  orgnr?: string
   description: string
   homepage: string
 }
@@ -44,7 +44,7 @@ export interface IJobRootObject {
   employer: IEmployer
   engagementtype: string
   extent: string
-  starttime?: any
+  starttime?: string
   positioncount: string
   sector: string
 }
