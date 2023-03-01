@@ -76,7 +76,6 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   useEffect(() => {
     if (jobItems.length) {
       Modal.setAppElement("#root")
-    } else {
     }
   }, [jobItems])
 
