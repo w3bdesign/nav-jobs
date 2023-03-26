@@ -1,13 +1,6 @@
 @import "@/assets/scss/variables";
 @import "@/assets/scss/mixins";
 
-@mixin typography($color, $font-weight, $font-size, $line-height) {
-  color: $color;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-}
-
 $header-title-font-size: 40px;
 $header-title-line-height: 44px;
 $sub-title-font-size: 32px;
