@@ -50,6 +50,7 @@
 
 .panel-button {
   @include flexbox(row, wrap, center, center);
+
   padding: 0.5em;
   gap: 1em;
   position: relative;
@@ -67,6 +68,7 @@
 
 .panel-span {
   @include flexbox(row, wrap, center, center);
+
   padding: 0.4em;
 }
 
@@ -81,6 +83,7 @@
 
 .pagination {
   @include flexbox(row, wrap, center, center);
+
   position: relative;
   margin: 2em !important;
 
