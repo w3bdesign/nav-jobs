@@ -5,6 +5,14 @@
   line-height: $line-height;
 }
 
+@mixin flexbox($direction, $wrap, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @mixin respond($breakpoint) {
   /* $breakpoint is simply a variable that can have several values */
 
