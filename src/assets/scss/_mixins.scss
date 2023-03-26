@@ -1,3 +1,10 @@
+@mixin typography($color, $font-weight, $font-size, $line-height) {
+  color: $color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
 @mixin respond($breakpoint) {
   /* $breakpoint is simply a variable that can have several values */
 
