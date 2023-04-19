@@ -3,21 +3,21 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 10px;
   margin-top: 20px;
   width: 98vw;
 
-  @include respond(desktop) {
-    grid-template-columns: 1fr 1fr 1fr;
+  @include mq(desktop) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @include respond(tablet) {
-    grid-template-columns: 1fr 1fr;
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @include respond(mobile) {
+  @include mq(mobile) {
     margin-left: 3em;
     margin-right: 3em;
     justify-content: center;
@@ -43,15 +43,14 @@
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   }
 
-  @include respond(mobile) {
+  @include mq(mobile) {
     min-width: 315px;
   }
 }
 
 .panel-button {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include flexbox(row, wrap, center, center);
+
   padding: 0.5em;
   gap: 1em;
   position: relative;
@@ -62,15 +61,14 @@
   width: 140px;
   margin: 0.3em;
 
-  @include respond(mobile) {
+  @include mq(mobile) {
     width: 200px;
   }
 }
 
 .panel-span {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include flexbox(row, wrap, center, center);
+
   padding: 0.4em;
 }
 
@@ -80,27 +78,24 @@
 }
 
 .loader {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include flexbox(row, wrap, center, center);
 }
 
 .pagination {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include flexbox(row, wrap, center, center);
+
   position: relative;
   margin: 2em !important;
 
   & li {
     height: 50px;
-    margin-top: 15px;
+    margin-top: $pagination-margin-top;
   }
 
-  @include respond(mobile) {
+  @include mq(mobile) {
     & li {
-      margin-top: 15px;
-      width: 80px !important;
+      margin-top: $pagination-margin-top-mobile;
+      width: $pagination-width-mobile !important;
       border: none;
     }
 
@@ -111,18 +106,18 @@
     }
   }
 
-  @include respond(desktop) {
+  @include mq(desktop) {
     a {
       padding: 2px !important;
       font-weight: 700;
     }
   }
 
-  @include respond(tabletAndUp) {
+  @include mq(tabletAndUp) {
     & li {
-      margin-top: 15px;
+      margin-top: $pagination-margin-top-tablet;
       height: 50px;
-      width: 60px;
+      width: $pagination-width-tablet;
     }
 
     a {
