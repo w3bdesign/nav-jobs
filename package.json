@@ -12,7 +12,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "2.9.7",
+    "@navikt/ds-css": "2.9.8",
     "@navikt/ds-css-internal": "2.9.7",
     "@navikt/ds-react": "2.9.7",
     "@navikt/ds-react-internal": "2.9.7",
