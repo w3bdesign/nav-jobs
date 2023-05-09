@@ -15,7 +15,7 @@ export default async function fetchNavJobs(_req: NextApiRequest, res: NextApiRes
     })
     const data = await result.json()
     res.status(200).json(data.content)
-  } catch (error: any) {
-    res.status(500).json(error)
+  } catch (error: unknown) {
+    res.status(500).json(error as Data)
   }
 }
