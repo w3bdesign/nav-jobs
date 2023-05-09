@@ -4,26 +4,18 @@ type Data = {
   name: string
 }
 
-export default function fetchNavJobs(_req: NextApiRequest, res: NextApiResponse<Data>): void {
-  // This could be replaced with Axios if wanted
-  fetch(
-    "https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1",
-    // 'https://arbeidsplassenx.navtet.no/public-feed/api/v1/ads?size=100&page=1', // <- Trigger error handler with this
-    {
+export default async function fetchNavJobs(_req: NextApiRequest, res: NextApiResponse<Data>): Promise<void> {
+  try {
+    const result = await fetch("https://arbeidsplassen.nav.no/public-feed/api/v1/ads?size=100&page=1", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AUTH}`,
       },
       mode: "cors",
-    },
-  ).then((result) =>
-    result
-      .json()
-      .then((data) => {
-        res.status(200).json(data.content)
-      })
-      .catch((error) => {
-        return res.status(500).json(error)
-      }),
-  )
+    })
+    const data = await result.json()
+    res.status(200).json(data.content)
+  } catch (error: any) {
+    res.status(500).json(error)
+  }
 }
