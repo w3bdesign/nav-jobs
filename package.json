@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@navikt/ds-css": "3.2.3",
-    "@navikt/ds-css-internal": "3.2.3",
+    "@navikt/ds-css-internal": "3.2.4",
     "@navikt/ds-react": "2.9.8",
     "@navikt/ds-react-internal": "3.2.3",
     "@tanstack/react-query": "^4.29.7",
