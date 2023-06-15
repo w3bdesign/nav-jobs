@@ -88,7 +88,6 @@
   margin: 2em !important;
 
   & li {
-    height: 50px;
     margin-top: $pagination-margin-top;
   }
 
@@ -116,7 +115,6 @@
   @include mq(tabletAndUp) {
     & li {
       margin-top: $pagination-margin-top-tablet;
-      height: 50px;
       width: $pagination-width-tablet;
     }
 
