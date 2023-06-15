@@ -15,69 +15,65 @@
 
 @mixin mq($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: 767px) {
+    @media (width <= 767px) {
       @content;
     }
   } @else if $breakpoint == tablet {
-    @media (min-width: 768px) and (max-width: 1023px) {
+    @media (768px <= width) and (width <= 1023px) {
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media (min-width: 1024px) {
+    @media (width >= 1024px) {
       @content;
     }
   }
 }
 
 @mixin respond($breakpoint) {
-  /* $breakpoint is simply a variable that can have several values */
-
   @if $breakpoint == desktop {
-    @media only screen and (max-width: 1900px) {
+    @media only screen and (width <= 1900px) {
       @content;
     }
   }
 
   @if $breakpoint == tablet {
-    @media only screen and (max-width: 1350px) {
+    @media only screen and (width <= 1350px) {
       @content;
     }
   }
 
   @if $breakpoint == mobile {
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (width <= 1000px) {
       @content;
     }
   }
 
   @if $breakpoint == tabletAndUp {
-    @media only screen and (min-width: 800px) {
+    @media only screen and (width >= 800px) {
       @content;
     }
   }
 
-  /* Tailwind */
-
   @if $breakpoint == sm {
-    @media only screen and (min-width: 640px) {
+    @media only screen and (width >= 640px) {
       @content;
     }
   }
 
   @if $breakpoint == md {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (width >= 768px) {
       @content;
     }
   }
 
   @if $breakpoint == lg {
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (width >= 1024px) {
       @content;
     }
   }
 
   @if $breakpoint == lg {
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (width >= 1280px) {
       @content;
     }
   }
