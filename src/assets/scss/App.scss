@@ -12,10 +12,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.35rem;
 
-  /* overflow-x: hidden; */
-
   @include respond(md) {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
   }
 
   @include respond(lg) {
