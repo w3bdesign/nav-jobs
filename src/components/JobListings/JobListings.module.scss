@@ -115,7 +115,6 @@
   @include mq(tabletAndUp) {
     & li {
       margin-top: $pagination-margin-top-tablet;
-
       width: $pagination-width-tablet;
     }
 
