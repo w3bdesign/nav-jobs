@@ -18,7 +18,7 @@
     "@navikt/ds-react-internal": "3.4.3",
     "@tanstack/react-query": "^4.32.0",
     "easy-peasy": "6.0.1",
-    "html-react-parser": "4.1.0",
+    "html-react-parser": "4.2.0",
     "next": "^13.4.11",
     "rc-pagination": "3.5.0",
     "react": "18.2.0",
