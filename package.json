@@ -33,7 +33,7 @@
     "@types/node": "18.18.0",
     "@types/react": "18.2.23",
     "@types/react-modal": "3.16.1",
-    "@types/react-transition-group": "4.4.6",
+    "@types/react-transition-group": "4.4.7",
     "@types/uuid": "9.0.4",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",
