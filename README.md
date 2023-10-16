@@ -1,6 +1,3 @@
-
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/67769ec3b4c94f2d92617d31c2981445)](https://www.codacy.com/gh/w3bdesign/nav-jobs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nav-jobs&utm_campaign=Badge_Grade)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/w3bdesign/nav-jobs/?branch=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nav-jobs&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nav-jobs)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nav-jobs/badge)](https://www.codefactor.io/repository/github/w3bdesign/nav-jobs)
