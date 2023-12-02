@@ -16,7 +16,7 @@
     "@navikt/ds-css-internal": "3.4.3",
     "@navikt/ds-react": "5.11.3",
     "@navikt/ds-react-internal": "3.4.3",
-    "@tanstack/react-query": "^5.12.1",
+    "@tanstack/react-query": "^5.12.2",
     "easy-peasy": "6.0.4",
     "html-react-parser": "5.0.6",
     "next": "^14.0.3",
