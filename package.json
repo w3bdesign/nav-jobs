@@ -34,7 +34,7 @@
     "@types/react": "18.3.3",
     "@types/react-modal": "3.16.3",
     "@types/react-transition-group": "4.4.10",
-    "@types/uuid": "9.0.8",
+    "@types/uuid": "10.0.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.4",
     "prettier": "3.3.2",
