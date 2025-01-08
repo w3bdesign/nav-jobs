@@ -2,7 +2,7 @@ import { StoreProvider } from "easy-peasy"
 import Head from "next/head"
 import React from "react"
 import { NextPage } from "next/types"
-import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 import store from "../store/index"
 
@@ -26,11 +26,9 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
       <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <StoreProviderCasted store={store}>
-            <Component {...pageProps} />
-          </StoreProviderCasted>
-        </Hydrate>
+        <StoreProviderCasted store={store}>
+          <Component {...pageProps} />
+        </StoreProviderCasted>
       </QueryClientProvider>
     </>
   )

@@ -102,7 +102,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
               <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
               <span className={style["panel-span"]}>{Boolean(name.length) && name}</span>
               <span className={style["panel-span"]}>
-                <>Publisert: {published && formatDate(published)}</>
+                {`Publisert: ${published ? formatDate(published) : ""}`}
               </span>
               <span className={style["panel-button"]}>
                 <Button
