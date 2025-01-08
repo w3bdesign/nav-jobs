@@ -79,6 +79,11 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
     }
   }, [jobItems])
 
+  const formatPublishedDate = (date: string | number | Date | undefined) => {
+    if (!date) return ""
+    return `Publisert: ${formatDate(date)}`
+  }
+
   return (
     <div>
       <SavedJobs handleOpenModalClick={handleOpenModalClick} />
@@ -101,9 +106,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
             <Panel key={uuid} className={style.panel} border>
               <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
               <span className={style["panel-span"]}>{Boolean(name.length) && name}</span>
-              <span className={style["panel-span"]}>
-                <>Publisert: {published && formatDate(published)}</>
-              </span>
+              <span className={style["panel-span"]}>{formatPublishedDate(published)}</span>
               <span className={style["panel-button"]}>
                 <Button
                   className={style["hoved-knapp"]}
