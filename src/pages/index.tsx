@@ -27,7 +27,10 @@ export default Home
 export const getStaticProps = async () => {
   const queryClient = new QueryClient()
 
-  await queryClient.prefetchQuery(["jobs"], getJobs)
+  await queryClient.prefetchQuery({
+    queryKey: ["jobs"],
+    queryFn: getJobs
+  })
 
   return {
     props: {
