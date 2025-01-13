@@ -27,7 +27,7 @@
     "react-toastify": "11.0.2",
     "react-transition-group": "4.4.5",
     "sass": "1.83.1",
-    "uuid": "11.0.4"
+    "uuid": "11.0.5"
   },
   "devDependencies": {
     "@types/node": "22.10.5",
