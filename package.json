@@ -37,7 +37,7 @@
     "@types/uuid": "10.0.0",
     "eslint": "9.20.1",
     "eslint-config-next": "15.2.0",
-    "prettier": "3.5.1",
+    "prettier": "3.5.3",
     "sitemap": "8.0.0",
     "typescript": "5.8.2"
   }
