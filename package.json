@@ -14,7 +14,7 @@
   "dependencies": {
     "@navikt/ds-css": "7.21.0",
     "@navikt/ds-css-internal": "3.4.3",
-    "@navikt/ds-react": "7.20.0",
+    "@navikt/ds-react": "7.21.0",
     "@navikt/ds-react-internal": "3.4.3",
     "@tanstack/react-query": "^5.75.1",
     "easy-peasy": "6.1.0",
