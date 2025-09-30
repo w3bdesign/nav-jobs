@@ -50,29 +50,16 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
     (title: string, description: string, extent: string, name: string, applicationDue: string) => {
       // Check if we try to add an existing job, if yes, show error message
       if (jobExists(title) === -1) {
-        addJob({
-          title,
-          description,
-          extent,
-          name,
-          applicationDue,
-        })
+        addJob({ title, description, extent, name, applicationDue })
       } else {
         jobExistsToast()
       }
     },
-    [addJob, jobModalItems, jobExists],
+    [addJob, jobExists],
   )
 
   const handleOpenModalClick = (description: string, extent: string, name: string, applicationDue: string) => {
-    setModalItems([
-      {
-        description,
-        name,
-        extent,
-        applicationDue,
-      },
-    ])
+    setModalItems([{ description, name, extent, applicationDue }])
   }
 
   const closeModal = () => {
@@ -119,9 +106,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
             <Panel key={uuid} className={style.panel} border>
               <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
               <span className={style["panel-span"]}>{Boolean(name.length) && name}</span>
-              <span className={style["panel-span"]}>
-                {`Publisert: ${published ? formatDate(published) : ""}`}
-              </span>
+              <span className={style["panel-span"]}>{`Publisert: ${published ? formatDate(published) : ""}`}</span>
               <span className={style["panel-button"]}>
                 <Button
                   className={style["hoved-knapp"]}
