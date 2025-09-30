@@ -39,8 +39,6 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   const jobExistsToast = () => toast.error("Jobb er allerede lagret ...")
   const errorFetchingJobsToast = (errorMessage: string) =>
     toast.error(`Feil ved henting av ekstern data ${errorMessage}`)
-  const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search)
-
   // Changes page to the current page (on click)
   const changePage = useCallback((page: number) => {
     setPageNumber(page)
@@ -49,13 +47,14 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   const handleSaveJob = useCallback(
     (title: string, description: string, extent: string, name: string, applicationDue: string) => {
       // Check if we try to add an existing job, if yes, show error message
-      if (jobExists(title) === -1) {
+      const jobExists = jobModalItems.findIndex((value) => value.title === title)
+      if (jobExists === -1) {
         addJob({ title, description, extent, name, applicationDue })
       } else {
         jobExistsToast()
       }
     },
-    [addJob, jobExists],
+    [addJob, jobModalItems],
   )
 
   const handleOpenModalClick = (description: string, extent: string, name: string, applicationDue: string) => {
