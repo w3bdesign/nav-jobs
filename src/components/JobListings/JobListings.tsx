@@ -68,7 +68,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   }, [remoteError])
 
   useEffect(() => {
-    if (modalItems && modalItems[0].name.length) {
+    if (modalItems?.[0]?.name.length) {
       setModalIsOpen(true)
     }
   }, [modalItems])
