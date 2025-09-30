@@ -45,7 +45,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   }, [])
 
   const handleSaveJob = useCallback(
-    (title: string, description: string, extent: string, name: string, applicationDue: string) => {
+    (title: string, description: string, extent: string, name: string, applicationDue: string) => () => {
       // Check if we try to add an existing job, if yes, show error message
       const jobExists = jobModalItems.findIndex((value) => value.title === title)
       if (jobExists === -1) {
@@ -116,7 +116,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
                 <Button
                   variant="secondary"
                   className={style["sekund-knapp"]}
-                  onClick={() => handleSaveJob(title, description, extent, name, applicationDue)}
+                  onClick={handleSaveJob(title, description, extent, name, applicationDue)}
                 >
                   Lagre
                 </Button>
