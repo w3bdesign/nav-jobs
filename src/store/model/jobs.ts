@@ -1,4 +1,6 @@
+import { StateCreator } from "zustand"
 import { v4 as uuidv4 } from "uuid"
+import { StoreState } from "../index"
 
 /**
  * Error type
@@ -98,55 +100,62 @@ export interface IJobsModel {
   deleteJob: (payload: ICompleteJob) => void
 }
 
-export const createJobsSlice = (set: any) => ({
-  jobItems: [],
-  jobModalItems: [],
-  error: "",
-  setError: (error: TError) =>
-    set((state: any) => ({
-      jobs: {
-        ...state.jobs,
-        error,
-      },
-    })),
-  saveFetchedJobs: (jobs: IJobItem[]) =>
-    set((state: any) => ({
-      jobs: {
-        ...state.jobs,
-        jobItems: jobs,
-      },
-    })),
-  addJob: ({ title, description, extent, name, applicationDue }: IJobType) =>
-    set((state: any) => ({
-      jobs: {
-        ...state.jobs,
-        jobModalItems: [
-          ...state.jobs.jobModalItems,
-          {
-            id: uuidv4(),
-            title,
-            description,
-            extent,
-            name,
-            applicationDue,
-          },
-        ],
-      },
-    })),
-  deleteJob: ({ rowIndex }: ICompleteJob) =>
-    set((state: any) => ({
-      jobs: {
-        ...state.jobs,
-        jobModalItems: state.jobs.jobModalItems.filter(
-          (_: any, index: number) => index !== rowIndex,
-        ),
-      },
-    })),
-  deleteAllJobs: () =>
-    set((state: any) => ({
-      jobs: {
-        ...state.jobs,
-        jobModalItems: [],
-      },
-    })),
+export const createJobsSlice: StateCreator<
+  StoreState,
+  [],
+  [],
+  { jobs: IJobsModel }
+> = (set) => ({
+  jobs: {
+    jobItems: [],
+    jobModalItems: [],
+    error: "",
+    setError: (error: TError) =>
+      set((state) => ({
+        jobs: {
+          ...state.jobs,
+          error,
+        },
+      })),
+    saveFetchedJobs: (jobs: IJobItem[]) =>
+      set((state) => ({
+        jobs: {
+          ...state.jobs,
+          jobItems: jobs,
+        },
+      })),
+    addJob: ({ title, description, extent, name, applicationDue }: IJobType) =>
+      set((state) => ({
+        jobs: {
+          ...state.jobs,
+          jobModalItems: [
+            ...state.jobs.jobModalItems,
+            {
+              id: uuidv4(),
+              title,
+              description,
+              extent,
+              name,
+              applicationDue,
+            },
+          ],
+        },
+      })),
+    deleteJob: ({ rowIndex }: ICompleteJob) =>
+      set((state) => ({
+        jobs: {
+          ...state.jobs,
+          jobModalItems: state.jobs.jobModalItems.filter(
+            (_, index) => index !== rowIndex,
+          ),
+        },
+      })),
+    deleteAllJobs: () =>
+      set((state) => ({
+        jobs: {
+          ...state.jobs,
+          jobModalItems: [],
+        },
+      })),
+  },
 })
