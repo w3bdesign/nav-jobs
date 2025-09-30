@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 import Pagination from "rc-pagination"
 import { Button, Panel } from "@navikt/ds-react"
@@ -39,22 +39,26 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   const jobExistsToast = () => toast.error("Jobb er allerede lagret ...")
   const errorFetchingJobsToast = (errorMessage: string) =>
     toast.error(`Feil ved henting av ekstern data ${errorMessage}`)
-  const jobExists = (search: string) => jobModalItems.findIndex((value) => value.title === search)
-
   // Changes page to the current page (on click)
-  const changePage = (page: number) => {
+  const changePage = useCallback((page: number) => {
     setPageNumber(page)
-  }
+  }, [])
+
+  const handleSaveJob = useCallback(
+    (title: string, description: string, extent: string, name: string, applicationDue: string) => () => {
+      // Check if we try to add an existing job, if yes, show error message
+      const jobExists = jobModalItems.findIndex((value) => value.title === title)
+      if (jobExists === -1) {
+        addJob({ title, description, extent, name, applicationDue })
+      } else {
+        jobExistsToast()
+      }
+    },
+    [addJob, jobModalItems],
+  )
 
   const handleOpenModalClick = (description: string, extent: string, name: string, applicationDue: string) => {
-    setModalItems([
-      {
-        description,
-        name,
-        extent,
-        applicationDue,
-      },
-    ])
+    setModalItems([{ description, name, extent, applicationDue }])
   }
 
   const closeModal = () => {
@@ -68,7 +72,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
   }, [remoteError])
 
   useEffect(() => {
-    if (modalItems && modalItems[0].name.length) {
+    if (modalItems?.[0]?.name.length) {
       setModalIsOpen(true)
     }
   }, [modalItems])
@@ -101,9 +105,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
             <Panel key={uuid} className={style.panel} border>
               <span className={`${style["panel-span"]} ${style.title}`}>{title}</span>
               <span className={style["panel-span"]}>{Boolean(name.length) && name}</span>
-              <span className={style["panel-span"]}>
-                {`Publisert: ${published ? formatDate(published) : ""}`}
-              </span>
+              <span className={style["panel-span"]}>{`Publisert: ${published ? formatDate(published) : ""}`}</span>
               <span className={style["panel-button"]}>
                 <Button
                   className={style["hoved-knapp"]}
@@ -114,20 +116,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
                 <Button
                   variant="secondary"
                   className={style["sekund-knapp"]}
-                  onClick={() => {
-                    // Check if we try to add an existing job, if yes, show error message
-                    if (jobExists(title) === -1) {
-                      addJob({
-                        title,
-                        description,
-                        extent,
-                        name,
-                        applicationDue,
-                      })
-                    } else {
-                      jobExistsToast()
-                    }
-                  }}
+                  onClick={handleSaveJob(title, description, extent, name, applicationDue)}
                 >
                   Lagre
                 </Button>
@@ -142,7 +131,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
         total={jobItems.length - 10}
         pageSize={jobsPerPage}
         locale={locale}
-        onChange={(page: number) => changePage(page)}
+        onChange={changePage}
       />
     </div>
   )
