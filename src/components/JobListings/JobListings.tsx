@@ -61,7 +61,7 @@ const JobListings = ({ jobItems }: IJobListingsProps) => {
         jobExistsToast()
       }
     },
-    [addJob, jobModalItems],
+    [addJob, jobModalItems, jobExists],
   )
 
   const handleOpenModalClick = (description: string, extent: string, name: string, applicationDue: string) => {
