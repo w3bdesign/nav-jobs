@@ -5,8 +5,8 @@ export interface StoreState {
   jobs: IJobsModel
 }
 
-const useStore = create<StoreState>((set) => ({
-  jobs: createJobsSlice(set) as IJobsModel,
+const useStore = create<StoreState>()((set, get, api) => ({
+  ...createJobsSlice(set, get, api),
 }))
 
 export default useStore
