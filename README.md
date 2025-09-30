@@ -21,7 +21,7 @@ Authentication is handled via a Bearer token saved as the environment variable R
 -   Custom responsive @mixins
 -   Animations with React Transition Group and Animate.css
 -   NAV frontend library implemented with multiple components like Pagination and Button
--   State management with Easy Peasy and Typescript typings
+-   State management with Zustand and Typescript typings
 -   Responsive design
 -   Saving of job ads
 -   State-based API error handler with React-toastify
