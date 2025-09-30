@@ -1,6 +1,6 @@
 {
   "name": "nav-jobs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,13 +12,13 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@navikt/ds-css": "7.29.0",
+    "@navikt/ds-css": "7.31.0",
     "@navikt/ds-css-internal": "3.4.3",
     "@navikt/ds-react": "7.31.0",
     "@navikt/ds-react-internal": "3.4.3",
-    "@tanstack/react-query": "^5.90.1",
-    "easy-peasy": "6.1.0",
+    "@tanstack/react-query": "^5.90.2",
     "html-react-parser": "5.2.6",
+    "zustand": "^5.0.8",
     "next": "15.5.4",
     "rc-pagination": "5.1.0",
     "react": "19.1.1",
@@ -27,14 +27,13 @@
     "react-toastify": "11.0.5",
     "react-transition-group": "4.4.5",
     "sass": "1.93.2",
-    "uuid": "12.0.0"
+    "uuid": "13.0.0"
   },
   "devDependencies": {
-    "@types/node": "22.18.7",
-    "@types/react": "19.1.13",
+    "@types/node": "24.6.0",   
+    "@types/react": "^19.1.15",
     "@types/react-modal": "3.16.3",
-    "@types/react-transition-group": "4.4.12",
-    "@types/uuid": "11.0.0",
+    "@types/react-transition-group": "4.4.12",   
     "eslint": "9.36.0",
     "eslint-config-next": "15.5.4",
     "prettier": "3.6.2",

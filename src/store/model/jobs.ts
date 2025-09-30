@@ -1,5 +1,3 @@
-import { Action, action } from "easy-peasy"
-
 import { v4 as uuidv4 } from "uuid"
 
 /**
@@ -77,56 +75,78 @@ export interface IJobsModel {
   /**
    * Save error to state
    */
-  setError: Action<IJobsModel, TError>
+  setError: (error: TError) => void
 
   /**
    * Action to store all jobs from API to state
    */
-  saveFetchedJobs: Action<IJobsModel, IJobItem[]>
+  saveFetchedJobs: (jobs: IJobItem[]) => void
 
   /**
    * Action to add a job to jobModalItems array
    */
-  addJob: Action<IJobsModel, IJobType>
+  addJob: (job: IJobType) => void
 
   /**
    * Action to delete all jobs from jobModalItems array
    */
-  deleteAllJobs: Action<IJobsModel>
+  deleteAllJobs: () => void
 
   /**
    * Action to delete a single job from jobModalItems array
    */
-  deleteJob: Action<IJobsModel, ICompleteJob>
+  deleteJob: (payload: ICompleteJob) => void
 }
 
-const JobModel: IJobsModel = {
+export const createJobsSlice = (set: any) => ({
   jobItems: [],
   jobModalItems: [],
   error: "",
-  setError: action((state, payload) => {
-    state.error = payload
-  }),
-  saveFetchedJobs: action((state, payload) => {
-    state.jobItems = payload
-  }),
-  addJob: action((state, { title, description, extent, name, applicationDue }) => {
-    state.jobModalItems.push({
-      id: uuidv4(),
-      title,
-      description,
-      extent,
-      name,
-      applicationDue,
-    })
-  }),
-  // Should also be able to delete individual jobs and all saved jobs
-  deleteJob: action((state, { rowIndex }) => {
-    state.jobModalItems.splice(rowIndex, 1)
-  }),
-  deleteAllJobs: action((state) => {
-    state.jobModalItems.length = 0
-  }),
-}
-
-export default JobModel
+  setError: (error: TError) =>
+    set((state: any) => ({
+      jobs: {
+        ...state.jobs,
+        error,
+      },
+    })),
+  saveFetchedJobs: (jobs: IJobItem[]) =>
+    set((state: any) => ({
+      jobs: {
+        ...state.jobs,
+        jobItems: jobs,
+      },
+    })),
+  addJob: ({ title, description, extent, name, applicationDue }: IJobType) =>
+    set((state: any) => ({
+      jobs: {
+        ...state.jobs,
+        jobModalItems: [
+          ...state.jobs.jobModalItems,
+          {
+            id: uuidv4(),
+            title,
+            description,
+            extent,
+            name,
+            applicationDue,
+          },
+        ],
+      },
+    })),
+  deleteJob: ({ rowIndex }: ICompleteJob) =>
+    set((state: any) => ({
+      jobs: {
+        ...state.jobs,
+        jobModalItems: state.jobs.jobModalItems.filter(
+          (_: any, index: number) => index !== rowIndex,
+        ),
+      },
+    })),
+  deleteAllJobs: () =>
+    set((state: any) => ({
+      jobs: {
+        ...state.jobs,
+        jobModalItems: [],
+      },
+    })),
+})

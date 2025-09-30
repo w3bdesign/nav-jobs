@@ -1,7 +1,12 @@
-import { createStore } from "easy-peasy"
+import { create } from "zustand"
+import { createJobsSlice, IJobsModel } from "./model/jobs"
 
-import model from "./model/index"
+export interface StoreState {
+  jobs: IJobsModel
+}
 
-const store = createStore(model)
+const useStore = create<StoreState>((set) => ({
+  jobs: createJobsSlice(set) as IJobsModel,
+}))
 
-export default store
+export default useStore
